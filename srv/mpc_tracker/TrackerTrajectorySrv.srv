@@ -1,0 +1,4 @@
+TrackerTrajectory trajectory_msg
+---
+bool success
+string message
