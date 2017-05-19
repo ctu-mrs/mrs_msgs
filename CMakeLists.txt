@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   message_generation
   dynamic_reconfigure
-)
+  )
 
 ###############################################
 ## Declare ROS messages, services and actions ##
@@ -26,7 +26,7 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
   TrackerDiagnostics.msg
   FuturePoint.msg
   FutureTrajectory.msg
-)
+  )
 
 # messages for MPC_TRACKER
 add_service_files(DIRECTORY srv/mpc_tracker FILES
@@ -34,13 +34,20 @@ add_service_files(DIRECTORY srv/mpc_tracker FILES
   Vec1.srv
   Gains.srv
   TrackerTrajectorySrv.srv
-)
+  )
+
+# messages for MRS_MULTIMASTER
+add_service_files(DIRECTORY srv/mrs_multimaster FILES
+
+  ChangeState.srv
+  )
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
+
   std_msgs
   geometry_msgs
-)
+  )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -58,12 +65,12 @@ generate_messages(DEPENDENCIES
 ###################################
 
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES data_exporter
-   CATKIN_DEPENDS roscpp std_msgs message_runtime
-#  DEPENDS system_lib
-#   DEPENDS Eigen
-)
+  #  INCLUDE_DIRS include
+  #  LIBRARIES data_exporter
+  CATKIN_DEPENDS roscpp std_msgs message_runtime
+  #  DEPENDS system_lib
+  #   DEPENDS Eigen
+  )
 
 ###########
 ## Build ##
@@ -74,8 +81,8 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-#  include
-)
+  #  include
+  )
 
 ## Declare a C++ library
 #add_library(detector
