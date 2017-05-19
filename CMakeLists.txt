@@ -42,6 +42,12 @@ add_service_files(DIRECTORY srv/mrs_multimaster FILES
   ChangeState.srv
   )
 
+# messages for MRS_MULTIMASTER
+add_service_files(DIRECTORY msg/nmea_navsat_driver FILES
+
+  RtkGpsLocal.srv
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
