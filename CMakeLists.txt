@@ -49,16 +49,6 @@ generate_messages(DEPENDENCIES
   geometry_msgs
   )
 
-################################################
-## Declare ROS dynamic reconfigure parameters ##
-################################################
-
-## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
-#   cfg/DynReconf2.cfg
-# )
-
 
 ###################################
 ## catkin specific configuration ##
@@ -84,20 +74,6 @@ include_directories(
   #  include
   )
 
-## Declare a C++ library
-#add_library(detector
-#   src/detector.cpp
-#)
-
-## Declare a C++ executable
-#add_executable(mrs_msgs src/dummy.cpp)
-
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies( ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
-
-## Specify libraries to link a library or executable target against
-
-#target_link_libraries(mrs_msgs
-#   ${catkin_LIBRARIES}
-#)
