@@ -1,0 +1,10 @@
+test_build:
+  tags: 
+    - ros-kinetic
+  stage: build
+  script:
+    - source .test_build.sh | tee compilation.txt
+  artifacts:
+    name: "compilation_results"
+    paths:
+    - compilation.txt
