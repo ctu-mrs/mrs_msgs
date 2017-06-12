@@ -1,5 +1,5 @@
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
 
 USER_REPO_PATH=`pwd`
 MY_WORKSPACE=~/workspace
