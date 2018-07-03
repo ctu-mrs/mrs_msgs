@@ -28,7 +28,7 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
   FutureTrajectory.msg
   )
 
-# messages for MPC_TRACKER
+# services for MPC_TRACKER
 add_service_files(DIRECTORY srv/mpc_tracker FILES
 
   Vec1.srv
@@ -48,13 +48,19 @@ add_message_files(DIRECTORY msg/nmea_navsat_driver FILES
   RtkGpsLocal.msg
   )
 
+# messages for the UAV_MANAGER
+add_message_files(DIRECTORY msg/uav_manager FILES
+
+  PositionCommand.msg
+  TrackerStatus.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
   std_msgs
   geometry_msgs
   )
-
 
 ###################################
 ## catkin specific configuration ##
