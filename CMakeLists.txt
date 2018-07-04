@@ -10,7 +10,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_srvs
   geometry_msgs
   message_generation
-  dynamic_reconfigure
   )
 
 ###############################################
@@ -68,7 +67,6 @@ generate_messages(DEPENDENCIES
   geometry_msgs
   )
 
-
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -95,4 +93,8 @@ include_directories(
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies( ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(
+  ${${PROJECT_NAME}_EXPORTED_TARGETS}
+  ${catkin_EXPORTED_TARGETS}
+  ${PROJECT_NAME}_generate_messages_cpp
+  )
