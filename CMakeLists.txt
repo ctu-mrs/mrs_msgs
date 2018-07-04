@@ -55,12 +55,19 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   TrackerStatus.msg
   )
 
+# messages for MRS_MULTIMASTER
+add_service_files(DIRECTORY srv/uav_manager FILES
+
+  Transition.srv
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
   std_msgs
   geometry_msgs
   )
+
 
 ###################################
 ## catkin specific configuration ##
