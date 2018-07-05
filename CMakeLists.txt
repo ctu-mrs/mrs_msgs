@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   std_srvs
   geometry_msgs
+  cmake_modules
   message_generation
   )
 
@@ -72,11 +73,8 @@ generate_messages(DEPENDENCIES
 ###################################
 
 catkin_package(
-  #  INCLUDE_DIRS include
-  #  LIBRARIES data_exporter
   CATKIN_DEPENDS roscpp std_msgs message_runtime
-  #  DEPENDS system_lib
-  #   DEPENDS Eigen
+  LIBRARIES mrs_msgs
   )
 
 ###########
@@ -88,13 +86,15 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  #  include
   )
 
-## Add cmake target dependencies of the executable
-## same as for the library above
-add_dependencies(
+add_library(mrs_msgs src/main.cpp)
+
+add_dependencies(mrs_msgs
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
   ${catkin_EXPORTED_TARGETS}
-  ${PROJECT_NAME}_generate_messages_cpp
+  )
+
+target_link_libraries(mrs_msgs
+  ${catkin_LIBRARIES}
   )
