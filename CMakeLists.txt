@@ -60,7 +60,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
 # messages for MRS_MULTIMASTER
 add_service_files(DIRECTORY srv/uav_manager FILES
 
-  Transition.srv
+  SwitchTracker.srv
   )
 
 ## Generate added messages and services with any dependencies listed here
