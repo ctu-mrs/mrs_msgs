@@ -52,7 +52,9 @@ add_message_files(DIRECTORY msg/nmea_navsat_driver FILES
 add_message_files(DIRECTORY msg/uav_manager FILES
 
   PositionCommand.msg
+  AttitudeCommand.msg
   TrackerStatus.msg
+  ControllerStatus.msg
   )
 
 # messages for MRS_MULTIMASTER
