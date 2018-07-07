@@ -61,6 +61,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
 add_service_files(DIRECTORY srv/uav_manager FILES
 
   SwitchTracker.srv
+  Vec4.srv
   )
 
 ## Generate added messages and services with any dependencies listed here
