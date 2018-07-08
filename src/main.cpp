@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv) {
 
-  ros::init(argc, argv, "trackers_manager");
+  ros::init(argc, argv, "control_manager");
 
   ROS_INFO("It works!");
 
