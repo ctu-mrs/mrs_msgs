@@ -5,12 +5,12 @@ project(mrs_msgs)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  message_generation
   roscpp
   std_msgs
   std_srvs
   geometry_msgs
   cmake_modules
-  message_generation
   )
 
 ###############################################
@@ -76,7 +76,7 @@ generate_messages(DEPENDENCIES
 ###################################
 
 catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs message_runtime
+  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime
   LIBRARIES mrs_msgs
   )
 
