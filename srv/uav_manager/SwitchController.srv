@@ -1,0 +1,4 @@
+string controller
+---
+bool success
+string message
