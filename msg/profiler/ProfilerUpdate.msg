@@ -1,5 +1,6 @@
 time stamp
-string name
+string node_name
+string routine_name
 int64 iteration
 bool is_periodic
 int64 expected_rate
