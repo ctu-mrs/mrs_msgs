@@ -65,6 +65,12 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   Vec4.srv
   )
 
+# messages for the PROFILER
+add_message_files(DIRECTORY msg/profiler FILES
+
+  ProfilerUpdate.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
