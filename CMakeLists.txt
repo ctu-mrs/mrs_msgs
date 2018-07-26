@@ -48,8 +48,8 @@ add_message_files(DIRECTORY msg/nmea_navsat_driver FILES
   RtkGpsLocal.msg
   )
 
-# messages for the UAV_MANAGER
-add_message_files(DIRECTORY msg/uav_manager FILES
+# messages for the MAV_MANAGER
+add_message_files(DIRECTORY msg/mav_manager FILES
 
   PositionCommand.msg
   AttitudeCommand.msg
@@ -58,7 +58,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   )
 
 # messages for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/uav_manager FILES
+add_service_files(DIRECTORY srv/mav_manager FILES
 
   SwitchTracker.srv
   SwitchController.srv
