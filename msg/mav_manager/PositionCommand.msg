@@ -7,3 +7,4 @@ geometry_msgs/Point snap
 float64 yaw
 float64 yaw_dot
 float64 yaw_ddot
+bool disable_position_gains
