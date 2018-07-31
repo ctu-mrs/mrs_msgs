@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   std_srvs
+  sensor_msgs
   geometry_msgs
   cmake_modules
   )
@@ -46,6 +47,7 @@ add_service_files(DIRECTORY srv/mrs_multimaster FILES
 add_message_files(DIRECTORY msg/odometry FILES
 
   RtkGps.msg
+  RtkFixType.msg
   )
 
 # messages for the MAV_MANAGER
@@ -76,6 +78,7 @@ generate_messages(DEPENDENCIES
 
   std_msgs
   geometry_msgs
+  sensor_msgs
   )
 
 ###################################
@@ -83,7 +86,7 @@ generate_messages(DEPENDENCIES
 ###################################
 
 catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime
+  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime sensor_msgs
   LIBRARIES mrs_msgs
   )
 
