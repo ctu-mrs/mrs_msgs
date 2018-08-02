@@ -46,6 +46,7 @@ add_service_files(DIRECTORY srv/mrs_multimaster FILES
 # messages for MRS_MULTIMASTER
 add_message_files(DIRECTORY msg/odometry FILES
 
+  GpsData.msg
   RtkGps.msg
   RtkFixType.msg
   )
