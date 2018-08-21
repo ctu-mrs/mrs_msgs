@@ -112,3 +112,8 @@ add_dependencies(mrs_msgs
 target_link_libraries(mrs_msgs
   ${catkin_LIBRARIES}
   )
+
+add_custom_command(TARGET mrs_msgs
+  COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh ${CMAKE_CURRENT_SOURCE_DIR}"
+  VERBATIM
+  )
