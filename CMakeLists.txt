@@ -49,6 +49,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   GpsData.msg
   RtkGps.msg
   RtkFixType.msg
+  Float64Stamped.msg
   )
 
 # messages for the MAV_MANAGER
@@ -114,6 +115,7 @@ target_link_libraries(mrs_msgs
   )
 
 add_custom_command(TARGET mrs_msgs
-  COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh ${CMAKE_CURRENT_SOURCE_DIR}"
-  VERBATIM
+  PRE_BUILD
+  WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+  COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh"
   )

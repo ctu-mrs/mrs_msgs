@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# get the path to this script
-if [ -z "$1" ]; then
-  MY_PATH=`dirname "$0"`
-  MY_PATH=`( cd "$MY_PATH" && pwd )`
-else
-  MY_PATH="$1"
-fi
-
-echo "$MY_PATH"
+MY_PATH=`dirname "$0"`
+MY_PATH=`( cd "$MY_PATH" && pwd )`
 
 # delete old links
 cd "$MY_PATH"
