@@ -49,6 +49,10 @@ add_message_files(DIRECTORY msg/odometry FILES
   GpsData.msg
   RtkGps.msg
   RtkFixType.msg
+  ModelState.msg
+  Fusing.msg
+  OdometryMode.msg
+  OdometryDiag.msg
   )
 
 # messages for the MAV_MANAGER
@@ -72,6 +76,12 @@ add_service_files(DIRECTORY srv/mav_manager FILES
 add_message_files(DIRECTORY msg/profiler FILES
 
   ProfilerUpdate.msg
+  )
+
+# messages for the MRS_ODOMETRY
+add_service_files(DIRECTORY srv/mrs_odometry FILES
+
+  ChangeOdometryMode.srv
   )
 
 ## Generate added messages and services with any dependencies listed here
