@@ -1,0 +1,5 @@
+uint8 TILT=5
+uint8 ACCELERATION=3
+uint8 VELOCITY=1
+uint8 POSITION=0
+uint8 state
