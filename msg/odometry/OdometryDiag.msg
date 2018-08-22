@@ -1,4 +1,10 @@
 std_msgs/Header header
+float64 max_altitude
+bool gps_reliable
+bool gps_available
+bool optflow_available
+bool rtk_available
+bool lidar_available
 mrs_msgs/OdometryMode odometry_mode
 mrs_msgs/Fusing optflow_vel
 mrs_msgs/Fusing mavros_tilts
