@@ -54,6 +54,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   Fusing.msg
   OdometryMode.msg
   OdometryDiag.msg
+  LkfStates.msg
   )
 
 # messages for the MAV_MANAGER
