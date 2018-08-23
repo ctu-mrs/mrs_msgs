@@ -6,4 +6,4 @@ float64 acc_i
 float64 acc_d
 float64 tilt
 float64[36] covariance
-float64[9] eigenvalues
+float64[6] eigenvalues
