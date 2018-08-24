@@ -69,6 +69,7 @@ add_message_files(DIRECTORY msg/mav_manager FILES
 # messages for MAVROS_INTERFACE
 add_message_files(DIRECTORY msg/diagnostics FILES
 
+  MavrosState.msg
   GpsDiagnostics.msg
   SystemDiagnostics.msg
   BatteryDiagnostics.msg
