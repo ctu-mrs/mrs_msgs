@@ -1,3 +1,4 @@
+uint8 VIO=6
 uint8 ICP=5
 uint8 RTK=4
 uint8 OPTFLOWGPS=3
