@@ -69,8 +69,7 @@ add_message_files(DIRECTORY msg/mav_manager FILES
 # messages for MRS_MULTIMASTER
 add_service_files(DIRECTORY srv/mav_manager FILES
 
-  SwitchTracker.srv
-  SwitchController.srv
+  String.srv
   Vec4.srv
   )
 
