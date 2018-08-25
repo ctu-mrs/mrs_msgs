@@ -43,7 +43,7 @@ add_service_files(DIRECTORY srv/mrs_multimaster FILES
   ChangeState.srv
   )
 
-# messages for MRS_MULTIMASTER
+# messages for MRS_ODOMETRY
 add_message_files(DIRECTORY msg/odometry FILES
 
   GpsData.msg
@@ -64,6 +64,17 @@ add_message_files(DIRECTORY msg/mav_manager FILES
   AttitudeCommand.msg
   TrackerStatus.msg
   ControllerStatus.msg
+  )
+
+# messages for MAVROS_INTERFACE
+add_message_files(DIRECTORY msg/diagnostics FILES
+
+  MavrosState.msg
+  GpsDiagnostics.msg
+  SystemDiagnostics.msg
+  BatteryDiagnostics.msg
+  HeartbeatDiagnostics.msg
+  MavrosDiagnostics.msg
   )
 
 # messages for MRS_MULTIMASTER
