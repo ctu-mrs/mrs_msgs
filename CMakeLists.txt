@@ -82,6 +82,7 @@ add_service_files(DIRECTORY srv/mav_manager FILES
 
   String.srv
   Vec4.srv
+  TrackerConstraints.srv
   )
 
 # messages for the PROFILER

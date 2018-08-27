@@ -1,0 +1,22 @@
+float64 horizontal_speed
+float64 horizontal_acceleration
+float64 horizontal_jerk
+float64 horizontal_snap
+
+float64 vertical_ascending_speed
+float64 vertical_ascending_acceleration
+float64 vertical_ascending_jerk
+float64 vertical_ascending_snap
+
+float64 vertical_descending_speed
+float64 vertical_descending_acceleration
+float64 vertical_descending_jerk
+float64 vertical_descending_snap
+
+float64 yaw_speed
+float64 yaw_acceleration
+float64 yaw_jerk
+float64 yaw_snap
+---
+bool success
+string message
