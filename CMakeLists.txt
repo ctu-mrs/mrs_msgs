@@ -95,6 +95,7 @@ add_message_files(DIRECTORY msg/profiler FILES
 add_service_files(DIRECTORY srv/mrs_odometry FILES
 
   ChangeOdometryMode.srv
+  OffsetOdom.srv
   )
 
 ## Generate added messages and services with any dependencies listed here
