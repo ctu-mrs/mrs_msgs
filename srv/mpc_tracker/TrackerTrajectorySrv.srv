@@ -1,4 +1,5 @@
 TrackerTrajectory trajectory_msg
 ---
 bool success
+bool modified
 string message
