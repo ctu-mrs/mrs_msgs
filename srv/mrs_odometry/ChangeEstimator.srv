@@ -1,0 +1,5 @@
+mrs_msgs/EstimatorType estimator_type
+---
+bool success
+string message
+mrs_msgs/EstimatorType estimator_type

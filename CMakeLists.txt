@@ -54,7 +54,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   Float64Stamped.msg
   ModelState.msg
   Fusing.msg
-  Estimator.msg
+  EstimatorType.msg
   OdometryDiag.msg
   LkfStates.msg
   )
