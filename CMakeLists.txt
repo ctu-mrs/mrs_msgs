@@ -54,7 +54,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   Float64Stamped.msg
   ModelState.msg
   Fusing.msg
-  OdometryMode.msg
+  Estimator.msg
   OdometryDiag.msg
   LkfStates.msg
   )
@@ -96,7 +96,7 @@ add_message_files(DIRECTORY msg/profiler FILES
 # messages for the MRS_ODOMETRY
 add_service_files(DIRECTORY srv/mrs_odometry FILES
 
-  ChangeOdometryMode.srv
+  ChangeEstimator.srv
   OffsetOdom.srv
   )
 

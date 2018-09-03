@@ -6,7 +6,7 @@ bool optflow_available
 bool vio_available
 bool rtk_available
 bool lidar_available
-mrs_msgs/OdometryMode odometry_mode
+mrs_msgs/Estimator estimator
 mrs_msgs/Fusing optflow_vel
 mrs_msgs/Fusing mavros_tilts
 mrs_msgs/Fusing mavros_vel
