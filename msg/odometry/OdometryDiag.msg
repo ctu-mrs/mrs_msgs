@@ -7,12 +7,3 @@ bool vio_available
 bool rtk_available
 bool lidar_available
 mrs_msgs/EstimatorType estimator_type
-mrs_msgs/Fusing optflow_vel
-mrs_msgs/Fusing mavros_tilts
-mrs_msgs/Fusing mavros_vel
-mrs_msgs/Fusing mavros_pos
-mrs_msgs/Fusing vio_vel
-mrs_msgs/Fusing vio_pos
-mrs_msgs/Fusing icp_vel
-mrs_msgs/Fusing icp_pos
-mrs_msgs/Fusing rtk_pos
