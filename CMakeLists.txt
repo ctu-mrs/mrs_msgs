@@ -57,6 +57,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   EstimatorType.msg
   OdometryDiag.msg
   LkfStates.msg
+  Altitude.msg
   )
 
 # messages for the MAV_MANAGER
