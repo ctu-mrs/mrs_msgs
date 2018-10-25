@@ -52,12 +52,14 @@ add_message_files(DIRECTORY msg/odometry FILES
   RtkGps.msg
   RtkFixType.msg
   Float64Stamped.msg
+  Float64ArrayStamped.msg
   ModelState.msg
   Fusing.msg
   EstimatorType.msg
   OdometryDiag.msg
   LkfStates.msg
   Altitude.msg
+  AltitudeStateNames.msg
   )
 
 # messages for the MAV_MANAGER
