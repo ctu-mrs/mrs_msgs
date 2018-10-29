@@ -1,9 +1,10 @@
 std_msgs/Header header
-float64 yaw
-float64 pitch
-float64 roll
+mrs_msgs/EulerAngles euler_attitude
+geometry_msgs/Quaternion quter_attitude
+mrs_msgs/EulerAngles attitude_rate
 float64 thrust
-float64 yaw_rate
-float64 pitch_rate
-float64 roll_rate
 float64 mass_difference
+uint8 MODE_EULER_ATTITUDE=1
+uint8 MODE_QUATER_ATTITUDE=2
+uint8 MODE_ATTITUDE_RATE=4
+uint8 mode_mask

@@ -66,6 +66,7 @@ add_message_files(DIRECTORY msg/mav_manager FILES
   AttitudeCommand.msg
   TrackerStatus.msg
   ControllerStatus.msg
+  EulerAngles.msg
   )
 
 # messages for MAVROS_INTERFACE
