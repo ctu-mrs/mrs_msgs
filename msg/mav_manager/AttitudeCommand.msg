@@ -1,7 +1,7 @@
 std_msgs/Header header
-mrs_msgs/EulerAngles euler_attitude
+geometry_msgs/Point euler_attitude
 geometry_msgs/Quaternion quter_attitude
-mrs_msgs/EulerAngles attitude_rate
+geometry_msgs/Point attitude_rate
 float64 thrust
 float64 mass_difference
 uint8 MODE_EULER_ATTITUDE=1

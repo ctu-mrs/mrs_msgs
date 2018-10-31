@@ -5,7 +5,7 @@ geometry_msgs/Point velocity
 geometry_msgs/Point acceleration
 geometry_msgs/Point jerk
 geometry_msgs/Point snap
-mrs_msgs/EulerAngles attitude_rate
+geometry_msgs/Point attitude_rate
 float64 yaw
 float64 yaw_dot
 float64 yaw_ddot
