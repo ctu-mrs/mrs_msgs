@@ -6,4 +6,5 @@ bool optflow_available
 bool vio_available
 bool rtk_available
 bool lidar_available
+bool object_available
 mrs_msgs/EstimatorType estimator_type

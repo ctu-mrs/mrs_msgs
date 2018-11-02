@@ -9,6 +9,8 @@ geometry_msgs/Point attitude_rate
 float64 yaw
 float64 yaw_dot
 float64 yaw_ddot
+float64 yaw_dddot
+float64 yaw_ddddot
 bool disable_position_gains
 uint8 use_position
 uint8 use_velocity
