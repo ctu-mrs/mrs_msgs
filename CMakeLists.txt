@@ -37,6 +37,7 @@ add_service_files(DIRECTORY srv/mpc_tracker FILES
   Vec1.srv
   Gains.srv
   TrackerTrajectorySrv.srv
+  MpcMatrix.srv
   )
 
 # messages for MRS_MULTIMASTER
