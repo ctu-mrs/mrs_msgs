@@ -1,5 +1,4 @@
 float64[4] Q
-float64 R
 string axis
 ---
 bool success
