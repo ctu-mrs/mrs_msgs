@@ -29,6 +29,8 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
   TrackerDiagnostics.msg
   FuturePoint.msg
   FutureTrajectory.msg
+  FuturePointInt8.msg
+  FutureTrajectoryInt8.msg
   )
 
 # services for MPC_TRACKER
