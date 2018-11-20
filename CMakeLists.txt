@@ -58,6 +58,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   Fusing.msg
   EstimatorType.msg
   OdometryDiag.msg
+  EspOdometry.msg
   LkfStates.msg
   Altitude.msg
   AltitudeStateNames.msg
