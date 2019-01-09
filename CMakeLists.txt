@@ -65,6 +65,9 @@ add_message_files(DIRECTORY msg/odometry FILES
   Altitude.msg
   AltitudeStateNames.msg
   AltitudeType.msg
+  Heading.msg
+  HeadingStateNames.msg
+  HeadingType.msg
   )
 
 # messages for the MAV_MANAGER
