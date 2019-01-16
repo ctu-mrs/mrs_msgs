@@ -109,6 +109,7 @@ add_message_files(DIRECTORY msg/profiler FILES
 add_service_files(DIRECTORY srv/mrs_odometry FILES
 
   ChangeEstimator.srv
+  ChangeHdgEstimator.srv
   OffsetOdom.srv
   )
 

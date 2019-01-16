@@ -1,0 +1,5 @@
+mrs_msgs/HeadingType estimator_type
+---
+bool success
+string message
+mrs_msgs/HeadingType estimator_type
