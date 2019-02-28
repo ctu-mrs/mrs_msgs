@@ -91,6 +91,26 @@ add_message_files(DIRECTORY msg/diagnostics FILES
   MavrosDiagnostics.msg
   )
 
+# messages for TERSUS_GPS 
+add_message_files(DIRECTORY msg/tersus_gps FILES
+
+  Bestpos.msg
+  Bestvel.msg
+  Gpgga.msg
+  Gpgsa.msg
+  Gpgsv.msg
+  Gprmc.msg
+  GPSFix.msg
+  GpsStatus.msg
+  RangeInformation.msg
+  Range.msg
+  Satellite.msg
+  TersusMessageHeader.msg
+  Time.msg
+  TrackstatChannel.msg
+  Trackstat.msg
+  )
+
 # messages for MRS_MULTIMASTER
 add_service_files(DIRECTORY srv/mav_manager FILES
 
