@@ -42,8 +42,8 @@ add_service_files(DIRECTORY srv/mpc_tracker FILES
   MpcMatrix.srv
   )
 
-# messages for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/mrs_multimaster FILES
+# services for MRS_MULTIMASTER
+add_service_files(DIRECTORY srv/multimaster FILES
 
   ChangeState.srv
   )
@@ -70,8 +70,8 @@ add_message_files(DIRECTORY msg/odometry FILES
   HeadingType.msg
   )
 
-# messages for the MAV_MANAGER
-add_message_files(DIRECTORY msg/mav_manager FILES
+# messages for the UAV_MANAGER
+add_message_files(DIRECTORY msg/uav_manager FILES
 
   PositionCommand.msg
   AttitudeCommand.msg
@@ -111,8 +111,8 @@ add_message_files(DIRECTORY msg/tersus_gps FILES
   Trackstat.msg
   )
 
-# messages for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/mav_manager FILES
+# services for MRS_MULTIMASTER
+add_service_files(DIRECTORY srv/uav_manager FILES
 
   String.srv
   Vec4.srv
@@ -125,12 +125,19 @@ add_message_files(DIRECTORY msg/profiler FILES
   ProfilerUpdate.msg
   )
 
-# messages for the MRS_ODOMETRY
-add_service_files(DIRECTORY srv/mrs_odometry FILES
+# services for the MRS_ODOMETRY
+add_service_files(DIRECTORY srv/odometry FILES
 
   ChangeEstimator.srv
   ChangeHdgEstimator.srv
   OffsetOdom.srv
+  )
+
+# messages for the MRS_BUMPER
+add_message_files(DIRECTORY msg/bumper FILES
+
+  Histogram.msg
+  ObstacleSectors.msg
   )
 
 ## Generate added messages and services with any dependencies listed here
