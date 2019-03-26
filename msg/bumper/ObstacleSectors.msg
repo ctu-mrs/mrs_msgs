@@ -31,7 +31,8 @@ int8[]    sector_sensors        # the sensor, used for obstacle detection in eac
 #        /         \
 
 ## Obstacle distance special values
-float64 OBSTACLE_UNKNOWN=-1
+float64 OBSTACLE_NOT_DETECTED=-1
+float64 OBSTACLE_NO_DATA=-2
 
 ## Sensor types enum
 int8 SENSOR_NONE=-1
