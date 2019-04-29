@@ -120,6 +120,12 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   TrackerConstraints.srv
   )
 
+# messages for the GRIPPER
+add_message_files(DIRECTORY msg/gripper FILES
+
+  GripperDiagnostics.msg
+  )
+
 # messages for the PROFILER
 add_message_files(DIRECTORY msg/profiler FILES
 
