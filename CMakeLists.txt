@@ -120,6 +120,12 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   TrackerConstraints.srv
   )
 
+# messages for the MRS_SERIAL
+add_message_files(DIRECTORY msg/mrs_serial FILES
+
+  BacaProtocol.msg
+  )
+
 # messages for the GRIPPER
 add_message_files(DIRECTORY msg/gripper FILES
 
