@@ -4,5 +4,4 @@ bool tracking_trajectory
 int32 trajectory_length
 int32 trajectory_idx
 int32 trajectory_count
-bool failsafe_active
 geometry_msgs/Pose setpoint

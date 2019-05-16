@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(mrs_msgs)
 
-set(CMAKE_CXX_FLAGS "-std=c++17 -fno-diagnostics-color")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fno-diagnostics-color")
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -42,8 +42,8 @@ add_service_files(DIRECTORY srv/mpc_tracker FILES
   MpcMatrix.srv
   )
 
-# messages for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/mrs_multimaster FILES
+# services for MRS_MULTIMASTER
+add_service_files(DIRECTORY srv/multimaster FILES
 
   ChangeState.srv
   )
@@ -70,14 +70,15 @@ add_message_files(DIRECTORY msg/odometry FILES
   HeadingType.msg
   )
 
-# messages for the MAV_MANAGER
-add_message_files(DIRECTORY msg/mav_manager FILES
+# messages for the UAV_MANAGER
+add_message_files(DIRECTORY msg/uav_manager FILES
 
   PositionCommand.msg
   AttitudeCommand.msg
   TrackerStatus.msg
   ControllerStatus.msg
   EulerAngles.msg
+  BoolStamped.msg
   )
 
 # messages for MAVROS_INTERFACE
@@ -111,12 +112,24 @@ add_message_files(DIRECTORY msg/tersus_gps FILES
   Trackstat.msg
   )
 
-# messages for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/mav_manager FILES
+# services for MRS_MULTIMASTER
+add_service_files(DIRECTORY srv/uav_manager FILES
 
   String.srv
   Vec4.srv
   TrackerConstraints.srv
+  )
+
+# messages for the MRS_SERIAL
+add_message_files(DIRECTORY msg/mrs_serial FILES
+
+  BacaProtocol.msg
+  )
+
+# messages for the GRIPPER
+add_message_files(DIRECTORY msg/gripper FILES
+
+  GripperDiagnostics.msg
   )
 
 # messages for the PROFILER
@@ -125,12 +138,19 @@ add_message_files(DIRECTORY msg/profiler FILES
   ProfilerUpdate.msg
   )
 
-# messages for the MRS_ODOMETRY
-add_service_files(DIRECTORY srv/mrs_odometry FILES
+# services for the MRS_ODOMETRY
+add_service_files(DIRECTORY srv/odometry FILES
 
   ChangeEstimator.srv
   ChangeHdgEstimator.srv
   OffsetOdom.srv
+  )
+
+# messages for the MRS_BUMPER
+add_message_files(DIRECTORY msg/bumper FILES
+
+  Histogram.msg
+  ObstacleSectors.msg
   )
 
 ## Generate added messages and services with any dependencies listed here
