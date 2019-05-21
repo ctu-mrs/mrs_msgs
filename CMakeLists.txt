@@ -48,6 +48,15 @@ add_service_files(DIRECTORY srv/multimaster FILES
   ChangeState.srv
   )
 
+# services for GAZEBO_ROS_INTERFACE
+add_service_files(DIRECTORY srv/gazebo_ros_interface FILES
+
+  ApplyForce.srv
+  Attach.srv
+  AttachTyped.srv
+  Delete.srv
+  )
+
 # messages for MRS_ODOMETRY
 add_message_files(DIRECTORY msg/odometry FILES
 
