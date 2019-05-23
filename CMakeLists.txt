@@ -51,10 +51,10 @@ add_service_files(DIRECTORY srv/multimaster FILES
 # services for GAZEBO_ROS_INTERFACE
 add_service_files(DIRECTORY srv/gazebo_ros_interface FILES
 
-  ApplyForce.srv
-  Attach.srv
-  AttachTyped.srv
-  Delete.srv
+  GazeboApplyForce.srv
+  GazeboAttach.srv
+  GazeboAttachTyped.srv
+  GazeboDeleteModel.srv
   )
 
 # messages for MRS_ODOMETRY

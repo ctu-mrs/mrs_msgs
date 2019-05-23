@@ -1,6 +1,0 @@
-string model_name
-string link_name
-float64[3] force
-float64[3] torque
----
-bool ok
