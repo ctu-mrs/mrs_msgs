@@ -70,6 +70,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   EstimatorType.msg
   OdometryDiag.msg
   EspOdometry.msg
+  EstimatedState.msg
   LkfStates.msg
   Altitude.msg
   AltitudeStateNames.msg
