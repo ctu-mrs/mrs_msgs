@@ -1,0 +1,4 @@
+int8 pitch
+---
+bool success
+string message
