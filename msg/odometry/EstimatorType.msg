@@ -4,7 +4,7 @@ uint8 OPTFLOWGPS=2
 uint8 RTK=3
 uint8 ICP=4
 uint8 VIO=5
-uint8 OBJECT=6
+uint8 BRICK=6
 uint8 T265=7
 uint8 HECTOR=8
 
