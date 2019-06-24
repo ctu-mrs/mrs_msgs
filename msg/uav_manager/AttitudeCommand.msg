@@ -9,6 +9,8 @@ bool quater_attitude_set
 geometry_msgs/Point attitude_rate
 bool attitude_rate_set
 
+geometry_msgs/Point desired_acceleration
+
 float64 thrust
 float64 mass_difference
 
