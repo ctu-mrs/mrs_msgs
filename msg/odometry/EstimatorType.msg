@@ -7,8 +7,9 @@ uint8 VIO=5
 uint8 BRICK=6
 uint8 T265=7
 uint8 HECTOR=8
+uint8 BRICKFLOW=9
 
-uint8 TYPE_COUNT=9
+uint8 TYPE_COUNT=10
 
 string name
 uint8 type
