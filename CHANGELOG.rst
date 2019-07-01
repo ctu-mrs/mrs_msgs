@@ -2,8 +2,8 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2019-07-01)
+------------------
 * + BRICKFLOW estimator
 * updated AttitudeCommand
 * Contributors: Matej Petrlik, Matej Petrlik (desktop), NAKI, Pavel Petráček, Tomas Baca, Tomáš Báča, Vojtech Spurny
