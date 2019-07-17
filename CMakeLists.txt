@@ -91,6 +91,13 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   BoolStamped.msg
   )
 
+# messages for the RVIZ_PLUGINS
+add_message_files(DIRECTORY msg/rviz_plugins FILES
+
+  RvizCylinder.msg
+  RvizCylinderArray.msg
+  )
+
 # messages for MAVROS_INTERFACE
 add_message_files(DIRECTORY msg/diagnostics FILES
 
