@@ -1,6 +1,7 @@
 Header header
 bool tracker_active
 bool tracking_trajectory
+bool avoiding_collision
 int32 trajectory_length
 int32 trajectory_idx
 int32 trajectory_count
