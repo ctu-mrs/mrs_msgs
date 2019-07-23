@@ -127,6 +127,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
 
   String.srv
   Vec4.srv
+  PlannerTask.srv
   TrackerConstraints.srv
   )
 
