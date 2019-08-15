@@ -13,6 +13,13 @@ geometry_msgs/Point desired_acceleration
 
 float64 thrust
 float64 mass_difference
+float64 total_mass
+
+float64 disturbance_wx
+float64 disturbance_wy
+
+float64 disturbance_bx
+float64 disturbance_by
 
 uint8 mode_mask
 uint8 MODE_EULER_ATTITUDE=1
