@@ -15,11 +15,14 @@ float64 thrust
 float64 mass_difference
 float64 total_mass
 
-float64 disturbance_wx
-float64 disturbance_wy
+float64 disturbance_wx_w
+float64 disturbance_wy_w
 
-float64 disturbance_bx
-float64 disturbance_by
+float64 disturbance_bx_w
+float64 disturbance_by_w
+
+float64 disturbance_bx_b
+float64 disturbance_by_b
 
 uint8 mode_mask
 uint8 MODE_EULER_ATTITUDE=1
