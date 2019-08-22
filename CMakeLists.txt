@@ -42,6 +42,12 @@ add_service_files(DIRECTORY srv/mpc_tracker FILES
   MpcMatrix.srv
   )
 
+# messages for LANDOFF_TRACKER
+add_message_files(DIRECTORY msg/landoff_tracker FILES
+
+  LandoffDiagnostics.msg
+  )
+
 # services for MRS_MULTIMASTER
 add_service_files(DIRECTORY srv/multimaster FILES
 
