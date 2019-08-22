@@ -26,7 +26,7 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
   TrackerPoint.msg
   TrackerPointStamped.msg
   TrackerTrajectory.msg
-  TrackerDiagnostics.msg
+  MpcTrackerDiagnostics.msg
   FuturePoint.msg
   FutureTrajectory.msg
   FuturePointInt8.msg
@@ -95,6 +95,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   ControllerStatus.msg
   EulerAngles.msg
   BoolStamped.msg
+  ControlManagerDiagnostics.msg
   )
 
 # messages for MAVROS_INTERFACE
