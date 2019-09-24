@@ -151,7 +151,7 @@ add_service_files(DIRECTORY srv/mrs_serial FILES
   )
 
 # messages for the GRIPPER
-add_message_files(DIRECTORY msg/gripper FILES
+add_message_files(DIRECTORY msg/mrs_gripper FILES
 
   GripperDiagnostics.msg
   )
