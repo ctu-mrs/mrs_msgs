@@ -8,7 +8,7 @@ bool hall1_debug
 bool hall2_debug
 
 bool has_ultrasonic
-bool ultrasonic2_debug
+bool ultrasonic1_debug
 bool ultrasonic2_debug
 
 bool has_proximity
