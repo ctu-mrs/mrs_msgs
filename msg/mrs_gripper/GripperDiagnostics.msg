@@ -4,13 +4,13 @@ bool gripper_on
 bool gripping_object
 
 bool has_hall
-bool hall1_debug
-bool hall2_debug
+int32 hall1_debug
+int32 hall2_debug
 
 bool has_ultrasonic
-bool ultrasonic1_debug
-bool ultrasonic2_debug
+int32 ultrasonic1_debug
+int32 ultrasonic2_debug
 
 bool has_proximity
-bool proximity1_debug
-bool proximity2_debug
+int32 proximity1_debug
+int32 proximity2_debug
