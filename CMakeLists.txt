@@ -144,12 +144,6 @@ add_message_files(DIRECTORY msg/mrs_serial FILES
   BacaProtocol.msg
   )
 
-# services for the MRS_SERIAL
-add_service_files(DIRECTORY srv/mrs_serial FILES
-  
-  GimbalPitch.srv
-  )
-
 # messages for the GRIPPER
 add_message_files(DIRECTORY msg/mrs_gripper FILES
 
