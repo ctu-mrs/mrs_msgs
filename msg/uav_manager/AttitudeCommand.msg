@@ -24,6 +24,14 @@ float64 disturbance_by_w
 float64 disturbance_bx_b
 float64 disturbance_by_b
 
+bool controller_enforcing_constraints
+float64 horizontal_speed_constraint
+float64 horizontal_acc_constraint
+float64 vertical_asc_speed_constraint
+float64 vertical_asc_acc_constraint
+float64 vertical_desc_speed_constraint
+float64 vertical_desc_acc_constraint
+
 uint8 mode_mask
 uint8 MODE_EULER_ATTITUDE=1
 uint8 MODE_QUATER_ATTITUDE=2
