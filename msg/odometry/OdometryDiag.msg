@@ -9,3 +9,4 @@ bool lidar_available
 bool object_available
 bool t265_available
 mrs_msgs/EstimatorType estimator_type
+bool height_available
