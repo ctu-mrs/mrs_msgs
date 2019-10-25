@@ -2,8 +2,8 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2019-10-25)
+------------------
 * added bumper status
 * height available in odometry diagnostics
 * added mpc tracker diagnostsics collision avoidance
