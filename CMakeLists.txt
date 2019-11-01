@@ -96,6 +96,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   EulerAngles.msg
   BoolStamped.msg
   ControlManagerDiagnostics.msg
+  BumperStatus.msg
   )
 
 # messages for MAVROS_INTERFACE
