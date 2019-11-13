@@ -84,6 +84,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   Heading.msg
   HeadingStateNames.msg
   HeadingType.msg
+  UavState.msg
   )
 
 # messages for the UAV_MANAGER
