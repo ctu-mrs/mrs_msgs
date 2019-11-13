@@ -10,8 +10,7 @@ string estimator_heading
 # or if any estimator is resetted
 uint32 estimator_iteration
 
-geometry_msgs/Quaternion orientation
-geometry_msgs/Pose position
+geometry_msgs/Pose pose
 geometry_msgs/Twist velocity
 geometry_msgs/Accel acceleration
 geometry_msgs/Accel acceleration_disturbance
