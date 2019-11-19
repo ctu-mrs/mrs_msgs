@@ -1,4 +1,5 @@
 std_msgs/Header header
+
 geometry_msgs/Quaternion attitude
 geometry_msgs/Point position
 geometry_msgs/Point velocity
@@ -6,17 +7,26 @@ geometry_msgs/Point acceleration
 geometry_msgs/Point jerk
 geometry_msgs/Point snap
 geometry_msgs/Point attitude_rate
+
 float64 yaw
 float64 yaw_dot
 float64 yaw_ddot
 float64 yaw_dddot
 float64 yaw_ddddot
+
 bool disable_position_gains
-uint8 use_position
-uint8 use_velocity
+
+uint8 use_position_horizontal
+uint8 use_position_vertical
+
+uint8 use_velocity_horizontal
+uint8 use_velocity_vertical
+
 uint8 use_acceleration
 uint8 use_jerk
 uint8 use_snap
 uint8 use_attitude_rate
 uint8 use_quat_attitude
 uint8 use_euler_attitude
+uint8 use_yaw
+uint8 use_yaw_dot

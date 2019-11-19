@@ -13,3 +13,4 @@ bool use_horizontal_velocity
 bool use_acceleration
 bool use_height
 bool use_yaw
+bool use_yaw_dot

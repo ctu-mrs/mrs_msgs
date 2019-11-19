@@ -173,10 +173,10 @@ add_message_files(DIRECTORY msg/bumper FILES
   ObstacleSectors.msg
   )
 
-# messages for swarming
-add_message_files(DIRECTORY msg/swarming FILES
+# messages for SPEED_TRACKER
+add_message_files(DIRECTORY msg/speed_tracker FILES
 
-  SwarmingCommand.msg
+  SpeedTrackerCommand.msg
   )
 
 ## Generate added messages and services with any dependencies listed here
