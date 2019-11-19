@@ -173,6 +173,12 @@ add_message_files(DIRECTORY msg/bumper FILES
   ObstacleSectors.msg
   )
 
+# messages for swarming
+add_message_files(DIRECTORY msg/swarming FILES
+
+  SwarmingCommand.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
