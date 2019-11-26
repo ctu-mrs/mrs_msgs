@@ -24,7 +24,6 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(DIRECTORY msg/mpc_tracker FILES
 
   TrackerPoint.msg
-  TrackerPointStamped.msg
   TrackerTrajectory.msg
   MpcTrackerDiagnostics.msg
   FuturePoint.msg
@@ -36,7 +35,6 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
 # services for MPC_TRACKER
 add_service_files(DIRECTORY srv/mpc_tracker FILES
 
-  Vec1.srv
   Gains.srv
   TrackerTrajectorySrv.srv
   MpcMatrix.srv
@@ -69,8 +67,8 @@ add_message_files(DIRECTORY msg/odometry FILES
   GpsData.msg
   RtkGps.msg
   RtkFixType.msg
-  Float64Stamped.msg
   Float64ArrayStamped.msg
+  Float64Stamped.msg
   ModelState.msg
   Fusing.msg
   EstimatorType.msg
@@ -98,6 +96,9 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   BoolStamped.msg
   ControlManagerDiagnostics.msg
   BumperStatus.msg
+  Reference.msg
+  ReferenceStamped.msg
+  Float64.msg
   )
 
 # messages for MAVROS_INTERFACE
@@ -111,7 +112,7 @@ add_message_files(DIRECTORY msg/diagnostics FILES
   MavrosDiagnostics.msg
   )
 
-# messages for TERSUS_GPS 
+# messages for TERSUS_GPS
 add_message_files(DIRECTORY msg/tersus_gps FILES
 
   Bestpos.msg
@@ -136,8 +137,13 @@ add_service_files(DIRECTORY srv/uav_manager FILES
 
   String.srv
   Vec4.srv
+  Vec1.srv
+  Float64Srv.srv
+  Float64StampedSrv.srv
   PlannerTask.srv
   TrackerConstraints.srv
+  ReferenceSrv.srv
+  ReferenceStampedSrv.srv
   )
 
 # messages for the MRS_SERIAL
