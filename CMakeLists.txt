@@ -144,6 +144,9 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   TrackerConstraints.srv
   ReferenceSrv.srv
   ReferenceStampedSrv.srv
+  TransformReferenceSrv.srv
+  TransformPoseSrv.srv
+  TransformVector3Srv.srv
   )
 
 # messages for the MRS_SERIAL
