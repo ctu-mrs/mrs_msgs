@@ -172,6 +172,7 @@ add_service_files(DIRECTORY srv/odometry FILES
 
   ChangeEstimator.srv
   ChangeHdgEstimator.srv
+  ChangeAltEstimator.srv
   OffsetOdom.srv
   )
 
