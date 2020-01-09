@@ -3,7 +3,7 @@ std_msgs/Header header
 geometry_msgs/Point euler_attitude
 bool euler_attitude_set
 
-geometry_msgs/Quaternion quter_attitude
+geometry_msgs/Quaternion quater_attitude
 bool quater_attitude_set
 
 geometry_msgs/Point attitude_rate
