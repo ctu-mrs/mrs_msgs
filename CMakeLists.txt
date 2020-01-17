@@ -68,6 +68,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   RtkGps.msg
   RtkFixType.msg
   Float64ArrayStamped.msg
+  Float64MultiArrayStamped.msg
   Float64Stamped.msg
   ModelState.msg
   Fusing.msg
