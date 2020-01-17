@@ -1,5 +1,7 @@
 std_msgs/Header header
 
+string controller
+
 geometry_msgs/Point euler_attitude
 bool euler_attitude_set
 
