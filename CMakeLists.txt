@@ -190,6 +190,11 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
   SpeedTrackerCommand.msg
   )
 
+# messages for FIRE_DETECT
+add_message_files(DIRECTORY msg/fire_detect FILES
+
+  PoseWithCovarianceArrayStamped.msg
+  )
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
