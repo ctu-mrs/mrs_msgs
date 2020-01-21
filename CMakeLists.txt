@@ -100,6 +100,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   Reference.msg
   ReferenceStamped.msg
   Float64.msg
+  TrackerConstraints.msg
   )
 
 # messages for MAVROS_INTERFACE
@@ -142,7 +143,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   Float64Srv.srv
   Float64StampedSrv.srv
   PlannerTask.srv
-  TrackerConstraints.srv
+  TrackerConstraintsSrv.srv
   ReferenceSrv.srv
   ReferenceStampedSrv.srv
   TransformReferenceSrv.srv

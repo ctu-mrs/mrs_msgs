@@ -17,6 +17,3 @@ float64 yaw_speed
 float64 yaw_acceleration
 float64 yaw_jerk
 float64 yaw_snap
----
-bool success
-string message
