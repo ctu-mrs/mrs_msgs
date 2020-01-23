@@ -1,4 +1,7 @@
 Header header
+
+string uav_name
+
 bool tracker_active
 bool tracking_trajectory
 bool collision_avoidance_active
