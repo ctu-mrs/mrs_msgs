@@ -101,6 +101,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   ReferenceStamped.msg
   Float64.msg
   TrackerConstraints.msg
+  ControlError.msg
   )
 
 # messages for MAVROS_INTERFACE
