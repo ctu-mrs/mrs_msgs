@@ -100,6 +100,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   Reference.msg
   ReferenceStamped.msg
   Float64.msg
+  TrackerConstraints.msg
   )
 
 # messages for MAVROS_INTERFACE
@@ -142,7 +143,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   Float64Srv.srv
   Float64StampedSrv.srv
   PlannerTask.srv
-  TrackerConstraints.srv
+  TrackerConstraintsSrv.srv
   ReferenceSrv.srv
   ReferenceStampedSrv.srv
   TransformReferenceSrv.srv
@@ -190,6 +191,11 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
   SpeedTrackerCommand.msg
   )
 
+# messages for FIRE_DETECT
+add_message_files(DIRECTORY msg/fire_detect FILES
+
+  PoseWithCovarianceArrayStamped.msg
+  )
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
