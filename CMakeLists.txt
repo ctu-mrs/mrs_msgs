@@ -142,6 +142,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   Vec4.srv
   Vec1.srv
   Float64Srv.srv
+  GetFloat64.srv
   Float64StampedSrv.srv
   PlannerTask.srv
   TrackerConstraintsSrv.srv
