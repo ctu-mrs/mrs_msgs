@@ -5,7 +5,7 @@ uint8 VIO=3
 uint8 ALOAM=4
 uint8 BARO=5
 
-uint8 TYPE_COUNT=5
+uint8 TYPE_COUNT=6
 
 string name
 uint8 type
