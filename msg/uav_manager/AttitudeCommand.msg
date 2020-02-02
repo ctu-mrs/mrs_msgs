@@ -2,6 +2,8 @@ std_msgs/Header header
 
 string controller
 
+bool ramping_up
+
 geometry_msgs/Point euler_attitude
 bool euler_attitude_set
 
