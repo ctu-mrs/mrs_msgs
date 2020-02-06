@@ -1,3 +1,4 @@
 time stamp
+bool motors
 mrs_msgs/TrackerStatus tracker_status
 mrs_msgs/ControllerStatus controller_status
