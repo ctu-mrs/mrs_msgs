@@ -201,6 +201,13 @@ add_message_files(DIRECTORY msg/fire_detect FILES
 
   PoseWithCovarianceArrayStamped.msg
   )
+
+# general services
+add_service_files(DIRECTORY srv/general FILES
+
+  SetInt.srv
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
