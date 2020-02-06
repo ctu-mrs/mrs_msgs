@@ -98,6 +98,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   ControlManagerDiagnostics.msg
   BumperStatus.msg
   Reference.msg
+  ReferenceList.msg
   ReferenceStamped.msg
   Float64.msg
   TrackerConstraints.msg
@@ -154,6 +155,8 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   TransformReferenceSrv.srv
   TransformPoseSrv.srv
   TransformVector3Srv.srv
+  ValidateReference.srv
+  ValidateReferenceList.srv
   )
 
 # messages for the MRS_SERIAL
