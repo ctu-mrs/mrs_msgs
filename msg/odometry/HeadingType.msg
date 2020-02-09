@@ -10,8 +10,9 @@ uint8 LIDAR=8
 uint8 ICP=9
 uint8 BRICKFLOW=10
 uint8 ALOAM=11
+uint8 TOWER=12
 
-uint8 TYPE_COUNT=12
+uint8 TYPE_COUNT=13
 
 string name
 uint8 type
