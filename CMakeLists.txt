@@ -163,6 +163,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
 add_message_files(DIRECTORY msg/mrs_serial FILES
 
   BacaProtocol.msg
+  SerialRaw.msg
   )
 
 # messages for the GRIPPER
