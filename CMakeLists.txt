@@ -157,6 +157,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   TransformVector3Srv.srv
   ValidateReference.srv
   ValidateReferenceList.srv
+  BumperParamsSrv.srv
   )
 
 # messages for the MRS_SERIAL
