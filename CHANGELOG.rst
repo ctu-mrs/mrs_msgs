@@ -2,6 +2,10 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* nothing changed here ;-)
+
 0.0.4 (2020-02-18)
 ------------------
 * added bumper params msg
