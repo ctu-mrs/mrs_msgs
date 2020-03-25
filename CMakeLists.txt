@@ -86,8 +86,8 @@ add_message_files(DIRECTORY msg/odometry FILES
   UavState.msg
   )
 
-# messages for the UAV_MANAGER
-add_message_files(DIRECTORY msg/uav_manager FILES
+# messages for the CONTROL_MANAGER
+add_message_files(DIRECTORY msg/control_manager FILES
 
   PositionCommand.msg
   AttitudeCommand.msg
@@ -139,8 +139,8 @@ add_message_files(DIRECTORY msg/tersus_gps FILES
   Trackstat.msg
   )
 
-# services for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/uav_manager FILES
+# services for CONTROL_MANAGER
+add_service_files(DIRECTORY srv/control_manager FILES
 
   String.srv
   Vec4.srv
