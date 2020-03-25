@@ -23,21 +23,9 @@ find_package(catkin REQUIRED COMPONENTS
 # messages for MPC_TRACKER
 add_message_files(DIRECTORY msg/mpc_tracker FILES
 
-  TrackerPoint.msg
-  TrackerTrajectory.msg
   MpcTrackerDiagnostics.msg
   FuturePoint.msg
   FutureTrajectory.msg
-  FuturePointInt8.msg
-  FutureTrajectoryInt8.msg
-  )
-
-# services for MPC_TRACKER
-add_service_files(DIRECTORY srv/mpc_tracker FILES
-
-  Gains.srv
-  TrackerTrajectorySrv.srv
-  MpcMatrix.srv
   )
 
 # messages for LANDOFF_TRACKER
@@ -98,6 +86,7 @@ add_message_files(DIRECTORY msg/control_manager FILES
   ControlManagerDiagnostics.msg
   BumperStatus.msg
   Reference.msg
+  TrajectoryReference.msg
   ReferenceList.msg
   ReferenceStamped.msg
   Float64.msg
@@ -152,6 +141,7 @@ add_service_files(DIRECTORY srv/control_manager FILES
   TrackerConstraintsSrv.srv
   ReferenceSrv.srv
   ReferenceStampedSrv.srv
+  TrajectoryReferenceSrv.srv
   TransformReferenceSrv.srv
   TransformPoseSrv.srv
   TransformVector3Srv.srv
