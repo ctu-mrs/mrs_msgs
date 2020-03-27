@@ -1,2 +1,1 @@
-string controller
 bool active
