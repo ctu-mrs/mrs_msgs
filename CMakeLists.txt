@@ -191,8 +191,8 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
   SpeedTrackerCommand.msg
   )
 
-# messages for FIRE_DETECT
-add_message_files(DIRECTORY msg/fire_detect FILES
+# general messages
+add_message_files(DIRECTORY msg/general FILES
 
   PoseWithCovarianceArrayStamped.msg
   )
