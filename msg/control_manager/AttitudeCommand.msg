@@ -4,14 +4,9 @@ string controller
 
 bool ramping_up
 
-geometry_msgs/Point euler_attitude
-bool euler_attitude_set
-
-geometry_msgs/Quaternion quater_attitude
-bool quater_attitude_set
+geometry_msgs/Quaternion attitude
 
 geometry_msgs/Point attitude_rate
-bool attitude_rate_set
 
 geometry_msgs/Point desired_acceleration
 
@@ -37,6 +32,5 @@ float64 vertical_desc_speed_constraint
 float64 vertical_desc_acc_constraint
 
 uint8 mode_mask
-uint8 MODE_EULER_ATTITUDE=1
-uint8 MODE_QUATER_ATTITUDE=2
-uint8 MODE_ATTITUDE_RATE=4
+uint8 MODE_ATTITUDE=1
+uint8 MODE_ATTITUDE_RATE=2
