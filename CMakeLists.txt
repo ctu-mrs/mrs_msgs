@@ -23,21 +23,9 @@ find_package(catkin REQUIRED COMPONENTS
 # messages for MPC_TRACKER
 add_message_files(DIRECTORY msg/mpc_tracker FILES
 
-  TrackerPoint.msg
-  TrackerTrajectory.msg
   MpcTrackerDiagnostics.msg
   FuturePoint.msg
   FutureTrajectory.msg
-  FuturePointInt8.msg
-  FutureTrajectoryInt8.msg
-  )
-
-# services for MPC_TRACKER
-add_service_files(DIRECTORY srv/mpc_tracker FILES
-
-  Gains.srv
-  TrackerTrajectorySrv.srv
-  MpcMatrix.srv
   )
 
 # messages for LANDOFF_TRACKER
@@ -86,8 +74,8 @@ add_message_files(DIRECTORY msg/odometry FILES
   UavState.msg
   )
 
-# messages for the UAV_MANAGER
-add_message_files(DIRECTORY msg/uav_manager FILES
+# messages for the CONTROL_MANAGER
+add_message_files(DIRECTORY msg/control_manager FILES
 
   PositionCommand.msg
   AttitudeCommand.msg
@@ -98,6 +86,7 @@ add_message_files(DIRECTORY msg/uav_manager FILES
   ControlManagerDiagnostics.msg
   BumperStatus.msg
   Reference.msg
+  TrajectoryReference.msg
   ReferenceList.msg
   ReferenceStamped.msg
   Float64.msg
@@ -139,8 +128,8 @@ add_message_files(DIRECTORY msg/tersus_gps FILES
   Trackstat.msg
   )
 
-# services for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/uav_manager FILES
+# services for CONTROL_MANAGER
+add_service_files(DIRECTORY srv/control_manager FILES
 
   String.srv
   Vec4.srv
@@ -152,6 +141,7 @@ add_service_files(DIRECTORY srv/uav_manager FILES
   TrackerConstraintsSrv.srv
   ReferenceSrv.srv
   ReferenceStampedSrv.srv
+  TrajectoryReferenceSrv.srv
   TransformReferenceSrv.srv
   TransformPoseSrv.srv
   TransformVector3Srv.srv
@@ -201,8 +191,8 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
   SpeedTrackerCommand.msg
   )
 
-# messages for FIRE_DETECT
-add_message_files(DIRECTORY msg/fire_detect FILES
+# general messages
+add_message_files(DIRECTORY msg/general FILES
 
   PoseWithCovarianceArrayStamped.msg
   )

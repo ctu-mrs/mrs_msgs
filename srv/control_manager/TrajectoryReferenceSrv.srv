@@ -1,0 +1,5 @@
+mrs_msgs/TrajectoryReference trajectory
+---
+bool success
+string message
+bool modified
