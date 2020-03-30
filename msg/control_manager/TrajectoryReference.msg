@@ -1,5 +1,5 @@
 Header header
-bool use_yaw
+bool use_heading
 bool fly_now
 bool loop
 float64 dt
