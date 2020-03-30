@@ -1,9 +1,5 @@
-std_msgs/Header header
-uint32    n_horizontal_sectors  # number of horizontal sectors (total number of sectors -2)
-float64   sectors_vertical_fov  # vertical FOV of the horizontal sectors
-float64[] sectors               # distance to closest detected obstacle in each sector
-int8[]    sector_sensors        # the sensor, used for obstacle detection in each sector
-
+# This message represents the output from the mrs_bumper package.
+#
 # The *sectors* variable contains information about obstacles in the horizontal,
 # bottom and up sectors. Horizontal sectors take up the first part of the array.
 # Bottom and up sectors are the second and first elements from the end of the array:
@@ -30,11 +26,26 @@ int8[]    sector_sensors        # the sensor, used for obstacle detection in eac
 #         /   2   \
 #        /         \
 
-## Obstacle distance special values
+# Time at which the data in this message was generated, coordinate frame ID.
+std_msgs/Header header
+
+# Number of horizontal bumper sectors (total number of sectors -2).
+uint32    n_horizontal_sectors
+
+# Vertical FOV of the individual horizontal sectors.
+float64   sectors_vertical_fov
+
+# Distance to closest detected obstacle in each sector.
+float64[] sectors
+
+# Sensor ID of the sensor, which was used for obstacle detection in each sector.
+int8[]    sector_sensors
+
+## Obstacle distance special values.
 float64 OBSTACLE_NOT_DETECTED=-1
 float64 OBSTACLE_NO_DATA=-2
 
-## Sensor types enum
+## Sensor types enum.
 int8 SENSOR_NONE=-1
 int8 SENSOR_DEPTH=0
 int8 SENSOR_LIDAR_1D=1
