@@ -13,7 +13,7 @@ float64 vertical_descending_acceleration
 float64 vertical_descending_jerk
 float64 vertical_descending_snap
 
-float64 yaw_speed
-float64 yaw_acceleration
-float64 yaw_jerk
-float64 yaw_snap
+float64 heading_speed
+float64 heading_acceleration
+float64 heading_jerk
+float64 heading_snap

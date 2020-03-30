@@ -6,6 +6,8 @@ geometry_msgs/Point acceleration
 geometry_msgs/Point jerk
 geometry_msgs/Point snap
 
+geometry_msgs/Quaternion orientation
+
 float64 heading
 float64 heading_rate
 
@@ -25,3 +27,4 @@ uint8 use_snap
 uint8 use_attitude_rate
 uint8 use_heading
 uint8 use_heading_rate
+uint8 use_orientation
