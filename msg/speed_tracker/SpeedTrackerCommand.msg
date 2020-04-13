@@ -6,12 +6,12 @@ geometry_msgs/Vector3 force
 
 float64 height
 
-float64 yaw
-float64 yaw_dot
+float64 heading
+float64 heading_rate
 
 bool use_velocity
 bool use_acceleration
 bool use_force
 bool use_height
-bool use_yaw
-bool use_yaw_dot
+bool use_heading
+bool use_heading_rate
