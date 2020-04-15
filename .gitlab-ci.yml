@@ -14,12 +14,14 @@ pages:
   # - sed -i 's/\(PROJECT_NAME\s*=\s*\)\".*\"/\1\"'$proj_name'\"/g' Doxyfile Doxyfile; # rename the project in the Doxyfile
   - source /opt/ros/melodic/setup.bash
   - rosdoc_lite . -o . # generate the documentation
+  - grep -rl "mrs_msgs/html/" . | xargs sed -i 's/mrs_msgs\/html\//mrs_msgs\//g' -r html/*.html # remove the html part of paths in the generated files
   - rm -rf ~/public_artifacts/doc/$proj_name # remove old documentation folder of this project
   - mkdir -p ~/public_artifacts/doc # if the doc folder does not exist, create it
-  - mv -f html ~/public_artifacts/doc/$proj_name # finally move the generated documentation to the synced folder
-  - mv -f ~/public_artifacts/doc/$proj_name/index-msg.html ~/public_artifacts/doc/$proj_name/index.html # finally move the generated documentation to the synced folder
+  - mv -f html ~/public_artifacts/doc/$proj_name # move the generated documentation to the synced folder
+  - ln -s ~/public_artifacts/doc/$proj_name/index-msg.html ~/public_artifacts/doc/$proj_name/index.html # link index.html to index-msg.html so that a browser opens that by default
   artifacts:
     paths:
-    - doc
+    - html
+    - manifest.yaml
   only:
   - master
