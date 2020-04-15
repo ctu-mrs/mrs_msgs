@@ -17,7 +17,7 @@ pages:
   - rm -rf ~/public_artifacts/doc/$proj_name # remove old documentation folder of this project
   - mkdir -p ~/public_artifacts/doc # if the doc folder does not exist, create it
   - mv -f doc/html ~/public_artifacts/doc/$proj_name # move the generated documentation to the synced folder
-  - ln -s ~/public_artifacts/doc/$proj_name/index-msg.html ~/public_artifacts/doc/$proj_name/index.html # link index.html to index-msg.html so that a browser opens that by default
+  - cp -s ~/public_artifacts/doc/$proj_name/index-msg.html ~/public_artifacts/doc/$proj_name/index.html # link index.html to index-msg.html so that a browser opens that by default
   artifacts:
     paths:
     - doc
