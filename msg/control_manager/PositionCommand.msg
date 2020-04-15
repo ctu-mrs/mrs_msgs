@@ -1,26 +1,50 @@
+# This represents the output of the currently active Tracker (mrs_uav_manager::Tracker).
+# This message is returned from a tracker by means of the update() function, called by the mrs_uav_manager::ControlManager.
+
 std_msgs/Header header
 
+# The desired position.
 geometry_msgs/Point position
+
+# The desired velocity.
 geometry_msgs/Point velocity
+
+# The desired acceleration.
 geometry_msgs/Point acceleration
+
+# The desired jerk.
 geometry_msgs/Point jerk
+
+# The desired snap.
 geometry_msgs/Point snap
 
+# The desired orientation and attitude rate.
+# It is mutually exclusive to heading+heading_rate.
 geometry_msgs/Quaternion orientation
+geometry_msgs/Point attitude_rate
 
+# The desired heading and heading rate.
+# It is mutually exclusive to orientation+attitude_rate.
 float64 heading
 float64 heading_rate
 
-geometry_msgs/Point attitude_rate
-
+# Whether the controller should mute its position feedback.
+# Useful, e.g., during takeoff or in situations where sudden control
+# error is expected but not immediately required to be fixed.
 bool disable_position_gains
 
+# Flags defining whether the XY or Z position reference was filled in.
+# If not, the controllers should pay no attention to it and to the corresponding control error.
 uint8 use_position_horizontal
 uint8 use_position_vertical
 
+# Flags defining whether the XY or Z velocity reference was filled in.
+# If not, the controllers should pay no attention to it and to the corresponding control error.
 uint8 use_velocity_horizontal
 uint8 use_velocity_vertical
 
+# Flags defining which references were filled in.
+# If not, the controllers should pay no attention to them and to the corresponding control errors.
 uint8 use_acceleration
 uint8 use_jerk
 uint8 use_snap
