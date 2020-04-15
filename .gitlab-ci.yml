@@ -12,8 +12,8 @@ pages:
   script:
   - line=$(cat CMakeLists.txt | grep "project(.*)" -o); tmp=${line:8}; proj_name=${tmp:0:${#tmp}-1}; # parse the project name
   - source /opt/ros/melodic/setup.bash
-  - rosdoc_lite . -o doc # generate the documentation
-  - grep -rl "mrs_msgs/html/msg" doc | xargs sed -i 's/mrs_msgs\/html\/msg\//msg\//g' # remove the html part of paths in the generated files
+  - rosdoc_lite . # generate the documentation
+  - grep -rl "mrs_msgs/html/msg" doc | xargs sed -i 's/..\/..\/..\/mrs_msgs\/html\//..\//g' # remove the html part of paths in the generated files
   - rm -rf ~/public_artifacts/doc/$proj_name # remove old documentation folder of this project
   - mkdir -p ~/public_artifacts/doc # if the doc folder does not exist, create it
   - mv -f doc/html ~/public_artifacts/doc/$proj_name # move the generated documentation to the synced folder
