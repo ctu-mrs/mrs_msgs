@@ -21,9 +21,6 @@ float64 kaz
 # Roll+pitch attitude gain.
 float64 kqxy
 
-# Roll+pitch attitude rate gain.
-float64 kwxy
-
 # Body disturbance gain.
 float64 kibxy
 
@@ -38,9 +35,6 @@ float64 kiwxy_lim
 
 # Yaw attitude gain.
 float64 kqz
-
-# Yaw attitude rate gain.
-float64 kwz
 
 # Mass estimator gain.
 float64 km
