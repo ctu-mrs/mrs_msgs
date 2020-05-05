@@ -1,4 +1,7 @@
-sudo: true
+sudo: required
+os:
+- linux
+dist: bionic
 
 branches:
   only:
