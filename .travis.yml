@@ -14,7 +14,7 @@ addons:
       - graphviz
 
 script:
-   - line=$(cat CMakeLists.txt | grep "project(.*)" -o); tmp=${line:8}; proj_name=${tmp:0:${#tmp}-1}; # parse the project name
+  - line=$(cat CMakeLists.txt | grep "project(.*)" -o); tmp=${line:8}; proj_name=${tmp:0:${#tmp}-1}; # parse the project name
   - source /opt/ros/melodic/setup.bash
   - rosdoc_lite . # generate the documentation
   - grep -rl "mrs_msgs/html" doc | xargs sed -i 's+../../../mrs_msgs/html/+../+g' # remove the html part of paths in the generated files
