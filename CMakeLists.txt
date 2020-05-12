@@ -193,7 +193,7 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
 
 # general messages
 add_message_files(DIRECTORY msg/general FILES
-
+  PoseWithCovarianceIdentified.msg
   PoseWithCovarianceArrayStamped.msg
   )
 
