@@ -163,6 +163,12 @@ add_message_files(DIRECTORY msg/mrs_gripper FILES
   GripperDiagnostics.msg
   )
 
+# messages for the PARACHUTE
+add_message_files(DIRECTORY msg/parachute FILES
+
+  ParachuteDiagnostics.msg
+  )
+
 # messages for the PROFILER
 add_message_files(DIRECTORY msg/profiler FILES
 
