@@ -197,6 +197,11 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
   SpeedTrackerCommand.msg
   )
 
+# uvdar messages
+add_message_files(DIRECTORY msg/uvdar FILES
+  Int32MultiArrayStamped.msg
+  )
+
 # general messages
 add_message_files(DIRECTORY msg/general FILES
   PoseWithCovarianceIdentified.msg
