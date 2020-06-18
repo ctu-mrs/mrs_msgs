@@ -10,3 +10,7 @@ bool tracking_trajectory
 
 int32 trajectory_length
 int32 trajectory_idx
+
+# only when following trajectory
+# the current reference in the trajectory UNINTERPOLATED
+mrs_msgs/ReferenceStamped trajectory_reference
