@@ -205,6 +205,8 @@ add_message_files(DIRECTORY msg/uvdar FILES
 # sxd messages
 add_message_files(DIRECTORY msg/sxd FILES
   SxdMeasurement.msg
+  SxdHistogram.msg
+  SxdDiagnostics.msg
   )
 
 # general messages
