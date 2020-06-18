@@ -202,6 +202,11 @@ add_message_files(DIRECTORY msg/uvdar FILES
   Int32MultiArrayStamped.msg
   )
 
+# sxd messages
+add_message_files(DIRECTORY msg/sxd FILES
+  SxdMeasurement.msg
+  )
+
 # general messages
 add_message_files(DIRECTORY msg/general FILES
   PoseWithCovarianceIdentified.msg
