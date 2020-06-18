@@ -200,6 +200,8 @@ add_message_files(DIRECTORY msg/speed_tracker FILES
 # uvdar messages
 add_message_files(DIRECTORY msg/uvdar FILES
   Int32MultiArrayStamped.msg
+  Point2DWithFloat.msg
+  ImagePointsWithFloatStamped.msg
   )
 
 # general messages
