@@ -204,6 +204,13 @@ add_message_files(DIRECTORY msg/uvdar FILES
   ImagePointsWithFloatStamped.msg
   )
 
+# sxd messages
+add_message_files(DIRECTORY msg/sxd FILES
+  SxdMeasurement.msg
+  SxdHistogram.msg
+  SxdDiagnostics.msg
+  )
+
 # general messages
 add_message_files(DIRECTORY msg/general FILES
   PoseWithCovarianceIdentified.msg
