@@ -1,4 +1,4 @@
-# This a set of gains for the SO(3) controller.
+# This a set of gains for the SE(3) controller.
 
 # Horizontal position gain.
 float64 kpxy

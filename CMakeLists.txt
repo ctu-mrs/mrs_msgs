@@ -94,7 +94,12 @@ add_message_files(DIRECTORY msg/control_manager FILES
   ControlError.msg
   ConstraintManagerDiagnostics.msg
   GainManagerDiagnostics.msg
-  So3Gains.msg
+  )
+
+# messages for the SE3_CONTROLLER
+add_message_files(DIRECTORY msg/se3_controller FILES
+
+  Se3Gains.msg
   )
 
 # messages for MAVROS_INTERFACE

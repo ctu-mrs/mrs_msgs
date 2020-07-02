@@ -12,4 +12,4 @@ string[] available
 string current_name
 
 # The particular values of the current gains.
-mrs_msgs/So3Gains current_values
+mrs_msgs/Se3Gains current_values
