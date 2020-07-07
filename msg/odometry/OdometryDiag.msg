@@ -1,13 +1,6 @@
 std_msgs/Header header
 float64 max_altitude
-bool gps_reliable
-bool gps_available
-bool optflow_available
-bool vio_available
-bool rtk_available
-bool lidar_available
-bool aloam_available
-bool object_available
-bool t265_available
 mrs_msgs/EstimatorType estimator_type
-bool height_available
+mrs_msgs/AltitudeType altitude_type
+string[] available_lat_estimators
+string[] available_alt_estimators
