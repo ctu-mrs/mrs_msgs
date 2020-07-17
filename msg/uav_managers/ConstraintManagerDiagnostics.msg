@@ -15,4 +15,4 @@ string current_name
 # Beware, those might be overloaded by the current controller.
 # Subscribe to "control_manager/current_constraints" for the
 # true values.
-mrs_msgs/TrackerConstraints current_values
+mrs_msgs/DynamicsConstraints current_values

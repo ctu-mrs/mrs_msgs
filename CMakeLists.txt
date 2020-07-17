@@ -74,8 +74,8 @@ add_message_files(DIRECTORY msg/odometry FILES
   UavState.msg
   )
 
-# messages for the CONTROL_MANAGER
-add_message_files(DIRECTORY msg/control_manager FILES
+# messages for the UAV_MANAGERS
+add_message_files(DIRECTORY msg/uav_managers FILES
 
   PositionCommand.msg
   AttitudeCommand.msg
@@ -90,7 +90,7 @@ add_message_files(DIRECTORY msg/control_manager FILES
   ReferenceList.msg
   ReferenceStamped.msg
   Float64.msg
-  TrackerConstraints.msg
+  DynamicsConstraints.msg
   ControlError.msg
   ConstraintManagerDiagnostics.msg
   GainManagerDiagnostics.msg
@@ -133,8 +133,8 @@ add_message_files(DIRECTORY msg/tersus_gps FILES
   Trackstat.msg
   )
 
-# services for CONTROL_MANAGER
-add_service_files(DIRECTORY srv/control_manager FILES
+# services for UAV_MANAGERS
+add_service_files(DIRECTORY srv/uav_managers FILES
 
   String.srv
   Vec4.srv
@@ -143,7 +143,7 @@ add_service_files(DIRECTORY srv/control_manager FILES
   GetFloat64.srv
   Float64StampedSrv.srv
   PlannerTask.srv
-  TrackerConstraintsSrv.srv
+  DynamicsConstraintsSrv.srv
   ReferenceSrv.srv
   ReferenceStampedSrv.srv
   TrajectoryReferenceSrv.srv

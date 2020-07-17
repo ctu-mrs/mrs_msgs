@@ -1,4 +1,0 @@
-mrs_msgs/TrackerConstraints constraints
----
-bool success
-string message

@@ -1,9 +1,11 @@
-# A set of dynamics constraints for mrs_uav_manager::Tracker.
+# UAV dynamics constraints
 
 # speed: m/s
 # acceleration: m/s^2
 # jerk: m/s^3
 # snap: m/s^4
+
+# translational dynamics
 
 float64 horizontal_speed
 float64 horizontal_acceleration
@@ -20,7 +22,19 @@ float64 vertical_descending_acceleration
 float64 vertical_descending_jerk
 float64 vertical_descending_snap
 
+# heading
+
 float64 heading_speed
 float64 heading_acceleration
 float64 heading_jerk
 float64 heading_snap
+
+# angular rates: rad/s
+
+float64 roll_rate
+float64 pitch_rate
+float64 yaw_rate
+
+# maximum tilt
+
+float64 tilt
