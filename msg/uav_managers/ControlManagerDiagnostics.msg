@@ -19,3 +19,7 @@ string active_controller
 
 # The status of the currently active controller.
 mrs_msgs/ControllerStatus controller_status
+
+# list of controllers and trackers that are loaded and can be switched to
+string[] available_controllers
+string[] available_trackers
