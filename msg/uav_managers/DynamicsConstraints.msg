@@ -35,6 +35,7 @@ float64 roll_rate
 float64 pitch_rate
 float64 yaw_rate
 
-# maximum tilt
+# maximum tilt, rad
+# max angle between body-3 and world-3 axes
 
 float64 tilt
