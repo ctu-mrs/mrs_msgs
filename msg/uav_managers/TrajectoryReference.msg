@@ -2,10 +2,10 @@
 
 Header header
 
-# True if the heading part should be tracker, otherwise the tracker should maintain the current heading.
+# True if the heading part should be tracked, otherwise the tracker should maintain the current heading.
 bool use_heading
 
-# True if the trajectory should start being tracker immediately after receiving it.
+# True if the trajectory should start being tracked immediately after receiving it.
 # Beware the header time stamp matters in this case.
 bool fly_now
 

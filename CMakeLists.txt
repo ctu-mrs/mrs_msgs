@@ -87,6 +87,7 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   BumperStatus.msg
   Reference.msg
   TrajectoryReference.msg
+  PathReference.msg
   ReferenceList.msg
   ReferenceStamped.msg
   Float64.msg
