@@ -33,6 +33,9 @@ float64 heading_rate
 # error is expected but not immediately required to be fixed.
 bool disable_position_gains
 
+# Whether the controller should disable its antiwindups
+bool disable_antiwindups
+
 # Flags defining whether the XY or Z position reference was filled in.
 # If not, the controllers should pay no attention to it and to the corresponding control error.
 uint8 use_position_horizontal
