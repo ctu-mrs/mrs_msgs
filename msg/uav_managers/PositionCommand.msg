@@ -27,6 +27,8 @@ geometry_msgs/Point attitude_rate
 # It is mutually exclusive to orientation+attitude_rate.
 float64 heading
 float64 heading_rate
+float64 heading_acceleration
+float64 heading_jerk
 
 # Whether the controller should mute its position feedback.
 # Useful, e.g., during takeoff or in situations where sudden control
@@ -54,4 +56,6 @@ uint8 use_snap
 uint8 use_attitude_rate
 uint8 use_heading
 uint8 use_heading_rate
+uint8 use_heading_acceleration
+uint8 use_heading_jerk
 uint8 use_orientation
