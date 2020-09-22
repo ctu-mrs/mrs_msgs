@@ -15,8 +15,8 @@ matrix:
       before_install:
         - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
         - sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-        - sudo apt -y update
-        - sudo apt -y install ros-melodic-rosdoc-lite
+        - sudo apt-get -y update
+        - sudo apt-get -y install ros-melodic-rosdoc-lite
       script:
         - line=$(cat CMakeLists.txt | grep "project(.*)" -o); tmp=${line:8}; proj_name=${tmp:0:${#tmp}-1}; # parse the project name
         - source /opt/ros/melodic/setup.bash
