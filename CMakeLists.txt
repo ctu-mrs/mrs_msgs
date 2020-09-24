@@ -103,6 +103,12 @@ add_message_files(DIRECTORY msg/se3_controller FILES
   Se3Gains.msg
   )
 
+# messages for the TRAJECTORY_GENERATION
+add_message_files(DIRECTORY msg/trajectory_generation FILES
+
+  Path.msg
+  )
+
 # messages for MAVROS_INTERFACE
 add_message_files(DIRECTORY msg/diagnostics FILES
 
@@ -227,6 +233,12 @@ add_message_files(DIRECTORY msg/general FILES
 add_service_files(DIRECTORY srv/general FILES
 
   SetInt.srv
+  )
+
+# services for TRAJECTORY_GENERATION
+add_service_files(DIRECTORY srv/trajectory_generation FILES
+
+  PathSrv.srv
   )
 
 ## Generate added messages and services with any dependencies listed here
