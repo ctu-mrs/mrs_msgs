@@ -74,6 +74,12 @@ add_message_files(DIRECTORY msg/odometry FILES
   UavState.msg
   )
 
+# messages for OUSTER
+add_message_files(DIRECTORY msg/ouster FILES
+
+  OusterInfo.msg
+  )
+
 # messages for the UAV_MANAGERS
 add_message_files(DIRECTORY msg/uav_managers FILES
 
