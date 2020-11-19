@@ -10,8 +10,9 @@ uint8 BRICKFLOW=8
 uint8 VSLAM=9
 uint8 ICP=10
 uint8 ALOAM=11
+uint8 ALOAMGARM=12
 
-uint8 TYPE_COUNT=12
+uint8 TYPE_COUNT=13
 
 string name
 uint8 type
