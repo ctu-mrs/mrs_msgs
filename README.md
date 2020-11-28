@@ -1,4 +1,4 @@
-# MRS ROS messages [![Build Status](https://travis-ci.com/ctu-mrs/mrs_msgs.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_msgs)
+# MRS ROS messages [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/CI/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions)
 
 ![](.fig/thumbnail.jpg)
 
