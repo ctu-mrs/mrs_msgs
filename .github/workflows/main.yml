@@ -27,27 +27,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-  # This workflow contains a single job called "build"
-  # build:
-  #   runs-on: ${{ matrix.os }}
-  #   strategy:
-  #     matrix:
-  #       os: [ubuntu-18.04, ubuntu-20.04]
+  This workflow contains a single job called "build"
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
 
-  #   steps:
+    steps:
 
-  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-  #     - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-  #     # Runs a single command using the runners shell
-  #     - name: Install
-  #       run: ./.ci/install.sh
+      # Runs a single command using the runners shell
+      - name: Install
+        run: ./.ci/install.sh
 
-  #     # Runs a set of commands using the runners shell
-  #     - name: Build
-  #       run: ./.ci/build.sh
+      # Runs a set of commands using the runners shell
+      - name: Build
+        run: ./.ci/build.sh
 
   docs:
+    needs: build
     runs-on: ubuntu-20.04
     steps:
 
