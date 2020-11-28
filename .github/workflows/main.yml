@@ -27,7 +27,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-  This workflow contains a single job called "build"
   build:
     runs-on: ${{ matrix.os }}
     strategy:
