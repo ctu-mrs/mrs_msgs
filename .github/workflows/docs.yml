@@ -1,10 +1,6 @@
-# This is a basic workflow to help you get started with Actions
+name: Docs
 
-name: CI
-
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
     paths-ignore:
@@ -15,7 +11,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
   cancel:
@@ -27,38 +22,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
-
-    steps:
-
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Install
-        run: ./.ci/install.sh
-
-      # Runs a set of commands using the runners shell
-      - name: Build
-        run: ./.ci/build.sh
-
   docs:
-    needs: build
     runs-on: ubuntu-20.04
     steps:
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
       - name: Build
         run: ./.ci/docs.sh
 
-      # Runs a set of commands using the runners shell
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

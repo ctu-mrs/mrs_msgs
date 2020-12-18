@@ -1,6 +1,9 @@
-# MRS ROS messages [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/CI/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions)
+# MRS ROS messages
 
 ![](.fig/thumbnail.jpg)
+
+| Build status | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions) | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions) | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/Docs/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions) |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 
 ## Documentation
 
