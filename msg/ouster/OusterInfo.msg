@@ -1,8 +1,11 @@
-string hostname
+string name
 string sn
 string fw_rev
-string lidar_mode
+string mode
+string prod_line
 float64[] beam_azimuth_angles
 float64[] beam_altitude_angles
+float64 lidar_origin_to_beam_origin_mm
 float64[] imu_to_sensor_transform
 float64[] lidar_to_sensor_transform
+float64[] extrinsic
