@@ -1,276 +1,187 @@
-cmake_minimum_required(VERSION 3.1.2)
+cmake_minimum_required(VERSION 3.5)
 project(mrs_msgs)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  roscpp
-  std_msgs
-  std_srvs
-  sensor_msgs
-  geometry_msgs
-  cmake_modules
+find_package(ament_cmake REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+set(msg_files
+
+  # messages for MPC_TRACKER
+  msg/MpcTrackerDiagnostics.msg
+  msg/FuturePoint.msg
+  msg/FutureTrajectory.msg
+
+  # messages for LANDOFF_TRACKER
+  msg/LandoffDiagnostics.msg
+
+  # messages for MRS_ODOMETRY
+  msg/GpsData.msg
+  msg/RtkGps.msg
+  msg/RtkFixType.msg
+  msg/Float64ArrayStamped.msg
+  msg/Float64MultiArrayStamped.msg
+  msg/Float64Stamped.msg
+  msg/ModelState.msg
+  msg/Fusing.msg
+  msg/EstimatorType.msg
+  msg/OdometryDiag.msg
+  msg/EspOdometry.msg
+  msg/EstimatedState.msg
+  msg/LkfStates.msg
+  msg/Altitude.msg
+  msg/AltitudeStateNames.msg
+  msg/AltitudeType.msg
+  msg/Heading.msg
+  msg/HeadingStateNames.msg
+  msg/HeadingType.msg
+  msg/UavState.msg
+
+  # messages for OUSTER
+  msg/OusterInfo.msg
+
+  # messages for the UAV_MANAGERS
+  msg/PositionCommand.msg
+  msg/AttitudeCommand.msg
+  msg/TrackerStatus.msg
+  msg/ControllerStatus.msg
+  msg/EulerAngles.msg
+  msg/BoolStamped.msg
+  msg/ControlManagerDiagnostics.msg
+  msg/BumperStatus.msg
+  msg/Reference.msg
+  msg/TrajectoryReference.msg
+  msg/PathReference.msg
+  msg/ReferenceList.msg
+  msg/ReferenceStamped.msg
+  msg/Float64.msg
+  msg/DynamicsConstraints.msg
+  msg/ControlError.msg
+  msg/ConstraintManagerDiagnostics.msg
+  msg/GainManagerDiagnostics.msg
+
+  # messages for the SE3_CONTROLLER
+  msg/Se3Gains.msg
+
+  # messages for the TRAJECTORY_GENERATION
+  msg/Path.msg
+
+  # messages for MAVROS_INTERFACE
+  msg/MavrosState.msg
+  msg/GpsDiagnostics.msg
+  msg/SystemDiagnostics.msg
+  msg/BatteryDiagnostics.msg
+  msg/HeartbeatDiagnostics.msg
+  msg/MavrosDiagnostics.msg
+
+  # messages for TERSUS_GPS
+  msg/Bestpos.msg
+  msg/Bestvel.msg
+  msg/Gpgga.msg
+  msg/Gpgsa.msg
+  msg/Gpgsv.msg
+  msg/Gprmc.msg
+  msg/GPSFix.msg
+  msg/GpsStatus.msg
+  msg/RangeInformation.msg
+  msg/Range.msg
+  msg/Satellite.msg
+  msg/TersusMessageHeader.msg
+  msg/Time.msg
+  msg/TrackstatChannel.msg
+  msg/Trackstat.msg
+
+  # messages for the MRS_SERIAL
+  msg/BacaProtocol.msg
+  msg/SerialRaw.msg
+
+  # messages for the GRIPPER
+  msg/GripperDiagnostics.msg
+
+  # messages for the PARACHUTE
+  msg/ParachuteDiagnostics.msg
+
+  # messages for the PROFILER
+  msg/ProfilerUpdate.msg
+
+  # messages for the MRS_BUMPER
+  msg/Histogram.msg
+  msg/ObstacleSectors.msg
+
+  # messages for SPEED_TRACKER
+  msg/SpeedTrackerCommand.msg
+
+  # messages for UVDAR
+  msg/Int32MultiArrayStamped.msg
+  msg/Point2DWithFloat.msg
+  msg/ImagePointsWithFloatStamped.msg
+
+  # messages for SXD
+  msg/SxdMeasurement.msg
+  msg/SxdHistogram.msg
+  msg/SxdDiagnostics.msg
+
+  # general messages
+  msg/PoseWithCovarianceIdentified.msg
+  msg/PoseWithCovarianceArrayStamped.msg
+)
+
+set(srv_files
+
+  # services for GAZEBO_ROS_INTERFACE
+  srv/GazeboApplyForce.srv
+  srv/GazeboAttach.srv
+  srv/GazeboAttachTyped.srv
+  srv/GazeboDeleteModel.srv
+
+  # services for MRS_MULTIMASTER
+  srv/ChangeState.srv
+
+  # services for UAV_MANAGERS
+  srv/String.srv
+  srv/Vec4.srv
+  srv/Vec1.srv
+  srv/Float64Srv.srv
+  srv/GetFloat64.srv
+  srv/Float64StampedSrv.srv
+  srv/PlannerTask.srv
+  srv/DynamicsConstraintsSrv.srv
+  srv/ReferenceSrv.srv
+  srv/ReferenceStampedSrv.srv
+  srv/TrajectoryReferenceSrv.srv
+  srv/TransformReferenceSrv.srv
+  srv/TransformPoseSrv.srv
+  srv/TransformVector3Srv.srv
+  srv/ValidateReference.srv
+  srv/ValidateReferenceList.srv
+  srv/BumperParamsSrv.srv
+
+  # services for the MRS_ODOMETRY
+  srv/ChangeEstimator.srv
+  srv/ChangeHdgEstimator.srv
+  srv/ChangeAltEstimator.srv
+  srv/OffsetOdom.srv
+
+  # general services
+  srv/SetInt.srv
+
+  # services for TRAJECTORY_GENERATION
+  srv/PathSrv.srv
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+    ${msg_files}
+    ${srv_files}
+    DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
   )
 
-# messages for MPC_TRACKER
-add_message_files(DIRECTORY msg/mpc_tracker FILES
-
-  MpcTrackerDiagnostics.msg
-  FuturePoint.msg
-  FutureTrajectory.msg
-  )
-
-# messages for LANDOFF_TRACKER
-add_message_files(DIRECTORY msg/landoff_tracker FILES
-
-  LandoffDiagnostics.msg
-  )
-
-# services for MRS_MULTIMASTER
-add_service_files(DIRECTORY srv/multimaster FILES
-
-  ChangeState.srv
-  )
-
-# services for GAZEBO_ROS_INTERFACE
-add_service_files(DIRECTORY srv/gazebo_ros_interface FILES
-
-  GazeboApplyForce.srv
-  GazeboAttach.srv
-  GazeboAttachTyped.srv
-  GazeboDeleteModel.srv
-  )
-
-# messages for MRS_ODOMETRY
-add_message_files(DIRECTORY msg/odometry FILES
-
-  GpsData.msg
-  RtkGps.msg
-  RtkFixType.msg
-  Float64ArrayStamped.msg
-  Float64MultiArrayStamped.msg
-  Float64Stamped.msg
-  ModelState.msg
-  Fusing.msg
-  EstimatorType.msg
-  OdometryDiag.msg
-  EspOdometry.msg
-  EstimatedState.msg
-  LkfStates.msg
-  Altitude.msg
-  AltitudeStateNames.msg
-  AltitudeType.msg
-  Heading.msg
-  HeadingStateNames.msg
-  HeadingType.msg
-  UavState.msg
-  )
-
-# messages for OUSTER
-add_message_files(DIRECTORY msg/ouster FILES
-
-  OusterInfo.msg
-  )
-
-# messages for the UAV_MANAGERS
-add_message_files(DIRECTORY msg/uav_managers FILES
-
-  PositionCommand.msg
-  AttitudeCommand.msg
-  TrackerStatus.msg
-  ControllerStatus.msg
-  EulerAngles.msg
-  BoolStamped.msg
-  ControlManagerDiagnostics.msg
-  BumperStatus.msg
-  Reference.msg
-  TrajectoryReference.msg
-  PathReference.msg
-  ReferenceList.msg
-  ReferenceStamped.msg
-  Float64.msg
-  DynamicsConstraints.msg
-  ControlError.msg
-  ConstraintManagerDiagnostics.msg
-  GainManagerDiagnostics.msg
-  )
-
-# messages for the SE3_CONTROLLER
-add_message_files(DIRECTORY msg/se3_controller FILES
-
-  Se3Gains.msg
-  )
-
-# messages for the TRAJECTORY_GENERATION
-add_message_files(DIRECTORY msg/trajectory_generation FILES
-
-  Path.msg
-  )
-
-# messages for MAVROS_INTERFACE
-add_message_files(DIRECTORY msg/diagnostics FILES
-
-  MavrosState.msg
-  GpsDiagnostics.msg
-  SystemDiagnostics.msg
-  BatteryDiagnostics.msg
-  HeartbeatDiagnostics.msg
-  MavrosDiagnostics.msg
-  )
-
-# messages for TERSUS_GPS
-add_message_files(DIRECTORY msg/tersus_gps FILES
-
-  Bestpos.msg
-  Bestvel.msg
-  Gpgga.msg
-  Gpgsa.msg
-  Gpgsv.msg
-  Gprmc.msg
-  GPSFix.msg
-  GpsStatus.msg
-  RangeInformation.msg
-  Range.msg
-  Satellite.msg
-  TersusMessageHeader.msg
-  Time.msg
-  TrackstatChannel.msg
-  Trackstat.msg
-  )
-
-# services for UAV_MANAGERS
-add_service_files(DIRECTORY srv/uav_managers FILES
-
-  String.srv
-  Vec4.srv
-  Vec1.srv
-  Float64Srv.srv
-  GetFloat64.srv
-  Float64StampedSrv.srv
-  PlannerTask.srv
-  DynamicsConstraintsSrv.srv
-  ReferenceSrv.srv
-  ReferenceStampedSrv.srv
-  TrajectoryReferenceSrv.srv
-  TransformReferenceSrv.srv
-  TransformPoseSrv.srv
-  TransformVector3Srv.srv
-  ValidateReference.srv
-  ValidateReferenceList.srv
-  BumperParamsSrv.srv
-  )
-
-# messages for the MRS_SERIAL
-add_message_files(DIRECTORY msg/mrs_serial FILES
-
-  BacaProtocol.msg
-  SerialRaw.msg
-  )
-
-# messages for the GRIPPER
-add_message_files(DIRECTORY msg/mrs_gripper FILES
-
-  GripperDiagnostics.msg
-  )
-
-# messages for the PARACHUTE
-add_message_files(DIRECTORY msg/parachute FILES
-
-  ParachuteDiagnostics.msg
-  )
-
-# messages for the PROFILER
-add_message_files(DIRECTORY msg/profiler FILES
-
-  ProfilerUpdate.msg
-  )
-
-# services for the MRS_ODOMETRY
-add_service_files(DIRECTORY srv/odometry FILES
-
-  ChangeEstimator.srv
-  ChangeHdgEstimator.srv
-  ChangeAltEstimator.srv
-  OffsetOdom.srv
-  )
-
-# messages for the MRS_BUMPER
-add_message_files(DIRECTORY msg/bumper FILES
-
-  Histogram.msg
-  ObstacleSectors.msg
-  )
-
-# messages for SPEED_TRACKER
-add_message_files(DIRECTORY msg/speed_tracker FILES
-
-  SpeedTrackerCommand.msg
-  )
-
-# uvdar messages
-add_message_files(DIRECTORY msg/uvdar FILES
-  Int32MultiArrayStamped.msg
-  Point2DWithFloat.msg
-  ImagePointsWithFloatStamped.msg
-  )
-
-# sxd messages
-add_message_files(DIRECTORY msg/sxd FILES
-  SxdMeasurement.msg
-  SxdHistogram.msg
-  SxdDiagnostics.msg
-  )
-
-# general messages
-add_message_files(DIRECTORY msg/general FILES
-  PoseWithCovarianceIdentified.msg
-  PoseWithCovarianceArrayStamped.msg
-  )
-
-# general services
-add_service_files(DIRECTORY srv/general FILES
-
-  SetInt.srv
-  )
-
-# services for TRAJECTORY_GENERATION
-add_service_files(DIRECTORY srv/trajectory_generation FILES
-
-  PathSrv.srv
-  )
-
-## Generate added messages and services with any dependencies listed here
-generate_messages(DEPENDENCIES
-
-  std_msgs
-  geometry_msgs
-  sensor_msgs
-  )
-
-catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime sensor_msgs
-  LIBRARIES mrs_msgs
-  )
-
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-  )
-
-add_library(mrs_msgs src/main.cpp)
-
-add_dependencies(mrs_msgs
-  ${${PROJECT_NAME}_EXPORTED_TARGETS}
-  ${catkin_EXPORTED_TARGETS}
-  )
-
-target_link_libraries(mrs_msgs
-  ${catkin_LIBRARIES}
-  )
-
-add_custom_command(TARGET mrs_msgs
-  PRE_BUILD
-  WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-  COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh"
-  )
+ament_export_dependencies(rosidl_default_runtime)
+ament_package()

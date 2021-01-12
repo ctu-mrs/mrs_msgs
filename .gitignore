@@ -1,5 +1,3 @@
 *.swp
 *.swo
-msg/*.msg
-srv/*.srv
 doc/*

@@ -1,4 +1,0 @@
-mrs_msgs/ReferenceStamped reference
----
-bool success
-string message

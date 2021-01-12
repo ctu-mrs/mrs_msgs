@@ -1,0 +1,4 @@
+mrs_msgs/ReferenceStamped reference
+---
+uint8 success
+string message

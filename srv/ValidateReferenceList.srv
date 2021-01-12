@@ -1,0 +1,4 @@
+mrs_msgs/ReferenceList list
+---
+int8[] success
+string message
