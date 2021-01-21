@@ -225,6 +225,7 @@ add_message_files(DIRECTORY msg/sxd FILES
 
 # general messages
 add_message_files(DIRECTORY msg/general FILES
+  Sphere.msg
   PoseWithCovarianceIdentified.msg
   PoseWithCovarianceArrayStamped.msg
   )
