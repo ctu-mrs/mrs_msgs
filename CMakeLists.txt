@@ -1,11 +1,9 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.1.2)
 project(mrs_msgs)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   roscpp
@@ -15,10 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   cmake_modules
   )
-
-###############################################
-## Declare ROS messages, services and actions ##
-################################################
 
 # messages for MPC_TRACKER
 add_message_files(DIRECTORY msg/mpc_tracker FILES
@@ -256,22 +250,11 @@ generate_messages(DEPENDENCIES
   sensor_msgs
   )
 
-###################################
-## catkin specific configuration ##
-###################################
-
 catkin_package(
   CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime sensor_msgs
   LIBRARIES mrs_msgs
   )
 
-###########
-## Build ##
-###########
-
-## Specify additional locations of header files
-## Your package locations should be listed before other locations
-# include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
   )
