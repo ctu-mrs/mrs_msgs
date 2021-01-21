@@ -3,10 +3,11 @@ uint8 PLANE=1
 uint8 BRICK=2
 uint8 VIO=3
 uint8 ALOAM=4
-uint8 BARO=5
-uint8 ALOAMGARM=6
+uint8 ALOAMGARM=5
+uint8 ALOAMREP=6
+uint8 BARO=7
 
-uint8 TYPE_COUNT=7
+uint8 TYPE_COUNT=8
 
 string name
 uint8 type
