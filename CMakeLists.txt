@@ -236,6 +236,11 @@ add_service_files(DIRECTORY srv/general FILES
   SetInt.srv
   )
 
+# simulation messages
+add_message_files(DIRECTORY msg/simulation FILES
+  SpawnerDiagnostics.msg
+  )
+
 # services for TRAJECTORY_GENERATION
 add_service_files(DIRECTORY srv/trajectory_generation FILES
 
