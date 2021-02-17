@@ -23,6 +23,9 @@ geometry_msgs/Point snap
 geometry_msgs/Quaternion orientation
 geometry_msgs/Point attitude_rate
 
+# when used, it will override the thrust output of the controller
+float64 thrust
+
 # The desired heading and heading rate.
 # It is mutually exclusive to orientation+attitude_rate.
 float64 heading
@@ -59,3 +62,4 @@ uint8 use_heading_rate
 uint8 use_heading_acceleration
 uint8 use_heading_jerk
 uint8 use_orientation
+uint8 use_thrust
