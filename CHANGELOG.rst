@@ -2,8 +2,8 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2021-03-16)
+------------------
 * Noetic-compatible
 * update msg linking script
 * new cmake version
