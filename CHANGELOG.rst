@@ -2,6 +2,13 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.6 (2021-03-16)
+------------------
+* Noetic-compatible
+* update msg linking script
+* new cmake version
+* Contributors: Daniel Hert, Jan Bednar, Matej Petrlik, Matouš Vrba, Pavel Petracek, Robert Penicka, Tomas Baca, Tomáš Báča, Viktor Walter, klaxalk, mergify[bot]
+
 0.0.5 (2020-02-26)
 ------------------
 * nothing changed here ;-)
