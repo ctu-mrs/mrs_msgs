@@ -2,6 +2,10 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Major release
+
 0.0.6 (2021-03-16)
 ------------------
 * Noetic-compatible
