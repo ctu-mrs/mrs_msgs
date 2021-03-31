@@ -1,9 +1,9 @@
 Header header
 
 geometry_msgs/Point[] position
-geometry_msgs/Point[] velocity
-geometry_msgs/Point[] acceleration
-geometry_msgs/Point[] jerk
+geometry_msgs/Vector3[] velocity
+geometry_msgs/Vector3[] acceleration
+geometry_msgs/Vector3[] jerk
 
 float64[] heading
 float64[] heading_rate
