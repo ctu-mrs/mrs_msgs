@@ -20,6 +20,7 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
   MpcTrackerDiagnostics.msg
   FuturePoint.msg
   FutureTrajectory.msg
+  MpcPredictionFullState.msg
   )
 
 # messages for LANDOFF_TRACKER
