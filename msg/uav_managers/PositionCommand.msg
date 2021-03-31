@@ -7,16 +7,16 @@ std_msgs/Header header
 geometry_msgs/Point position
 
 # The desired velocity.
-geometry_msgs/Point velocity
+geometry_msgs/Vector3 velocity
 
 # The desired acceleration.
-geometry_msgs/Point acceleration
+geometry_msgs/Vector3 acceleration
 
 # The desired jerk.
-geometry_msgs/Point jerk
+geometry_msgs/Vector3 jerk
 
 # The desired snap.
-geometry_msgs/Point snap
+geometry_msgs/Vector3 snap
 
 # The desired orientation and attitude rate.
 # It is mutually exclusive to heading+heading_rate.
