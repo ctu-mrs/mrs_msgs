@@ -1,6 +1,7 @@
 # This reports on the state of the ControlManager and the currently active tracker and controller.
 
 time stamp
+string uav_name
 
 # If the motors are enabled, in other words, if the output of the ControlManager can pass out.
 bool motors
