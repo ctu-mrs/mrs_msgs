@@ -97,6 +97,7 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   ControlError.msg
   ConstraintManagerDiagnostics.msg
   GainManagerDiagnostics.msg
+  UavManagerDiagnostics.msg
   )
 
 # messages for the SE3_CONTROLLER
