@@ -1,0 +1,13 @@
+std_msgs/Header header
+float64 duration_all
+float64 duration_aloam
+float64 duration_garmin
+float64 duration_baro
+float64 duration_input
+float64 duration_rest
+float64 timestamp_diff_all
+float64 timestamp_diff_aloam
+float64 timestamp_diff_garmin
+float64 timestamp_diff_baro
+float64 timestamp_diff_input
+float64 timestamp_diff_rest
