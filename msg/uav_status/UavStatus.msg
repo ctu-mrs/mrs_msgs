@@ -1,4 +1,4 @@
-Header header
+aeader header
 
 float32 control_manager_diag_hz
 string[] controllers
@@ -20,6 +20,7 @@ string[] odom_estimators_hdg
 float32 cpu_load
 float32 cpu_ghz
 float32 free_ram
+float32 total_ram
 int32 free_hdd
 
 float32 mavros_hz
