@@ -99,6 +99,12 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   UavManagerDiagnostics.msg
   )
 
+# messages for the UAV_STATUS
+add_message_files(DIRECTORY msg/uav_status FILES
+
+  UavStatus.msg
+  )
+
 # messages for the SE3_CONTROLLER
 add_message_files(DIRECTORY msg/se3_controller FILES
 
