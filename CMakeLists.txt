@@ -67,6 +67,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   HeadingStateNames.msg
   HeadingType.msg
   UavState.msg
+  AloamgarmDebug.msg
   )
 
 # messages for OUSTER
