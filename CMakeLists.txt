@@ -104,6 +104,8 @@ add_message_files(DIRECTORY msg/uav_managers FILES
 add_message_files(DIRECTORY msg/uav_status FILES
 
   UavStatus.msg
+  UavStatusShort.msg
+  CustomTopic.msg
   )
 
 # messages for the SE3_CONTROLLER
