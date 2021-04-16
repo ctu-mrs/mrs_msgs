@@ -1,13 +1,22 @@
 Header header
 
+string uav_name
+string nato_name
+string uav_type
+string uav_mass
+
 float32 control_manager_diag_hz
+int16 control_manager_diag_color
 string[] controllers
 string[] gains
 string[] trackers
 string[] constraints
 string fly_state
+bool null_tracker
+uint32 secs_flown
 
 float32 odom_hz
+int16 odom_color
 float32 odom_x
 float32 odom_y
 float32 odom_z
@@ -24,19 +33,21 @@ float32 total_ram
 int32 free_hdd
 
 float32 mavros_hz
-string mavros_state
+int16 mavros_color
+float32 mavros_battery_hz
+float32 mavros_state_hz
+float32 mavros_cmd_hz
 string mavros_mode
-string mavros_GPS_state
-string mavros_GPS_qual
+bool mavros_armed
+bool mavros_gps_ok
+float32 mavros_gps_qual
 float32 battery_volt
 float32 battery_curr
 float32 thrust
 float32 mass_estimate
 float32 mass_set
 
-string[] custom_topic_names
-float32[] custom_topic_hz
-float32[] custom_topic_hz_expected
+CustomTopic[] custom_topics
 string[] custom_string_outputs
 string[] custom_services
 
