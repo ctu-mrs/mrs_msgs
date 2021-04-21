@@ -88,6 +88,8 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   ControlManagerDiagnostics.msg
   BumperStatus.msg
   Reference.msg
+  VelocityReference.msg
+  VelocityReferenceStamped.msg
   TrajectoryReference.msg
   PathReference.msg
   ReferenceList.msg
@@ -163,6 +165,8 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   PlannerTask.srv
   DynamicsConstraintsSrv.srv
   ReferenceSrv.srv
+  VelocityReferenceSrv.srv
+  VelocityReferenceStampedSrv.srv
   ReferenceStampedSrv.srv
   TrajectoryReferenceSrv.srv
   TransformReferenceSrv.srv
