@@ -2,6 +2,23 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* updated path
+* added velocity reference
+* updates for mrs status
+* fixed msg linking script
+* added ram total to mrs_status msg
+* added AloamgarmDebug msg
+* added UavManagerDiagnostics
+* updated full state's vector
+* updated subtypes of PositionCommand
+* added full state MPC prediction message
+* added ALOAMREP heading estimator type for repredictor testing
+* added another estimator type for testing of ALOAM with repredictor
+* added aloamgarm altitudetype
+* Contributors: Daniel Hert, Matej Petrlik, Tomas Baca, Vaclav Pritzl
+
 1.0.0 (2021-03-18)
 ------------------
 * Major release
