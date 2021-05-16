@@ -2,8 +2,8 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.1 (2021-05-16)
+------------------
 * updated path
 * added velocity reference
 * updates for mrs status
