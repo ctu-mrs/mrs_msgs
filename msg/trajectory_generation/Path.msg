@@ -6,7 +6,11 @@ bool stop_at_waypoints
 bool loop
 
 bool override_constraints
-float64 override_max_velocity
-float64 override_max_acceleration
+float64 override_max_velocity_horizontal
+float64 override_max_acceleration_horizontal
+float64 override_max_velocity_vertical
+float64 override_max_acceleration_vertical
+
+bool relax_heading
 
 Reference[] points
