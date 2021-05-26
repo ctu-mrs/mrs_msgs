@@ -260,6 +260,7 @@ add_message_files(DIRECTORY msg/simulation FILES
 add_service_files(DIRECTORY srv/trajectory_generation FILES
 
   PathSrv.srv
+  GetPathSrv.srv
   )
 
 ## Generate added messages and services with any dependencies listed here
