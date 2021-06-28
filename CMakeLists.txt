@@ -120,6 +120,8 @@ add_message_files(DIRECTORY msg/se3_controller FILES
 add_message_files(DIRECTORY msg/trajectory_generation FILES
 
   Path.msg
+  PathWithVelocity.msg
+  ReferenceWithVelocity.msg
   )
 
 # messages for MAVROS_INTERFACE
