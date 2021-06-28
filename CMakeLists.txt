@@ -245,6 +245,8 @@ add_message_files(DIRECTORY msg/general FILES
   Sphere.msg
   PoseWithCovarianceIdentified.msg
   PoseWithCovarianceArrayStamped.msg
+  Track.msg
+  TrackArrayStamped.msg
   )
 
 # general services
