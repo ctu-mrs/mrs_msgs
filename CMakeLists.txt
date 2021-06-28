@@ -246,6 +246,7 @@ add_message_files(DIRECTORY msg/general FILES
   PoseWithCovarianceIdentified.msg
   PoseWithCovarianceArrayStamped.msg
   Track.msg
+  TrackStamped.msg
   TrackArrayStamped.msg
   )
 
