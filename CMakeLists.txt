@@ -268,6 +268,11 @@ add_service_files(DIRECTORY srv/trajectory_generation FILES
   GetPathSrv.srv
   )
 
+# pathfinder messages
+add_message_files(DIRECTORY msg/pathfinder FILES
+  PathfinderDiagnostics.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
