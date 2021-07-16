@@ -26,6 +26,11 @@ string[] odom_estimators_hori
 string[] odom_estimators_vert
 string[] odom_estimators_hdg
 
+float32 cmd_x
+float32 cmd_y
+float32 cmd_z
+float32 cmd_hdg
+
 float32 cpu_load
 float32 cpu_ghz
 float32 free_ram
