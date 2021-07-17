@@ -12,6 +12,10 @@ float64 override_max_acceleration_horizontal
 float64 override_max_velocity_vertical
 float64 override_max_acceleration_vertical
 
+# if true, the heading from the first point will be used to override any heading calculated by the optimization
+# to enforce it ASAP. WARNING: Use this with the relax_heading parameter set to true!
+bool override_heading
+
 bool relax_heading
 
 ReferenceWithVelocity[] points
