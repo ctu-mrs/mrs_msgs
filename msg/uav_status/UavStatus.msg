@@ -26,6 +26,11 @@ string[] odom_estimators_hori
 string[] odom_estimators_vert
 string[] odom_estimators_hdg
 
+float32 cmd_x
+float32 cmd_y
+float32 cmd_z
+float32 cmd_hdg
+
 float32 cpu_load
 float32 cpu_ghz
 float32 free_ram
@@ -43,6 +48,7 @@ bool mavros_gps_ok
 float32 mavros_gps_qual
 float32 battery_volt
 float32 battery_curr
+float32 battery_wh_drained
 float32 thrust
 float32 mass_estimate
 float32 mass_set
