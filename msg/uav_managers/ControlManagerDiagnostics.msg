@@ -24,3 +24,8 @@ mrs_msgs/ControllerStatus controller_status
 # list of controllers and trackers that are loaded and can be switched to
 string[] available_controllers
 string[] available_trackers
+
+# flags reporting on whether the trackers and controller should be "human switchable", meaning,
+# whether people should be "just" able to switch to them, e.g., using a GUI or TUI interface
+bool[] human_switchable_controllers
+bool[] human_switchable_trackers
