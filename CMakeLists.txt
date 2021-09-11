@@ -108,6 +108,7 @@ add_message_files(DIRECTORY msg/uav_status FILES
   UavStatus.msg
   UavStatusShort.msg
   CustomTopic.msg
+  NodeCpuLoad.msg
   )
 
 # messages for the SE3_CONTROLLER
