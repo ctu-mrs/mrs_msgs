@@ -1,2 +1,2 @@
-string node_name
-float32 cpu_load
+string[] node_names
+float32[] cpu_loads
