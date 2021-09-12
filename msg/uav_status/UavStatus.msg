@@ -32,6 +32,7 @@ float32 cmd_z
 float32 cmd_hdg
 
 float32 cpu_load
+float32 cpu_load_total
 float32 cpu_ghz
 float32 free_ram
 float32 total_ram
@@ -57,7 +58,7 @@ CustomTopic[] custom_topics
 string[] custom_string_outputs
 string[] custom_services
 
-NodeCpuLoad[] node_cpu_loads
+NodeCpuLoad node_cpu_loads
 
 bool flying_normally
 bool have_goal
