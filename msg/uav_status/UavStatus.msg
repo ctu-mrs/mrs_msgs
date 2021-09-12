@@ -57,6 +57,8 @@ CustomTopic[] custom_topics
 string[] custom_string_outputs
 string[] custom_services
 
+NodeCpuLoad[] node_cpu_loads
+
 bool flying_normally
 bool have_goal
 bool callbacks_enabled
