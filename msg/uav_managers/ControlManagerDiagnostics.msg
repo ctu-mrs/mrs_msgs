@@ -9,6 +9,9 @@ bool motors
 # True if the UAV is flying and no special case occurred (emergency land, failsafe, etc.).
 bool flying_normally
 
+# True if under the "RC Joystick" mode
+bool rc_mode
+
 # The name of the currently active tracker, as defined in the trackers.yaml in the "mrs_uav_manager" package.
 string active_tracker
 
