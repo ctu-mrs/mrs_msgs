@@ -1,5 +1,7 @@
 Header header
 
+int64 input_id
+
 time[] stamps
 
 geometry_msgs/Point[] position
