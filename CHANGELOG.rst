@@ -2,8 +2,8 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2021-10-03)
+------------------
 * add UInt16Stamped msg
 * added cpu temp to mrs_status
 * added input_id for mpc and traj. gen
