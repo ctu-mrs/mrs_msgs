@@ -34,6 +34,7 @@ float32 cmd_hdg
 float32 cpu_load
 float32 cpu_load_total
 float32 cpu_ghz
+float32 cpu_temperature
 float32 free_ram
 float32 total_ram
 int32 free_hdd

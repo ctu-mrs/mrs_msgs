@@ -1,5 +1,7 @@
 Header header
 
+int64 input_id
+
 bool use_heading
 bool fly_now
 bool stop_at_waypoints

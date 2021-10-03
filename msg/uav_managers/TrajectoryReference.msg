@@ -2,6 +2,9 @@
 
 Header header
 
+# uniquely identifies the user input, so you can check it agains the prediction_full_state
+int64 input_id
+
 # True if the heading part should be tracked, otherwise the tracker should maintain the current heading.
 bool use_heading
 

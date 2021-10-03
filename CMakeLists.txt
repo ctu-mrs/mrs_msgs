@@ -275,6 +275,12 @@ add_message_files(DIRECTORY msg/pathfinder FILES
   PathfinderDiagnostics.msg
   )
 
+# messages for stamped_msgs
+add_message_files(DIRECTORY msg/stamped_msgs FILES
+
+  UInt16Stamped.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
