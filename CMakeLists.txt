@@ -108,6 +108,7 @@ add_message_files(DIRECTORY msg/uav_status FILES
   UavStatus.msg
   UavStatusShort.msg
   CustomTopic.msg
+  NodeCpuLoad.msg
   )
 
 # messages for the SE3_CONTROLLER
@@ -184,6 +185,7 @@ add_message_files(DIRECTORY msg/mrs_serial FILES
 
   BacaProtocol.msg
   SerialRaw.msg
+  GimbalPRY.msg
   )
 
 # messages for the GRIPPER
@@ -245,6 +247,9 @@ add_message_files(DIRECTORY msg/general FILES
   Sphere.msg
   PoseWithCovarianceIdentified.msg
   PoseWithCovarianceArrayStamped.msg
+  Track.msg
+  TrackStamped.msg
+  TrackArrayStamped.msg
   )
 
 # general services
@@ -268,6 +273,12 @@ add_service_files(DIRECTORY srv/trajectory_generation FILES
 # pathfinder messages
 add_message_files(DIRECTORY msg/pathfinder FILES
   PathfinderDiagnostics.msg
+  )
+
+# messages for stamped_msgs
+add_message_files(DIRECTORY msg/stamped_msgs FILES
+
+  UInt16Stamped.msg
   )
 
 ## Generate added messages and services with any dependencies listed here

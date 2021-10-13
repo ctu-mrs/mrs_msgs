@@ -26,8 +26,15 @@ string[] odom_estimators_hori
 string[] odom_estimators_vert
 string[] odom_estimators_hdg
 
+float32 cmd_x
+float32 cmd_y
+float32 cmd_z
+float32 cmd_hdg
+
 float32 cpu_load
+float32 cpu_load_total
 float32 cpu_ghz
+float32 cpu_temperature
 float32 free_ram
 float32 total_ram
 int32 free_hdd
@@ -43,6 +50,7 @@ bool mavros_gps_ok
 float32 mavros_gps_qual
 float32 battery_volt
 float32 battery_curr
+float32 battery_wh_drained
 float32 thrust
 float32 mass_estimate
 float32 mass_set
@@ -50,6 +58,8 @@ float32 mass_set
 CustomTopic[] custom_topics
 string[] custom_string_outputs
 string[] custom_services
+
+NodeCpuLoad node_cpu_loads
 
 bool flying_normally
 bool have_goal

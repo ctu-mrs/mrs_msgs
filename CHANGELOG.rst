@@ -2,6 +2,26 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.2 (2021-10-03)
+------------------
+* add UInt16Stamped msg
+* added cpu temp to mrs_status
+* added input_id for mpc and traj. gen
+* added rc mode to control manager diag
+* Add override jerk constraints in path msg
+* updated docs build script
+* added cont.&track. flags regarding human activation
+  added Track.msg
+* added gimbal PRY message
+* added TrackStamped message
+* added the Track and TrackArrayStamped messages
+* added PathWithVelocity message
+* added pathfinder msg
+* TrajectoryGeneration: added getPath service
+* MpcTracker: updated fullstate prediction
+* updated path msg
+* Contributors: Dan Hert, Matouš Vrba, Pavel Petracek, Tomas Baca, Vit Kratky
+
 1.0.1 (2021-05-16)
 ------------------
 * updated path
