@@ -8,5 +8,5 @@ bool modified
 
 # responses of each loaded tracker
 string[] tracker_names
-int8[] tracker_successes
+bool[] tracker_successes
 string[] tracker_messages

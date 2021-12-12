@@ -2,6 +2,9 @@
 
 std_msgs/Header header
 
+# uniquely identifies the user input
+int64 input_id
+
 # True if the heading part should be tracked, otherwise the tracker should maintain the current heading.
 bool use_heading
 

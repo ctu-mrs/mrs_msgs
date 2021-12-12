@@ -1,5 +1,5 @@
-float64[] start
-float64[] finish
+float64[4] start
+float64[4] finish
 ---
 bool success
 string message

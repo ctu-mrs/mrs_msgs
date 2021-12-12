@@ -7,21 +7,24 @@ std_msgs/Header header
 geometry_msgs/Point position
 
 # The desired velocity.
-geometry_msgs/Point velocity
+geometry_msgs/Vector3 velocity
 
 # The desired acceleration.
-geometry_msgs/Point acceleration
+geometry_msgs/Vector3 acceleration
 
 # The desired jerk.
-geometry_msgs/Point jerk
+geometry_msgs/Vector3 jerk
 
 # The desired snap.
-geometry_msgs/Point snap
+geometry_msgs/Vector3 snap
 
 # The desired orientation and attitude rate.
 # It is mutually exclusive to heading+heading_rate.
 geometry_msgs/Quaternion orientation
 geometry_msgs/Point attitude_rate
+
+# when used, it will override the thrust output of the controller
+float64 thrust
 
 # The desired heading and heading rate.
 # It is mutually exclusive to orientation+attitude_rate.
@@ -59,3 +62,4 @@ uint8 use_heading_rate
 uint8 use_heading_acceleration
 uint8 use_heading_jerk
 uint8 use_orientation
+uint8 use_thrust

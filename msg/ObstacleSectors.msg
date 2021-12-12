@@ -1,16 +1,3 @@
-# This message represents the output from the mrs_bumper package.
-#
-# The *sectors* variable contains information about obstacles in the horizontal,
-# bottom and up sectors. Horizontal sectors take up the first part of the array.
-# Bottom and up sectors are the second and first elements from the end of the array:
-# sectors[0, 1, ..., n_horizontal_sectors-1] -> horizontal sectors
-# sectors[n_horizontal_sectors]              -> bottom sector
-# sectors[n_horizontal_sectors+1]            -> top sector
-#
-# The horizontal sectors are indexed counterclockwise, starting from the front facing
-# sector, relative to the MAV orientation (see picture below). The last two
-# elements of the *sectors* variable are the above and below sectors, respectively.
-
 # Time at which the data in this message was generated, coordinate frame ID.
 std_msgs/Header header
 

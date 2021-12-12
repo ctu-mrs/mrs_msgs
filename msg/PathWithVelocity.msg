@@ -7,14 +7,13 @@ bool fly_now
 bool stop_at_waypoints
 bool loop
 
+# if this is enabled, the slower velocity between the points and these overrides will be chosen
 bool override_constraints
 float64 override_max_velocity_horizontal
 float64 override_max_acceleration_horizontal
-float64 override_max_jerk_horizontal
 float64 override_max_velocity_vertical
 float64 override_max_acceleration_vertical
-float64 override_max_jerk_vertical
 
 bool relax_heading
 
-Reference[] points
+ReferenceWithVelocity[] points

@@ -1,6 +1,6 @@
 string frame_id
 mrs_msgs/ReferenceStamped reference
 ---
-int8 success
+bool success
 string message
 mrs_msgs/ReferenceStamped reference

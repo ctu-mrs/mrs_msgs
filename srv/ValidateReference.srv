@@ -1,4 +1,4 @@
 mrs_msgs/ReferenceStamped reference
 ---
-uint8 success
+bool success
 string message
