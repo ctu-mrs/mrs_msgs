@@ -281,6 +281,12 @@ add_message_files(DIRECTORY msg/stamped_msgs FILES
   UInt16Stamped.msg
   )
 
+# messages for mrs_pcl_tools
+add_message_files(DIRECTORY msg/mrs_pcl_tools FILES
+
+  PclToolsDiagnostics.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
