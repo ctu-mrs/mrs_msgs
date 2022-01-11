@@ -1,4 +1,5 @@
 time   stamp
+string sensor_name
 uint8  sensor_type
 
 float32 frequency   # [Hz]
