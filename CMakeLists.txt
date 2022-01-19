@@ -186,6 +186,7 @@ add_message_files(DIRECTORY msg/mrs_serial FILES
   BacaProtocol.msg
   SerialRaw.msg
   GimbalPRY.msg
+  TarotGimbalState.msg
   )
 
 # messages for the GRIPPER
