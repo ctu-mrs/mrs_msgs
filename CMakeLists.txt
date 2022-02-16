@@ -302,9 +302,14 @@ generate_messages(DEPENDENCIES
   sensor_msgs
   )
 
+set(LIBRARIES
+  mrs_msgs
+  )
+
+
 catkin_package(
   CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime sensor_msgs
-  LIBRARIES mrs_msgs
+  LIBRARIES ${LIBRARIES}
   )
 
 include_directories(
@@ -326,4 +331,19 @@ add_custom_command(TARGET mrs_msgs
   PRE_BUILD
   WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
   COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh"
+  )
+
+## --------------------------------------------------------------
+## |                           Install                          |
+## --------------------------------------------------------------
+
+install(TARGETS ${LIBRARIES}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+  )
+
+install(DIRECTORY ./
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  FILES_MATCHING PATTERN "*.xml"
   )
