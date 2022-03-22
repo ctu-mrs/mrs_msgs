@@ -178,6 +178,7 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   ValidateReference.srv
   ValidateReferenceList.srv
   BumperParamsSrv.srv
+  ConstraintsOverride.srv
   )
 
 # messages for the MRS_SERIAL
