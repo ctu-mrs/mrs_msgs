@@ -1,0 +1,6 @@
+string uav_name
+float64[] payload
+
+---
+bool success
+string message

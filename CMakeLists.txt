@@ -259,6 +259,7 @@ add_message_files(DIRECTORY msg/general FILES
 add_service_files(DIRECTORY srv/general FILES
 
   SetInt.srv
+  NimbroTestSrv.srv
   )
 
 # simulation messages
