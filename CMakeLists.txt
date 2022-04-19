@@ -253,6 +253,8 @@ add_message_files(DIRECTORY msg/general FILES
   TrackStamped.msg
   TrackArrayStamped.msg
   NimbroTest.msg
+  ImageLabeled.msg
+  ImageLabeledArray.msg
   )
 
 # general services
