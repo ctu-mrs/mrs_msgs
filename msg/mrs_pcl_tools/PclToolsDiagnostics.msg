@@ -7,7 +7,7 @@ float32 vfov        # [deg]
 uint16  rows_before # height of input data
 uint16  cols_before # width of input data
 uint16  rows_after  # height of output data
-uint16  cols_after  # width of input data
+uint16  cols_after  # width of output data
 
 # Sensor type
 int8 SENSOR_TYPE_NONE=-1
