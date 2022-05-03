@@ -13,8 +13,9 @@ uint8 ALOAM=11
 uint8 ALOAMGARM=12
 uint8 ALOAMREP=13
 uint8 LIOSAM=14
+uint8 UWB=15
 
-uint8 TYPE_COUNT=15
+uint8 TYPE_COUNT=16
 
 string name
 uint8 type
