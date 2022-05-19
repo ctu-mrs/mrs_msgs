@@ -137,14 +137,17 @@ add_message_files(DIRECTORY msg/diagnostics FILES
   )
 
 # messages for TERSUS_GPS
-add_message_files(DIRECTORY msg/tersus_gps FILES
+add_message_files(DIRECTORY msg/gnss FILES
 
   Bestpos.msg
   Bestvel.msg
   Gpgga.msg
   Gpgsa.msg
+  Gpgst.msg
   Gpgsv.msg
+  Gpvtg.msg
   Gprmc.msg
+  StringStamped.msg
   GPSFix.msg
   GpsStatus.msg
   RangeInformation.msg
