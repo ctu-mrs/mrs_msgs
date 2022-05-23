@@ -137,14 +137,17 @@ add_message_files(DIRECTORY msg/diagnostics FILES
   )
 
 # messages for TERSUS_GPS
-add_message_files(DIRECTORY msg/tersus_gps FILES
+add_message_files(DIRECTORY msg/gnss FILES
 
   Bestpos.msg
   Bestvel.msg
   Gpgga.msg
   Gpgsa.msg
+  Gpgst.msg
   Gpgsv.msg
+  Gpvtg.msg
   Gprmc.msg
+  StringStamped.msg
   GPSFix.msg
   GpsStatus.msg
   RangeInformation.msg
@@ -178,6 +181,7 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   ValidateReference.srv
   ValidateReferenceList.srv
   BumperParamsSrv.srv
+  ConstraintsOverride.srv
   )
 
 # messages for the MRS_SERIAL
@@ -186,6 +190,7 @@ add_message_files(DIRECTORY msg/mrs_serial FILES
   BacaProtocol.msg
   SerialRaw.msg
   GimbalPRY.msg
+  TarotGimbalState.msg
   )
 
 # messages for the GRIPPER
@@ -250,12 +255,16 @@ add_message_files(DIRECTORY msg/general FILES
   Track.msg
   TrackStamped.msg
   TrackArrayStamped.msg
+  NimbroTest.msg
+  ImageLabeled.msg
+  ImageLabeledArray.msg
   )
 
 # general services
 add_service_files(DIRECTORY srv/general FILES
 
   SetInt.srv
+  NimbroTestSrv.srv
   )
 
 # simulation messages
@@ -281,6 +290,17 @@ add_message_files(DIRECTORY msg/stamped_msgs FILES
   UInt16Stamped.msg
   )
 
+# messages for mrs_pcl_tools
+add_message_files(DIRECTORY msg/mrs_pcl_tools FILES
+
+  PclToolsDiagnostics.msg
+  )
+
+add_message_files(DIRECTORY msg/mrs_llcp FILES
+
+  Llcp.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
@@ -289,9 +309,14 @@ generate_messages(DEPENDENCIES
   sensor_msgs
   )
 
+set(LIBRARIES
+  mrs_msgs
+  )
+
+
 catkin_package(
   CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime sensor_msgs
-  LIBRARIES mrs_msgs
+  LIBRARIES ${LIBRARIES}
   )
 
 include_directories(
@@ -313,4 +338,23 @@ add_custom_command(TARGET mrs_msgs
   PRE_BUILD
   WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
   COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh"
+  )
+
+## --------------------------------------------------------------
+## |                           Install                          |
+## --------------------------------------------------------------
+
+install(TARGETS ${LIBRARIES}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+  )
+
+install(DIRECTORY msg srv
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  )
+
+install(DIRECTORY ./
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  FILES_MATCHING PATTERN "*.xml"
   )

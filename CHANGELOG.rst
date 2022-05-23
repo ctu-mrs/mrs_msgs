@@ -2,6 +2,25 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.3 (2022-05-09)
+------------------
+* added uwb estimator type
+* typo fix in msg description
+* added ImageLabeled and ImageLabeledArray msgs
+* update cmake with ImageLabeled
+* nimbro test service
+* added constraints override
+* added install for msg and srv
+* + install in cmakelists
+* added nimbro test msg
+* added llcp msg
+* added tarot gimbal msg
+* update mrs_pcl_tools/PclToolsDiagnostics.msg
+* add mrs_pcl_tools/PclToolsDiagnostics.msg
+* added pixels_per_column, columns_per_frame and pixel_shift_by_row to OusterInfo message (`#5 <https://github.com/ctu-mrs/mrs_msgs/issues/5>`_)
+  Co-authored-by: vasek <uav25>
+* Contributors: Dan Hert, Matej Petrlik, Myralllka, Pavel Petracek, Tomas Baca, Václav Pritzl
+
 1.0.2 (2021-10-03)
 ------------------
 * add UInt16Stamped msg

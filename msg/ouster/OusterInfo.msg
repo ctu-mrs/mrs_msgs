@@ -9,3 +9,6 @@ float64 lidar_origin_to_beam_origin_mm
 float64[] imu_to_sensor_transform
 float64[] lidar_to_sensor_transform
 float64[] extrinsic
+uint32 pixels_per_column
+uint32 columns_per_frame
+int32[] pixel_shift_by_row
