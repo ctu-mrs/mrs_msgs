@@ -64,3 +64,6 @@ NodeCpuLoad node_cpu_loads
 bool flying_normally
 bool have_goal
 bool callbacks_enabled
+bool collision_avoidance_enabled
+bool avoiding_collision
+uint16 num_other_uavs
