@@ -66,4 +66,6 @@ bool have_goal
 bool callbacks_enabled
 bool collision_avoidance_enabled
 bool avoiding_collision
+bool automatic_start_can_takeoff
+
 uint16 num_other_uavs
