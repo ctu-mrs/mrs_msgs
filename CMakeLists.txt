@@ -29,6 +29,12 @@ add_message_files(DIRECTORY msg/landoff_tracker FILES
   LandoffDiagnostics.msg
   )
 
+# services for MRS_HW_MODULES
+add_service_files(DIRECTORY srv/mrs_hw_modules FILES
+
+  LedStripDriver.srv
+  )
+
 # services for MRS_MULTIMASTER
 add_service_files(DIRECTORY srv/multimaster FILES
 
