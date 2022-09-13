@@ -32,6 +32,9 @@ add_message_files(DIRECTORY msg/landoff_tracker FILES
 # services for MRS_HW_MODULES
 add_service_files(DIRECTORY srv/mrs_hw_modules FILES
 
+  BigDofecArm.srv
+  BigDofecLaunch.srv
+  BigDofecSetPWM.srv
   LedStripDriver.srv
   )
 
