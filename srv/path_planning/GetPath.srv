@@ -1,0 +1,7 @@
+mrs_msgs/Reference start
+mrs_msgs/Reference goal
+---
+bool success
+string message
+string frame_id
+mrs_msgs/Reference[] path

@@ -295,6 +295,12 @@ add_service_files(DIRECTORY srv/trajectory_generation FILES
   GetPathSrv.srv
   )
 
+# services for PATH_PLANNING
+add_service_files(DIRECTORY srv/path_planning FILES
+
+  GetPath.srv
+  )
+
 # pathfinder messages
 add_message_files(DIRECTORY msg/pathfinder FILES
   PathfinderDiagnostics.msg
