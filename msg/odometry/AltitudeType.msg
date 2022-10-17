@@ -8,8 +8,9 @@ uint8 ALOAMREP=6
 uint8 BARO=7
 uint8 RTK=8
 uint8 LIOSAM=9
+uint8 DUMMY=10
 
-uint8 TYPE_COUNT=10
+uint8 TYPE_COUNT=11
 
 string name
 uint8 type
