@@ -1,0 +1,5 @@
+uint16 launch_delay
+uint16 msecs_open
+---
+bool success
+string message

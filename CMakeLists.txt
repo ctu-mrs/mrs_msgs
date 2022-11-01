@@ -42,6 +42,7 @@ add_service_files(DIRECTORY srv/mrs_hw_modules FILES
   BigDofecLaunch.srv
   BigDofecSetPWM.srv
   BigDofecSetLeds.srv
+  BigDofecSalvo.srv
   LedStripDriver.srv
   )
 
