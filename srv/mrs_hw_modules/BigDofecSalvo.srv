@@ -1,0 +1,5 @@
+float64 launch_delay_secs
+uint16 msecs_open
+---
+bool success
+string message

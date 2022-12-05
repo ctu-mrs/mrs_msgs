@@ -1,0 +1,8 @@
+uint8 channel
+uint8 num_leds
+uint8 r
+uint8 g
+uint8 b
+---
+bool success
+string message

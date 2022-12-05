@@ -29,6 +29,23 @@ add_message_files(DIRECTORY msg/landoff_tracker FILES
   LandoffDiagnostics.msg
   )
 
+# messages for MRS_HW_MODULES
+add_message_files(DIRECTORY msg/mrs_hw_modules FILES
+
+  BigDofecStatus.msg
+  )
+
+# services for MRS_HW_MODULES
+add_service_files(DIRECTORY srv/mrs_hw_modules FILES
+
+  BigDofecArm.srv
+  BigDofecLaunch.srv
+  BigDofecSetPWM.srv
+  BigDofecSetLeds.srv
+  BigDofecSalvo.srv
+  LedStripDriver.srv
+  )
+
 # services for MRS_MULTIMASTER
 add_service_files(DIRECTORY srv/multimaster FILES
 
