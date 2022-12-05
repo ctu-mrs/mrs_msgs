@@ -306,6 +306,16 @@ add_message_files(DIRECTORY msg/radar FILES
   RadarData.msg
   )
 
+add_message_files(DIRECTORY msg/hw_api FILES
+
+  HwApiActuatorCmd.msg
+  HwApiAttitudeCmd.msg
+  HwApiAttitudeRateCmd.msg
+  HwApiControlGroupCmd.msg
+  HwApiDiagnostics.msg
+  HwApiTranslationCmd.msg
+  )
+
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES
 
