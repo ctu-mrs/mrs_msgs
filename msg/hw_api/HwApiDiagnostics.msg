@@ -1,7 +1,7 @@
-std_msgs/Time stamp
+time stamp
 
 # true if the interface is connected to the HW
-bool running
+bool connected
 
 # motors can be spinned
 bool armed

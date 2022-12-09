@@ -332,6 +332,7 @@ add_message_files(DIRECTORY msg/hw_api FILES
   HwApiDiagnostics.msg
   HwApiMode.msg
   HwApiTranslationCmd.msg
+  HwApiRcChannels.msg
   )
 
 ## Generate added messages and services with any dependencies listed here
