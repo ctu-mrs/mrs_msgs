@@ -1,4 +1,4 @@
-std_msgs/Time stamp
+time stamp
 
 # angular rates [rad] in the Front-Left-Up body frame
 geometry_msgs/Vector3 body_rate

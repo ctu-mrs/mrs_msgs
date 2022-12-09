@@ -1,4 +1,4 @@
-std_msgs/Time stamp
+time stamp
 
 # 4DOF control vector, in the Front-Left-Up body frame
 # roll [-1, 1]
