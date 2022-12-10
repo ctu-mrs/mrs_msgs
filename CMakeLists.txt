@@ -331,7 +331,9 @@ add_message_files(DIRECTORY msg/hw_api FILES
   HwApiControlGroupCmd.msg
   HwApiDiagnostics.msg
   HwApiMode.msg
-  HwApiTranslationCmd.msg
+  HwApiPositionCmd.msg
+  HwApiVelocityCmd.msg
+  HwApiAccelerationCmd.msg
   HwApiRcChannels.msg
   )
 

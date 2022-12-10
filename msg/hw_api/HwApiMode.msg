@@ -6,11 +6,13 @@ bool accepts_actuator_cmd
 bool accepts_attitude_cmd
 bool accepts_attitude_rate_cmd
 bool accepts_control_group_cmd
-bool accepts_translation_cmd
+bool accepts_position_cmd
+bool accepts_velocity_cmd
+bool accepts_acceleration_cmd
 
 bool produces_gnss
 bool produces_imu
-bool produces_range
+bool produces_distance_sensor
 bool produces_altitude
 bool produces_magnetometer_heading
 bool produces_odometry_local
