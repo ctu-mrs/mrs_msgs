@@ -335,6 +335,7 @@ add_message_files(DIRECTORY msg/hw_api FILES
   HwApiVelocityCmd.msg
   HwApiAccelerationCmd.msg
   HwApiRcChannels.msg
+  HwApiAltitude.msg
   )
 
 ## Generate added messages and services with any dependencies listed here
