@@ -8,3 +8,6 @@ bool armed
 
 # under the control of the companion computer
 bool offboard
+
+# string describing a particular mode
+string mode
