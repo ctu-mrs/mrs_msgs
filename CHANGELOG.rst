@@ -2,8 +2,8 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4 (2023-01-20)
+------------------
 * dofec srv update
 * adding dofec salvo msg
 * updated big dofec messages
