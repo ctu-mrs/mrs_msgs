@@ -97,7 +97,7 @@ add_message_files(DIRECTORY msg/ouster FILES
 add_message_files(DIRECTORY msg/uav_managers FILES
 
   TrackerCommand.msg
-  AttitudeCommand.msg
+  ControllerDiagnostics.msg
   TrackerStatus.msg
   ControllerStatus.msg
   EulerAngles.msg
