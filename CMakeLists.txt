@@ -85,6 +85,7 @@ add_message_files(DIRECTORY msg/odometry FILES
   HeadingType.msg
   UavState.msg
   AloamgarmDebug.msg
+  MrsOdometryInput.msg
   )
 
 # messages for OUSTER
@@ -332,8 +333,10 @@ add_message_files(DIRECTORY msg/hw_api FILES
   HwApiDiagnostics.msg
   HwApiMode.msg
   HwApiPositionCmd.msg
-  HwApiVelocityCmd.msg
-  HwApiAccelerationCmd.msg
+  HwApiVelocityHdgCmd.msg
+  HwApiVelocityHdgRateCmd.msg
+  HwApiAccelerationHdgCmd.msg
+  HwApiAccelerationHdgRateCmd.msg
   HwApiRcChannels.msg
   HwApiAltitude.msg
   )

@@ -6,9 +6,11 @@ bool accepts_actuator_cmd
 bool accepts_attitude_cmd
 bool accepts_attitude_rate_cmd
 bool accepts_control_group_cmd
+bool accepts_acceleration_hdg_rate_cmd
+bool accepts_acceleration_hdg_cmd
+bool accepts_velocity_hdg_rate_cmd
+bool accepts_velocity_hdg_cmd
 bool accepts_position_cmd
-bool accepts_velocity_cmd
-bool accepts_acceleration_cmd
 
 bool produces_gnss
 bool produces_imu
@@ -18,3 +20,4 @@ bool produces_magnetometer_heading
 bool produces_odometry_local
 bool produces_orientation
 bool produces_rc_channels
+bool produces_battery_state
