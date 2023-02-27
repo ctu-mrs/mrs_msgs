@@ -330,8 +330,8 @@ add_message_files(DIRECTORY msg/hw_api FILES
   HwApiAttitudeCmd.msg
   HwApiAttitudeRateCmd.msg
   HwApiControlGroupCmd.msg
-  HwApiDiagnostics.msg
-  HwApiMode.msg
+  HwApiStatus.msg
+  HwApiCapabilities.msg
   HwApiPositionCmd.msg
   HwApiVelocityHdgCmd.msg
   HwApiVelocityHdgRateCmd.msg

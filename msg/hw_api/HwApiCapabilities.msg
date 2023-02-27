@@ -17,7 +17,10 @@ bool produces_imu
 bool produces_distance_sensor
 bool produces_altitude
 bool produces_magnetometer_heading
-bool produces_odometry_local
-bool produces_orientation
 bool produces_rc_channels
 bool produces_battery_state
+bool produces_position
+bool produces_orientation
+bool produces_velocity
+bool produces_angular_velocity
+bool produces_odometry
