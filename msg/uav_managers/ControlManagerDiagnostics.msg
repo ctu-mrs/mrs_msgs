@@ -4,7 +4,7 @@ time stamp
 string uav_name
 
 # If the motors are enabled, in other words, if the output of the ControlManager can pass out.
-bool motors
+bool output_enabled
 
 # True if the UAV is flying and no special case occurred (emergency land, failsafe, etc.).
 bool flying_normally
