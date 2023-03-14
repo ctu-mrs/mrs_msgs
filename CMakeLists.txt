@@ -61,33 +61,6 @@ add_service_files(DIRECTORY srv/gazebo_ros_interface FILES
   GazeboDeleteModel.srv
   )
 
-# messages for MRS_ODOMETRY
-add_message_files(DIRECTORY msg/odometry FILES
-
-  GpsData.msg
-  RtkGps.msg
-  RtkFixType.msg
-  Float64ArrayStamped.msg
-  Float64MultiArrayStamped.msg
-  Float64Stamped.msg
-  ModelState.msg
-  Fusing.msg
-  EstimatorType.msg
-  OdometryDiag.msg
-  EspOdometry.msg
-  EstimatedState.msg
-  LkfStates.msg
-  Altitude.msg
-  AltitudeStateNames.msg
-  AltitudeType.msg
-  Heading.msg
-  HeadingStateNames.msg
-  HeadingType.msg
-  UavState.msg
-  AloamgarmDebug.msg
-  MrsOdometryInput.msg
-  )
-
 # messages for OUSTER
 add_message_files(DIRECTORY msg/ouster FILES
 
@@ -118,6 +91,10 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   ConstraintManagerDiagnostics.msg
   GainManagerDiagnostics.msg
   UavManagerDiagnostics.msg
+  EstimationDiagnostics.msg
+  EstimatorDiagnostics.msg
+  EstimatorOutput.msg
+  EstimatorCorrection.msg
   )
 
 # messages for the UAV_STATUS
@@ -227,15 +204,6 @@ add_message_files(DIRECTORY msg/parachute FILES
 add_message_files(DIRECTORY msg/profiler FILES
 
   ProfilerUpdate.msg
-  )
-
-# services for the MRS_ODOMETRY
-add_service_files(DIRECTORY srv/odometry FILES
-
-  ChangeEstimator.srv
-  ChangeHdgEstimator.srv
-  ChangeAltEstimator.srv
-  OffsetOdom.srv
   )
 
 # messages for the MRS_BUMPER
