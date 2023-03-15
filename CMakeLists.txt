@@ -85,7 +85,6 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   PathReference.msg
   ReferenceList.msg
   ReferenceStamped.msg
-  Float64.msg
   DynamicsConstraints.msg
   ControlError.msg
   ConstraintManagerDiagnostics.msg
@@ -94,7 +93,9 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   EstimationDiagnostics.msg
   EstimatorDiagnostics.msg
   EstimatorOutput.msg
+  EstimatorInput.msg
   EstimatorCorrection.msg
+  UavState.msg
   )
 
 # messages for the UAV_STATUS
@@ -142,7 +143,6 @@ add_message_files(DIRECTORY msg/gnss FILES
   Gpgsv.msg
   Gpvtg.msg
   Gprmc.msg
-  StringStamped.msg
   GPSFix.msg
   GpsStatus.msg
   RangeInformation.msg
@@ -152,6 +152,9 @@ add_message_files(DIRECTORY msg/gnss FILES
   Time.msg
   TrackstatChannel.msg
   Trackstat.msg
+  RtkGps.msg
+  RtkFixType.msg
+  GpsData.msg
   )
 
 # services for UAV_MANAGERS
@@ -244,6 +247,11 @@ add_message_files(DIRECTORY msg/general FILES
   NimbroTest.msg
   ImageLabeled.msg
   ImageLabeledArray.msg
+  Float64.msg
+  Float64Stamped.msg
+  Float64ArrayStamped.msg
+  Float64MultiArrayStamped.msg
+  StringStamped.msg
   )
 
 # general services
