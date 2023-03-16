@@ -12,6 +12,9 @@ bool flying_normally
 # True if under the "RC Joystick" mode
 bool rc_mode
 
+# The recommended (but not lower than) desired rate of incoming UAV State
+float64 desired_uav_state_rate
+
 # The name of the currently active tracker, as defined in the trackers.yaml in the "mrs_uav_manager" package.
 string active_tracker
 
