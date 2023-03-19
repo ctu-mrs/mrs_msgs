@@ -12,7 +12,9 @@ bool accepts_velocity_hdg_rate_cmd
 bool accepts_velocity_hdg_cmd
 bool accepts_position_cmd
 
+bool produces_ground_truth
 bool produces_gnss
+bool produces_rtk
 bool produces_imu
 bool produces_distance_sensor
 bool produces_altitude
