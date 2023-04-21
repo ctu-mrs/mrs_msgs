@@ -1,0 +1,5 @@
+uint16 servo1_val
+uint16 servo2_val
+---
+bool success
+string message
