@@ -1,0 +1,10 @@
+bool enable
+uint16 pwm_1
+uint16 pwm_2
+uint16 pwm_3
+uint16 pwm_4
+uint16 pwm_5
+uint16 pwm_6
+---
+bool success
+string message
