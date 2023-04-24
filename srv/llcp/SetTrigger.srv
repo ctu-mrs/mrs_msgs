@@ -1,0 +1,5 @@
+bool trigger
+uint8 trigger_num
+---
+bool success
+string message

@@ -2,6 +2,18 @@
 Changelog for package mrs_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.4 (2023-01-20)
+------------------
+* dofec srv update
+* adding dofec salvo msg
+* updated big dofec messages
+* adding messages for big dofec board
+* adding led strip driver mrs module service
+* adding radar msg and updated status msg
+* added collison avoidance info
+* new RTK messages
+* Contributors: Dan Hert, Tomas Baca
+
 1.0.3 (2022-05-09)
 ------------------
 * added uwb estimator type

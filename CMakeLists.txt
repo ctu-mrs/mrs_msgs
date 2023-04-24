@@ -35,6 +35,13 @@ add_message_files(DIRECTORY msg/mrs_hw_modules FILES
   BigDofecStatus.msg
   )
 
+# services for LLCP
+add_service_files(DIRECTORY srv/llcp FILES
+
+  SetServo.srv
+  SetTrigger.srv
+  )
+
 # services for MRS_HW_MODULES
 add_service_files(DIRECTORY srv/mrs_hw_modules FILES
 
