@@ -1,7 +1,7 @@
 std_msgs/Header header
 
 string current_sm_state
-float64 max_flight_altitude_agl
+float64 max_flight_z
 
 string current_state_estimator
 string[] running_state_estimators
