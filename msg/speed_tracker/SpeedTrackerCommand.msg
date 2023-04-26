@@ -10,8 +10,8 @@ geometry_msgs/Vector3 acceleration
 # desired force [N], optional
 geometry_msgs/Vector3 force
 
-# height above ground, optional
-float64 height
+# z coordinate
+float64 z
 
 # desired heading and its rate, optional
 # heading is "the azimuth of the body-x axis of the drone, a.k.a, the aircraft's front"
@@ -22,6 +22,6 @@ float64 heading_rate
 bool use_velocity
 bool use_acceleration
 bool use_force
-bool use_height
+bool use_z
 bool use_heading
 bool use_heading_rate
