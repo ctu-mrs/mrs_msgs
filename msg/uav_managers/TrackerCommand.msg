@@ -18,6 +18,9 @@ geometry_msgs/Vector3 jerk
 # The desired snap.
 geometry_msgs/Vector3 snap
 
+# all-state future prediction
+mrs_msgs/MpcPredictionFullState full_state_prediction
+
 # The desired orientation and attitude rate.
 # It is mutually exclusive to heading+heading_rate.
 geometry_msgs/Quaternion orientation
@@ -63,3 +66,4 @@ uint8 use_heading_acceleration
 uint8 use_heading_jerk
 uint8 use_orientation
 uint8 use_throttle
+uint8 use_full_state_prediction
