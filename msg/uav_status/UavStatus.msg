@@ -48,6 +48,8 @@ string mavros_mode
 bool mavros_armed
 bool mavros_gps_ok
 float32 mavros_gps_qual
+float32 mag_norm_hz
+float32 mag_norm
 float32 battery_volt
 float32 battery_curr
 float32 battery_wh_drained
