@@ -342,15 +342,17 @@ set(LIBRARIES
   )
 
 catkin_package(
-  CATKIN_DEPENDS ${CATKIN_DEPENDENCIES}
   LIBRARIES ${LIBRARIES}
+  CATKIN_DEPENDS ${CATKIN_DEPENDENCIES}
   )
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
   )
 
-add_library(MrsMsgs_Main src/main.cpp)
+add_library(MrsMsgs_Main
+  src/main.cpp
+  )
 
 add_dependencies(MrsMsgs_Main
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
