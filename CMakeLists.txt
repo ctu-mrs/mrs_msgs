@@ -1,17 +1,22 @@
-cmake_minimum_required(VERSION 3.1.2)
+cmake_minimum_required(VERSION 3.5)
 project(mrs_msgs)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(catkin REQUIRED COMPONENTS
+set(CATKIN_DEPENDENCIES
+  cmake_modules
+  geometry_msgs
   message_generation
+  message_runtime
   roscpp
+  sensor_msgs
   std_msgs
   std_srvs
-  sensor_msgs
-  geometry_msgs
-  cmake_modules
+  )
+
+find_package(catkin REQUIRED COMPONENTS
+  ${CATKIN_DEPENDENCIES}
   )
 
 # messages for MPC_TRACKER
@@ -333,12 +338,11 @@ generate_messages(DEPENDENCIES
   )
 
 set(LIBRARIES
-  mrs_msgs
+  MrsMsgs_Main
   )
 
-
 catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime sensor_msgs
+  CATKIN_DEPENDS ${CATKIN_DEPENDENCIES}
   LIBRARIES ${LIBRARIES}
   )
 
@@ -346,18 +350,18 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
   )
 
-add_library(mrs_msgs src/main.cpp)
+add_library(MrsMsgs_Main src/main.cpp)
 
-add_dependencies(mrs_msgs
+add_dependencies(MrsMsgs_Main
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
   ${catkin_EXPORTED_TARGETS}
   )
 
-target_link_libraries(mrs_msgs
+target_link_libraries(MrsMsgs_Main
   ${catkin_LIBRARIES}
   )
 
-add_custom_command(TARGET mrs_msgs
+add_custom_command(TARGET MrsMsgs_Main
   PRE_BUILD
   WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
   COMMAND bash -c "${CMAKE_CURRENT_SOURCE_DIR}/link_msg_files.sh"
