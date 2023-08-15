@@ -26,3 +26,4 @@ bool produces_orientation
 bool produces_velocity
 bool produces_angular_velocity
 bool produces_odometry
+bool produces_magnetic_field
