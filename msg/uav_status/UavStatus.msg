@@ -46,8 +46,8 @@ float32 hw_api_state_hz
 float32 hw_api_cmd_hz
 string hw_api_mode
 bool hw_api_armed
-bool hw_api_gps_ok
-float32 hw_api_gps_qual
+bool hw_api_gnss_ok
+float32 hw_api_gnss_qual
 float32 mag_norm_hz
 float32 mag_norm
 float32 battery_volt
