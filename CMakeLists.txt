@@ -28,10 +28,30 @@ add_message_files(DIRECTORY msg/mpc_tracker FILES
   MpcTrackerDiagnostics.msg
   )
 
+# messages for GIMBAL
+add_message_files(DIRECTORY msg/gimbal FILES
+
+  GimbalState.msg
+  )
+
+# messages for GNSS
+add_message_files(DIRECTORY msg/gnss FILES
+
+  RtkFixType.msg
+  RtkGps.msg
+  GpsData.msg
+  )
+
 # messages for LANDOFF_TRACKER
 add_message_files(DIRECTORY msg/landoff_tracker FILES
 
   LandoffDiagnostics.msg
+  )
+
+# messages for GazeboSimulation
+add_message_files(DIRECTORY msg/gazebo_simulation FILES
+
+  GazeboSpawnerDiagnostics.msg
   )
 
 # messages for the UAV_MANAGERS
