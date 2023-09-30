@@ -1,4 +1,4 @@
-Time stamp
+std_msgs/Time stamp
 
 # The name of the controller (implementation-wise).
 # Beware, multiple instances of the same controller can be running.

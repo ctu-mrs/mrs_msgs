@@ -1,5 +1,0 @@
-uint8 channel
-uint16 msecs_open
----
-bool success
-string message

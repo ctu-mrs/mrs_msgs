@@ -1,6 +1,0 @@
-std_msgs/Header header
-mrs_msgs/MavrosState state
-mrs_msgs/HeartbeatDiagnostics heartbeat
-mrs_msgs/SystemDiagnostics system
-mrs_msgs/GpsDiagnostics gps
-mrs_msgs/BatteryDiagnostics battery
