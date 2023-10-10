@@ -1,6 +1,0 @@
-uint8 output_a
-uint8 output_b
-bool output_vbat
----
-bool success
-string message

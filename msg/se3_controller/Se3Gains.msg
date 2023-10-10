@@ -18,9 +18,6 @@ float64 kvz
 # Vertical acceleration gain.
 float64 kaz
 
-# Roll+pitch attitude gain.
-float64 kqxy
-
 # Body disturbance gain.
 float64 kibxy
 
@@ -33,8 +30,11 @@ float64 kiwxy
 # World disturbance estimator limit  ([N]).
 float64 kiwxy_lim
 
+# Roll+pitch attitude gain.
+float64 kqrp
+
 # Yaw attitude gain.
-float64 kqz
+float64 kqy
 
 # Mass estimator gain.
 float64 km

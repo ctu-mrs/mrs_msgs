@@ -39,15 +39,15 @@ float32 free_ram
 float32 total_ram
 int32 free_hdd
 
-float32 mavros_hz
-int16 mavros_color
-float32 mavros_battery_hz
-float32 mavros_state_hz
-float32 mavros_cmd_hz
-string mavros_mode
-bool mavros_armed
-bool mavros_gps_ok
-float32 mavros_gps_qual
+float32 hw_api_hz
+int16 hw_api_color
+float32 hw_api_battery_hz
+float32 hw_api_state_hz
+float32 hw_api_cmd_hz
+string hw_api_mode
+bool hw_api_armed
+bool hw_api_gnss_ok
+float32 hw_api_gnss_qual
 float32 mag_norm_hz
 float32 mag_norm
 float32 battery_volt
