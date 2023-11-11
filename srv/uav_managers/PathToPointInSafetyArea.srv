@@ -1,0 +1,5 @@
+mrs_msgs/ReferenceStamped start
+mrs_msgs/ReferenceStamped end
+---
+bool success
+string message

@@ -123,6 +123,7 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   ValidateReference.srv
   VelocityReferenceSrv.srv
   VelocityReferenceStampedSrv.srv
+  PathToPointInSafetyArea.srv
   )
 
 # messages for the PROFILER
