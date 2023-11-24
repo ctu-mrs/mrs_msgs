@@ -56,7 +56,6 @@ float32 mass_set
 
 CustomTopic[] custom_topics
 string[] custom_string_outputs
-string[] custom_services
 
 NodeCpuLoad node_cpu_loads
 
