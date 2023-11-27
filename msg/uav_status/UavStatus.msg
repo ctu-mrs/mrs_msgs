@@ -21,6 +21,10 @@ float32 odom_z
 float32 odom_hdg
 string odom_frame
 string[] odom_estimators
+string horizontal_estimator
+string vertical_estimator
+string heading_estimator
+string agl_estimator
 float32 max_flight_z
 
 float32 cmd_x
@@ -60,7 +64,9 @@ string[] custom_string_outputs
 NodeCpuLoad node_cpu_loads
 
 bool flying_normally
+bool rc_mode
 bool have_goal
+bool tracking_trajectory
 bool callbacks_enabled
 bool collision_avoidance_enabled
 bool avoiding_collision
