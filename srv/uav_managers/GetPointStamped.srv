@@ -1,0 +1,4 @@
+---
+geometry_msgs/PointStamped result
+bool success
+string message
