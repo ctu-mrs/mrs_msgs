@@ -163,9 +163,9 @@ add_message_files(DIRECTORY msg/general FILES
   Track.msg
   TrackStamped.msg
   )
-
-# general services
-add_service_files(DIRECTORY srv/general FILES
+  
+  # general services
+  add_service_files(DIRECTORY srv/general FILES
 
   Float64Srv.srv
   Float64StampedSrv.srv
@@ -174,6 +174,7 @@ add_service_files(DIRECTORY srv/general FILES
   String.srv
   Vec1.srv
   Vec4.srv
+  GetBool.srv
   )
 
 # services for TRAJECTORY_GENERATION
