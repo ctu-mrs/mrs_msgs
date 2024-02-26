@@ -57,7 +57,6 @@ add_message_files(DIRECTORY msg/gazebo_simulation FILES
 # messages for the UAV_MANAGERS
 add_message_files(DIRECTORY msg/uav_managers FILES
 
-  BumperStatus.msg
   ConstraintManagerDiagnostics.msg
   ControlError.msg
   ControllerDiagnostics.msg
@@ -110,7 +109,6 @@ add_message_files(DIRECTORY msg/trajectory_generation FILES
 # services for UAV_MANAGERS
 add_service_files(DIRECTORY srv/uav_managers FILES
 
-  BumperParamsSrv.srv
   ConstraintsOverride.srv
   DynamicsConstraintsSrv.srv
   ReferenceSrv.srv
@@ -257,9 +255,4 @@ install(TARGETS ${LIBRARIES}
 
 install(DIRECTORY msg srv
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  )
-
-install(DIRECTORY
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  FILES_MATCHING PATTERN "*.xml"
   )
