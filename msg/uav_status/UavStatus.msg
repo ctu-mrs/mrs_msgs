@@ -1,7 +1,6 @@
 Header header
 
 string uav_name
-string nato_name
 string uav_type
 string uav_mass
 
@@ -11,7 +10,6 @@ string[] controllers
 string[] gains
 string[] trackers
 string[] constraints
-string fly_state
 bool null_tracker
 uint32 secs_flown
 
@@ -22,9 +20,12 @@ float32 odom_y
 float32 odom_z
 float32 odom_hdg
 string odom_frame
-string[] odom_estimators_hori
-string[] odom_estimators_vert
-string[] odom_estimators_hdg
+string[] odom_estimators
+string horizontal_estimator
+string vertical_estimator
+string heading_estimator
+string agl_estimator
+float32 max_flight_z
 
 float32 cmd_x
 float32 cmd_y
@@ -59,12 +60,13 @@ float32 mass_set
 
 CustomTopic[] custom_topics
 string[] custom_string_outputs
-string[] custom_services
 
 NodeCpuLoad node_cpu_loads
 
 bool flying_normally
+bool rc_mode
 bool have_goal
+bool tracking_trajectory
 bool callbacks_enabled
 bool collision_avoidance_enabled
 bool avoiding_collision
