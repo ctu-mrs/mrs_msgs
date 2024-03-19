@@ -12,13 +12,13 @@ string uav_mass
 float32 control_manager_diag_hz
 # Display color (for TUI visualization purposes)
 int16 control_manager_diag_color
-# A list of the available control algorithms
+# A list of the available control algorithms, the first element is the active controller
 string[] controllers
-# A list of the available control gain presets for the current controller
+# A list of the available control gain presets for the current controller, the first element is the active preset
 string[] gains
-# A list of the available trajectory tracking (pre-shaping) algorithms
+# A list of the available trajectory tracking (pre-shaping) algorithms, the first element is the active algorithm
 string[] trackers
-# A list of the available dynamic constraint presets for the current tracker
+# A list of the available dynamic constraint presets for the current tracker, the first element is the active preset
 string[] constraints
 # True if the null (no-output) tracker is active
 bool null_tracker
@@ -39,7 +39,7 @@ float32 odom_z
 float32 odom_hdg
 # Name of the current estimation coordinate frame
 string odom_frame
-# A list of the available ego-state estimation sources
+# A list of the available ego-state estimation sources, the first element is the active source
 string[] odom_estimators
 # Name of the current source used for estimation of the UAV's horizontal position 
 string horizontal_estimator
@@ -96,7 +96,7 @@ bool hw_api_gnss_ok
 float32 hw_api_gnss_qual
 # Frequency of receiving the magnetic field norm
 float32 mag_norm_hz
-# Norm of the  magnetic field (in unknown units)
+# Norm of the  magnetic field (in Gauss, 10Gauss = 1mT)
 float32 mag_norm
 # Battery voltage in volts
 float32 battery_volt
