@@ -1,0 +1,4 @@
+# The first polygon is the border of the safety zone, the rest are obstacles
+float64 height
+---
+geometry_msgs/Polygon[] safety_zone
