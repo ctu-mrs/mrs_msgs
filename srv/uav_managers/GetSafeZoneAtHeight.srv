@@ -1,4 +1,6 @@
 # The first polygon is the border of the safety zone, the rest are obstacles
+std_msgs/Header header
 float64 height
 ---
+std_msgs/Header header
 geometry_msgs/Polygon[] safety_zone
