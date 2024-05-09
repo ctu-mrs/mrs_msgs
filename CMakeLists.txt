@@ -19,6 +19,11 @@ find_package(catkin REQUIRED COMPONENTS
   ${CATKIN_DEPENDENCIES}
   )
 
+# messages for ROBOT_DIAGNOSTICS
+add_message_files(DIRECTORY msg/robot_diagnostics FILES
+  UavDiagnostics.msg
+  )
+
 # messages for MPC_TRACKER
 add_message_files(DIRECTORY msg/mpc_tracker FILES
 
