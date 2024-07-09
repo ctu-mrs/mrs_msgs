@@ -18,6 +18,9 @@ float64 max_deviation_from_path
 # when true, the by-default-ON prepanding of the current state is disabled
 bool dont_prepend_current_state
 
+# when true, the heading in the resulting trajectory will be tangential along the trajectory
+bool override_heading_atan2
+
 bool override_constraints
 float64 override_max_velocity_horizontal
 float64 override_max_acceleration_horizontal
