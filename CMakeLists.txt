@@ -158,6 +158,8 @@ add_message_files(DIRECTORY msg/general FILES
   ImageLabeled.msg
   PoseWithCovarianceArrayStamped.msg
   PoseWithCovarianceIdentified.msg
+  RangeWithCovarianceArrayStamped.msg
+  RangeWithCovarianceIdentified.msg
   Sphere.msg
   StringStamped.msg
   TrackArrayStamped.msg
