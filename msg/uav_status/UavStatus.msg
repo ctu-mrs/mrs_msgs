@@ -94,7 +94,15 @@ bool hw_api_armed
 bool hw_api_gnss_ok
 # A measure of the GPS position quality
 float32 hw_api_gnss_qual
+<<<<<<< HEAD
 # Frequency of receiving the magnetic field norm
+=======
+uint8 hw_api_gnss_fix_type
+uint8 hw_api_gnss_num_sats
+float32 hw_api_gnss_pos_acc
+float32 hw_api_gnss_status_hz
+
+>>>>>>> devel
 float32 mag_norm_hz
 # Norm of the  magnetic field (in Gauss, 10Gauss = 1mT)
 float32 mag_norm
