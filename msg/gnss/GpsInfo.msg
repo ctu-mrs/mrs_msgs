@@ -1,3 +1,4 @@
+time stamp
 ## GPS_FIX_TYPE enum
 
 uint8 GPS_FIX_TYPE_NO_GPS     = 0    # No GPS connected

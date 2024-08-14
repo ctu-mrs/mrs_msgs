@@ -94,16 +94,30 @@ bool hw_api_armed
 bool hw_api_gnss_ok
 # A measure of the GPS position quality
 float32 hw_api_gnss_qual
-<<<<<<< HEAD
 # Frequency of receiving the magnetic field norm
-=======
+float32 mag_norm_hz
+
+# Gnss fix type
+# 0 -> No GPS connected
+# 1 -> No position information, GPS is connected
+# 2 -> 2D position
+# 3 -> 3D position
+# 4 -> DGPS/SBAS aided 3D position
+# 5 -> TK float, 3D position
+# 6 -> TK Fixed, 3D position
+# 7 -> Static fixed, typically used for base stations
+# 8 -> PPP, 3D position
 uint8 hw_api_gnss_fix_type
+
+# Number of satellites used for gnss solution
 uint8 hw_api_gnss_num_sats
+
+# Estimated accuracy of the gnss solution (in meters)
 float32 hw_api_gnss_pos_acc
+
+# Rate of the gnss status message
 float32 hw_api_gnss_status_hz
 
->>>>>>> devel
-float32 mag_norm_hz
 # Norm of the  magnetic field (in Gauss, 10Gauss = 1mT)
 float32 mag_norm
 # Battery voltage in volts
