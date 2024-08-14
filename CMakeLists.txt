@@ -40,6 +40,7 @@ add_message_files(DIRECTORY msg/gnss FILES
   RtkFixType.msg
   RtkGps.msg
   GpsData.msg
+  GpsStatus.msg
   )
 
 # messages for LANDOFF_TRACKER

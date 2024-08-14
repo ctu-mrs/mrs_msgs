@@ -49,6 +49,11 @@ string hw_api_mode
 bool hw_api_armed
 bool hw_api_gnss_ok
 float32 hw_api_gnss_qual
+uint8 hw_api_gnss_fix_type
+uint8 hw_api_gnss_num_sats
+float32 hw_api_gnss_pos_acc
+float32 hw_api_gnss_status_hz
+
 float32 mag_norm_hz
 float32 mag_norm
 float32 battery_volt

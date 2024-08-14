@@ -14,6 +14,7 @@ bool accepts_position_cmd
 
 bool produces_ground_truth
 bool produces_gnss
+bool produces_gnss_status
 bool produces_rtk
 bool produces_imu
 bool produces_distance_sensor
