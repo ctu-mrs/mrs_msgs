@@ -1,0 +1,79 @@
+name: ros_package_build
+
+on:
+
+  push:
+    branches: [ filip ]
+
+    paths-ignore:
+      - '**/README.md'
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  build_arm32:
+
+    runs-on: ubuntu-20.04
+
+    env:
+      PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: 'recursive'
+
+      - name: Checkout CI scripts
+        uses: actions/checkout@v3
+        with:
+          repository: ctu-mrs/ci_scripts
+          ref: master
+          path: .ci_scripts
+          token: ${{ secrets.PUSH_TOKEN }}
+
+      - name: Update submodules
+        run: |
+           sudo pip3 install -U gitman
+           [[ -e .gitman.yml || -e .gitman.yaml ]] && [[ ! -e .gitman_ignore ]] && gitman install || echo "no gitman modules to install"
+
+      - uses: ctu-mrs/run-on-arch-action@master
+        name: Build artifact
+
+        id: build
+
+        with:
+          arch: arm/v7
+          distro: noetic
+
+          githubToken: ${{ github.token }}
+
+          # Create an artifacts directory
+          setup: |
+            mkdir -p "/tmp/artifacts"
+            mkdir -p "/tmp/repository"
+
+          # Mount the artifacts directory as /artifacts in the container
+          dockerRunArgs: |
+            --volume "$PWD:/tmp/repository"
+            --volume "/tmp/artifacts:/tmp/artifacts"
+
+          # The shell to run commands with in the container
+          shell: /bin/sh
+
+          install: |
+            apt-get update -q -y
+            apt-get upgrade -q -y
+
+          # Produce a binary artifact and place it in the mounted volume
+          run: |
+            git config --global --add safe.directory "*"
+            /tmp/repository/.ci_scripts/package_build/build_package.sh /tmp/repository /tmp/artifacts
+
+      - name: Deploy
+        run: .ci_scripts/package_build/push_to_ppa.sh unstable /tmp/artifacts
