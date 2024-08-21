@@ -49,7 +49,7 @@ jobs:
 
         with:
           arch: armv7
-          distro: noetic
+          distro: ubuntu:20.04
 
           githubToken: ${{ github.token }}
 
