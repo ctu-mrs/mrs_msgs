@@ -69,7 +69,7 @@ jobs:
           install: |
             apt-get update -q -y
             apt-get upgrade -q -y
-            apt-get install -y git
+            apt-get install -y sudo git curl wget lsb-release
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
