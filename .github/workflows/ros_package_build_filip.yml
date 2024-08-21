@@ -48,7 +48,7 @@ jobs:
         id: build
 
         with:
-          arch: arm/v7
+          arch: armv7
           distro: noetic
 
           githubToken: ${{ github.token }}
