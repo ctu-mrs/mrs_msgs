@@ -70,7 +70,7 @@ jobs:
             apt-get update -q -y
             apt-get upgrade -q -y
             apt-get install -y sudo git curl wget lsb-release ca-certificates
-            sudo update-ca-certificates --fresh
+            update-ca-certificates --fresh
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
