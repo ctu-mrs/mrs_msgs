@@ -70,11 +70,13 @@ jobs:
             apt-get update -q -y
             apt-get upgrade -q -y
             apt-get install -y sudo git curl wget lsb-release ca-certificates
+            sudo update-ca-certificates --fresh
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
             git config --global --add safe.directory "*"
             /tmp/repository/.ci_scripts/package_build/build_package.sh /tmp/repository /tmp/artifacts
+            export SSL_CERT_DIR=/etc/ssl/certs
 
       - name: Deploy
         run: .ci_scripts/package_build/push_to_ppa.sh unstable /tmp/artifacts
