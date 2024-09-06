@@ -122,6 +122,7 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   TrajectoryReferenceSrv.srv
   TransformPoseSrv.srv
   TransformReferenceSrv.srv
+  TransformReferenceListSrv.srv
   TransformVector3Srv.srv
   ValidateReferenceList.srv
   ValidateReference.srv
