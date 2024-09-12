@@ -77,7 +77,7 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   EulerAngles.msg
   GainManagerDiagnostics.msg
   PathReference.msg
-  ReferenceList.msg
+  ReferenceArray.msg
   Reference.msg
   ReferenceStamped.msg
   TrackerCommand.msg
@@ -122,9 +122,9 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   TrajectoryReferenceSrv.srv
   TransformPoseSrv.srv
   TransformReferenceSrv.srv
-  TransformReferenceListSrv.srv
+  TransformReferenceArraySrv.srv
   TransformVector3Srv.srv
-  ValidateReferenceList.srv
+  ValidateReferenceArray.srv
   ValidateReference.srv
   VelocityReferenceSrv.srv
   VelocityReferenceStampedSrv.srv
