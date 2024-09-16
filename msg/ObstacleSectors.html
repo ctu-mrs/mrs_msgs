@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>mrs_msgs/ObstacleSectors Documentation</title>
+<link type="text/css" rel="stylesheet" href="../msg-styles.css" />
+</head>
+<body>
+
+<div id="container">
+
+<h1 class="msg-title"><a href="../index-msg.html">mrs_msgs</a>/ObstacleSectors Message</h1>
+
+<div class="msg">
+
+<h2>File: <span class="filename">mrs_msgs/ObstacleSectors.msg</filename></h2>
+
+<h2>Raw Message Definition</h2>
+<div class="raw-msg">
+<font color="blue">#&nbsp;This&nbsp;message&nbsp;represents&nbsp;the&nbsp;output&nbsp;from&nbsp;the&nbsp;mrs_bumper&nbsp;package.</font><br/><font color="blue">#</font><br/><font color="blue">#&nbsp;The&nbsp;*sectors*&nbsp;variable&nbsp;contains&nbsp;information&nbsp;about&nbsp;obstacles&nbsp;in&nbsp;the&nbsp;horizontal,</font><br/><font color="blue">#&nbsp;bottom&nbsp;and&nbsp;up&nbsp;sectors.&nbsp;Horizontal&nbsp;sectors&nbsp;take&nbsp;up&nbsp;the&nbsp;first&nbsp;part&nbsp;of&nbsp;the&nbsp;array.</font><br/><font color="blue">#&nbsp;Bottom&nbsp;and&nbsp;up&nbsp;sectors&nbsp;are&nbsp;the&nbsp;second&nbsp;and&nbsp;first&nbsp;elements&nbsp;from&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;array:</font><br/><font color="blue">#&nbsp;sectors[0,&nbsp;1,&nbsp;...,&nbsp;n_horizontal_sectors-1]&nbsp;->&nbsp;horizontal&nbsp;sectors</font><br/><font color="blue">#&nbsp;sectors[n_horizontal_sectors]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->&nbsp;bottom&nbsp;sector</font><br/><font color="blue">#&nbsp;sectors[n_horizontal_sectors+1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->&nbsp;top&nbsp;sector</font><br/><font color="blue">#</font><br/><font color="blue">#&nbsp;The&nbsp;horizontal&nbsp;sectors&nbsp;are&nbsp;indexed&nbsp;counterclockwise,&nbsp;starting&nbsp;from&nbsp;the&nbsp;front&nbsp;facing</font><br/><font color="blue">#&nbsp;sector,&nbsp;relative&nbsp;to&nbsp;the&nbsp;MAV&nbsp;orientation&nbsp;(see&nbsp;picture&nbsp;below).&nbsp;The&nbsp;last&nbsp;two</font><br/><font color="blue">#&nbsp;elements&nbsp;of&nbsp;the&nbsp;*sectors*&nbsp;variable&nbsp;are&nbsp;the&nbsp;above&nbsp;and&nbsp;below&nbsp;sectors,&nbsp;respectively.</font><br/><font color="blue">#</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOP&nbsp;VIEW</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------</font><br/><font color="blue">#</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;(forward)</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;<--*&nbsp;z</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;\</font><br/><font color="blue">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</font><br/><br/><font color="blue">#&nbsp;Time&nbsp;at&nbsp;which&nbsp;the&nbsp;data&nbsp;in&nbsp;this&nbsp;message&nbsp;was&nbsp;generated,&nbsp;coordinate&nbsp;frame&nbsp;ID.</font><br/>std_msgs/Header&nbsp;header<br/><br/><font color="blue">#&nbsp;Number&nbsp;of&nbsp;horizontal&nbsp;bumper&nbsp;sectors&nbsp;(total&nbsp;number&nbsp;of&nbsp;sectors&nbsp;-2).</font><br/>uint32&nbsp;&nbsp;&nbsp;&nbsp;n_horizontal_sectors<br/><br/><font color="blue">#&nbsp;Vertical&nbsp;FOV&nbsp;of&nbsp;the&nbsp;individual&nbsp;horizontal&nbsp;sectors.</font><br/>float64&nbsp;&nbsp;&nbsp;sectors_vertical_fov<br/><br/><font color="blue">#&nbsp;Distance&nbsp;to&nbsp;closest&nbsp;detected&nbsp;obstacle&nbsp;in&nbsp;each&nbsp;sector.</font><br/>float64[]&nbsp;sectors<br/><br/><font color="blue">#&nbsp;Sensor&nbsp;ID&nbsp;of&nbsp;the&nbsp;sensor,&nbsp;which&nbsp;was&nbsp;used&nbsp;for&nbsp;obstacle&nbsp;detection&nbsp;in&nbsp;each&nbsp;sector.</font><br/>int8[]&nbsp;&nbsp;&nbsp;&nbsp;sector_sensors<br/><br/><font color="blue">##&nbsp;Obstacle&nbsp;distance&nbsp;special&nbsp;values.</font><br/>float64&nbsp;OBSTACLE_NOT_DETECTED=-1<br/>float64&nbsp;OBSTACLE_NO_DATA=-2<br/><br/><font color="blue">##&nbsp;Sensor&nbsp;types&nbsp;enum.</font><br/>int8&nbsp;SENSOR_NONE=-1<br/>int8&nbsp;SENSOR_DEPTH=0<br/>int8&nbsp;SENSOR_LIDAR1D=1<br/>int8&nbsp;SENSOR_LIDAR2D=2<br/>int8&nbsp;SENSOR_LIDAR3D=3<br/><br/>
+</div>
+
+<h2>Compact Message Definition</h2>
+<div class="fancy-msg">
+float64 OBSTACLE_NOT_DETECTED=-1<br />float64 OBSTACLE_NO_DATA=-2<br />int8 SENSOR_NONE=-1<br />int8 SENSOR_DEPTH=0<br />int8 SENSOR_LIDAR1D=1<br />int8 SENSOR_LIDAR2D=2<br />int8 SENSOR_LIDAR3D=3<br /><a href="http://docs.ros.org/noetic/api/std_msgs/html/msg/Header.html">std_msgs/Header</a> header<br />uint32 n_horizontal_sectors<br />float64 sectors_vertical_fov<br />float64[] sectors<br />int8[] sector_sensors<br />
+</div>
+
+
+</div>
+
+<p class="footer"><small><em>autogenerated on Mon, 16 Sep 2024 10:46:06</em></small></p>
+
+</div>
+
+</body>
+</html>

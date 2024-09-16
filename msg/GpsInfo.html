@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>mrs_msgs/GpsInfo Documentation</title>
+<link type="text/css" rel="stylesheet" href="../msg-styles.css" />
+</head>
+<body>
+
+<div id="container">
+
+<h1 class="msg-title"><a href="../index-msg.html">mrs_msgs</a>/GpsInfo Message</h1>
+
+<div class="msg">
+
+<h2>File: <span class="filename">mrs_msgs/GpsInfo.msg</filename></h2>
+
+<h2>Raw Message Definition</h2>
+<div class="raw-msg">
+time&nbsp;stamp<br/><font color="blue">##&nbsp;GPS_FIX_TYPE&nbsp;enum</font><br/><br/>uint8&nbsp;GPS_FIX_TYPE_NO_GPS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;No&nbsp;GPS&nbsp;connected</font><br/>uint8&nbsp;GPS_FIX_TYPE_NO_FIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;No&nbsp;position&nbsp;information,&nbsp;GPS&nbsp;is&nbsp;connected</font><br/>uint8&nbsp;GPS_FIX_TYPE_2D_FIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;2D&nbsp;position</font><br/>uint8&nbsp;GPS_FIX_TYPE_3D_FIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;3D&nbsp;position</font><br/>uint8&nbsp;GPS_FIX_TYPE_DGPS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;DGPS/SBAS&nbsp;aided&nbsp;3D&nbsp;position</font><br/>uint8&nbsp;GPS_FIX_TYPE_RTK_FLOATR&nbsp;=&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;TK&nbsp;float,&nbsp;3D&nbsp;position</font><br/>uint8&nbsp;GPS_FIX_TYPE_RTK_FIXEDR&nbsp;=&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;TK&nbsp;Fixed,&nbsp;3D&nbsp;position</font><br/>uint8&nbsp;GPS_FIX_TYPE_STATIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;Static&nbsp;fixed,&nbsp;typically&nbsp;used&nbsp;for&nbsp;base&nbsp;stations</font><br/>uint8&nbsp;GPS_FIX_TYPE_PPP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;PPP,&nbsp;3D&nbsp;position</font><br/>uint8&nbsp;fix_type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[GPS_FIX_TYPE]&nbsp;GPS&nbsp;fix&nbsp;type</font><br/><br/>float64&nbsp;lat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[deg]&nbsp;Latitude&nbsp;(WGS84,&nbsp;EGM96&nbsp;ellipsoid)</font><br/>float64&nbsp;lon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[deg]&nbsp;Longitude&nbsp;(WGS84,&nbsp;EGM96&nbsp;ellipsoid)</font><br/>float32&nbsp;alt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m]&nbsp;Altitude&nbsp;(MSL).&nbsp;Positive&nbsp;for&nbsp;up.&nbsp;Note&nbsp;that&nbsp;virtually&nbsp;all&nbsp;GPS&nbsp;modules&nbsp;provide&nbsp;the&nbsp;MSL&nbsp;altitude&nbsp;in&nbsp;addition&nbsp;to&nbsp;the&nbsp;WGS84&nbsp;altitude.</font><br/>uint16&nbsp;eph&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;GPS&nbsp;HDOP&nbsp;horizontal&nbsp;dilution&nbsp;of&nbsp;position&nbsp;(unitless).&nbsp;If&nbsp;unknown,&nbsp;set&nbsp;to:&nbsp;UINT16_MAX</font><br/>uint16&nbsp;epv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;GPS&nbsp;VDOP&nbsp;vertical&nbsp;dilution&nbsp;of&nbsp;position&nbsp;(unitless).&nbsp;If&nbsp;unknown,&nbsp;set&nbsp;to:&nbsp;UINT16_MAX</font><br/>float32&nbsp;vel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m/s]&nbsp;GPS&nbsp;ground&nbsp;speed.&nbsp;If&nbsp;unknown,&nbsp;set&nbsp;to:&nbsp;UINT16_MAX</font><br/>float32&nbsp;cog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[deg]&nbsp;Course&nbsp;over&nbsp;ground&nbsp;(NOT&nbsp;heading,&nbsp;but&nbsp;direction&nbsp;of&nbsp;movement),&nbsp;0.0..359.99&nbsp;degrees.&nbsp;If&nbsp;unknown,&nbsp;set&nbsp;to:&nbsp;UINT16_MAX</font><br/>uint8&nbsp;satellites_visible&nbsp;<font color="blue">#&nbsp;Number&nbsp;of&nbsp;satellites&nbsp;visible.&nbsp;If&nbsp;unknown,&nbsp;set&nbsp;to&nbsp;255</font><br/><br/>float32&nbsp;alt_ellipsoid&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m]&nbsp;Altitude&nbsp;(above&nbsp;WGS84,&nbsp;EGM96&nbsp;ellipsoid).&nbsp;Positive&nbsp;for&nbsp;up.</font><br/>float32&nbsp;h_acc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m]&nbsp;Position&nbsp;uncertainty.&nbsp;Positive&nbsp;for&nbsp;up.</font><br/>float32&nbsp;v_acc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m]&nbsp;Altitude&nbsp;uncertainty.&nbsp;Positive&nbsp;for&nbsp;up.</font><br/>float32&nbsp;vel_acc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m/s]&nbsp;Speed&nbsp;uncertainty.&nbsp;Positive&nbsp;for&nbsp;up.</font><br/>float32&nbsp;hdg_acc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[deg]&nbsp;Heading&nbsp;/&nbsp;track&nbsp;uncertainty</font><br/>float32&nbsp;yaw&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[deg]&nbsp;Yaw&nbsp;in&nbsp;earth&nbsp;frame&nbsp;from&nbsp;north.</font><br/><br/>uint8&nbsp;dgps_num_sats&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;Number&nbsp;of&nbsp;DGPS&nbsp;satellites</font><br/>float32&nbsp;dgps_age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[s]&nbsp;Age&nbsp;of&nbsp;DGPS&nbsp;info</font><br/>float32&nbsp;baseline_dist&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">#&nbsp;[m]&nbsp;distance&nbsp;to&nbsp;the&nbsp;basestation</font><br/><br/>
+</div>
+
+<h2>Compact Message Definition</h2>
+<div class="fancy-msg">
+uint8 GPS_FIX_TYPE_NO_GPS=0<br />uint8 GPS_FIX_TYPE_NO_FIX=1<br />uint8 GPS_FIX_TYPE_2D_FIX=2<br />uint8 GPS_FIX_TYPE_3D_FIX=3<br />uint8 GPS_FIX_TYPE_DGPS=4<br />uint8 GPS_FIX_TYPE_RTK_FLOATR=5<br />uint8 GPS_FIX_TYPE_RTK_FIXEDR=6<br />uint8 GPS_FIX_TYPE_STATIC=7<br />uint8 GPS_FIX_TYPE_PPP=8<br />time stamp<br />uint8 fix_type<br />float64 lat<br />float64 lon<br />float32 alt<br />uint16 eph<br />uint16 epv<br />float32 vel<br />float32 cog<br />uint8 satellites_visible<br />float32 alt_ellipsoid<br />float32 h_acc<br />float32 v_acc<br />float32 vel_acc<br />float32 hdg_acc<br />float32 yaw<br />uint8 dgps_num_sats<br />float32 dgps_age<br />float32 baseline_dist<br />
+</div>
+
+
+</div>
+
+<p class="footer"><small><em>autogenerated on Mon, 16 Sep 2024 10:46:06</em></small></p>
+
+</div>
+
+</body>
+</html>

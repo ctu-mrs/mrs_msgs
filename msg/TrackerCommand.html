@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>mrs_msgs/TrackerCommand Documentation</title>
+<link type="text/css" rel="stylesheet" href="../msg-styles.css" />
+</head>
+<body>
+
+<div id="container">
+
+<h1 class="msg-title"><a href="../index-msg.html">mrs_msgs</a>/TrackerCommand Message</h1>
+
+<div class="msg">
+
+<h2>File: <span class="filename">mrs_msgs/TrackerCommand.msg</filename></h2>
+
+<h2>Raw Message Definition</h2>
+<div class="raw-msg">
+<font color="blue">#&nbsp;This&nbsp;represents&nbsp;the&nbsp;output&nbsp;of&nbsp;the&nbsp;currently&nbsp;active&nbsp;Tracker&nbsp;(mrs_uav_manager::Tracker).</font><br/><font color="blue">#&nbsp;This&nbsp;message&nbsp;is&nbsp;returned&nbsp;from&nbsp;a&nbsp;tracker&nbsp;by&nbsp;means&nbsp;of&nbsp;the&nbsp;update()&nbsp;function,&nbsp;called&nbsp;by&nbsp;the&nbsp;mrs_uav_manager::ControlManager.</font><br/><br/>std_msgs/Header&nbsp;header<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;position.</font><br/>geometry_msgs/Point&nbsp;position<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;velocity.</font><br/>geometry_msgs/Vector3&nbsp;velocity<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;acceleration.</font><br/>geometry_msgs/Vector3&nbsp;acceleration<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;jerk.</font><br/>geometry_msgs/Vector3&nbsp;jerk<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;snap.</font><br/>geometry_msgs/Vector3&nbsp;snap<br/><br/><font color="blue">#&nbsp;all-state&nbsp;future&nbsp;prediction</font><br/>mrs_msgs/MpcPredictionFullState&nbsp;full_state_prediction<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;orientation&nbsp;and&nbsp;attitude&nbsp;rate.</font><br/><font color="blue">#&nbsp;It&nbsp;is&nbsp;mutually&nbsp;exclusive&nbsp;to&nbsp;heading+heading_rate.</font><br/>geometry_msgs/Quaternion&nbsp;orientation<br/>geometry_msgs/Point&nbsp;attitude_rate<br/><br/><font color="blue">#&nbsp;when&nbsp;used,&nbsp;it&nbsp;will&nbsp;override&nbsp;the&nbsp;throttle&nbsp;output&nbsp;of&nbsp;the&nbsp;controller</font><br/>float64&nbsp;throttle<br/><br/><font color="blue">#&nbsp;The&nbsp;desired&nbsp;heading&nbsp;and&nbsp;heading&nbsp;rate.</font><br/><font color="blue">#&nbsp;It&nbsp;is&nbsp;mutually&nbsp;exclusive&nbsp;to&nbsp;orientation+attitude_rate.</font><br/>float64&nbsp;heading<br/>float64&nbsp;heading_rate<br/>float64&nbsp;heading_acceleration<br/>float64&nbsp;heading_jerk<br/><br/><font color="blue">#&nbsp;Whether&nbsp;the&nbsp;controller&nbsp;should&nbsp;mute&nbsp;its&nbsp;position&nbsp;feedback.</font><br/><font color="blue">#&nbsp;Useful,&nbsp;e.g.,&nbsp;during&nbsp;takeoff&nbsp;or&nbsp;in&nbsp;situations&nbsp;where&nbsp;sudden&nbsp;control</font><br/><font color="blue">#&nbsp;error&nbsp;is&nbsp;expected&nbsp;but&nbsp;not&nbsp;immediately&nbsp;required&nbsp;to&nbsp;be&nbsp;fixed.</font><br/>bool&nbsp;disable_position_gains<br/><br/><font color="blue">#&nbsp;Whether&nbsp;the&nbsp;controller&nbsp;should&nbsp;disable&nbsp;its&nbsp;antiwindups</font><br/>bool&nbsp;disable_antiwindups<br/><br/><font color="blue">#&nbsp;Flags&nbsp;defining&nbsp;whether&nbsp;the&nbsp;XY&nbsp;or&nbsp;Z&nbsp;position&nbsp;reference&nbsp;was&nbsp;filled&nbsp;in.</font><br/><font color="blue">#&nbsp;If&nbsp;not,&nbsp;the&nbsp;controllers&nbsp;should&nbsp;pay&nbsp;no&nbsp;attention&nbsp;to&nbsp;it&nbsp;and&nbsp;to&nbsp;the&nbsp;corresponding&nbsp;control&nbsp;error.</font><br/>uint8&nbsp;use_position_horizontal<br/>uint8&nbsp;use_position_vertical<br/><br/><font color="blue">#&nbsp;Flags&nbsp;defining&nbsp;whether&nbsp;the&nbsp;XY&nbsp;or&nbsp;Z&nbsp;velocity&nbsp;reference&nbsp;was&nbsp;filled&nbsp;in.</font><br/><font color="blue">#&nbsp;If&nbsp;not,&nbsp;the&nbsp;controllers&nbsp;should&nbsp;pay&nbsp;no&nbsp;attention&nbsp;to&nbsp;it&nbsp;and&nbsp;to&nbsp;the&nbsp;corresponding&nbsp;control&nbsp;error.</font><br/>uint8&nbsp;use_velocity_horizontal<br/>uint8&nbsp;use_velocity_vertical<br/><br/><font color="blue">#&nbsp;Flags&nbsp;defining&nbsp;which&nbsp;references&nbsp;were&nbsp;filled&nbsp;in.</font><br/><font color="blue">#&nbsp;If&nbsp;not,&nbsp;the&nbsp;controllers&nbsp;should&nbsp;pay&nbsp;no&nbsp;attention&nbsp;to&nbsp;them&nbsp;and&nbsp;to&nbsp;the&nbsp;corresponding&nbsp;control&nbsp;errors.</font><br/>uint8&nbsp;use_acceleration<br/>uint8&nbsp;use_jerk<br/>uint8&nbsp;use_snap<br/>uint8&nbsp;use_attitude_rate<br/>uint8&nbsp;use_heading<br/>uint8&nbsp;use_heading_rate<br/>uint8&nbsp;use_heading_acceleration<br/>uint8&nbsp;use_heading_jerk<br/>uint8&nbsp;use_orientation<br/>uint8&nbsp;use_throttle<br/>uint8&nbsp;use_full_state_prediction<br/><br/>
+</div>
+
+<h2>Compact Message Definition</h2>
+<div class="fancy-msg">
+<a href="http://docs.ros.org/noetic/api/std_msgs/html/msg/Header.html">std_msgs/Header</a> header<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Point.html">geometry_msgs/Point</a> position<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Vector3.html">geometry_msgs/Vector3</a> velocity<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Vector3.html">geometry_msgs/Vector3</a> acceleration<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Vector3.html">geometry_msgs/Vector3</a> jerk<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Vector3.html">geometry_msgs/Vector3</a> snap<br /><a href="../msg/MpcPredictionFullState.html">mrs_msgs/MpcPredictionFullState</a> full_state_prediction<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Quaternion.html">geometry_msgs/Quaternion</a> orientation<br /><a href="http://docs.ros.org/noetic/api/geometry_msgs/html/msg/Point.html">geometry_msgs/Point</a> attitude_rate<br />float64 throttle<br />float64 heading<br />float64 heading_rate<br />float64 heading_acceleration<br />float64 heading_jerk<br />bool disable_position_gains<br />bool disable_antiwindups<br />uint8 use_position_horizontal<br />uint8 use_position_vertical<br />uint8 use_velocity_horizontal<br />uint8 use_velocity_vertical<br />uint8 use_acceleration<br />uint8 use_jerk<br />uint8 use_snap<br />uint8 use_attitude_rate<br />uint8 use_heading<br />uint8 use_heading_rate<br />uint8 use_heading_acceleration<br />uint8 use_heading_jerk<br />uint8 use_orientation<br />uint8 use_throttle<br />uint8 use_full_state_prediction<br />
+</div>
+
+
+</div>
+
+<p class="footer"><small><em>autogenerated on Mon, 16 Sep 2024 10:46:06</em></small></p>
+
+</div>
+
+</body>
+</html>
