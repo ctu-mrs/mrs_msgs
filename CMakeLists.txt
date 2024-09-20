@@ -19,6 +19,11 @@ find_package(catkin REQUIRED COMPONENTS
   ${CATKIN_DEPENDENCIES}
   )
 
+# messages for ROBOT_DIAGNOSTICS
+add_message_files(DIRECTORY msg/robot_diagnostics FILES
+  UavDiagnostics.msg
+  )
+
 # messages for MPC_TRACKER
 add_message_files(DIRECTORY msg/mpc_tracker FILES
 
@@ -40,6 +45,7 @@ add_message_files(DIRECTORY msg/gnss FILES
   RtkFixType.msg
   RtkGps.msg
   GpsData.msg
+  GpsInfo.msg
   )
 
 # messages for LANDOFF_TRACKER
@@ -71,7 +77,7 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   EulerAngles.msg
   GainManagerDiagnostics.msg
   PathReference.msg
-  ReferenceList.msg
+  ReferenceArray.msg
   Reference.msg
   ReferenceStamped.msg
   TrackerCommand.msg
@@ -116,8 +122,9 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   TrajectoryReferenceSrv.srv
   TransformPoseSrv.srv
   TransformReferenceSrv.srv
+  TransformReferenceArraySrv.srv
   TransformVector3Srv.srv
-  ValidateReferenceList.srv
+  ValidateReferenceArray.srv
   ValidateReference.srv
   VelocityReferenceSrv.srv
   VelocityReferenceStampedSrv.srv
@@ -156,6 +163,8 @@ add_message_files(DIRECTORY msg/general FILES
   ImageLabeled.msg
   PoseWithCovarianceArrayStamped.msg
   PoseWithCovarianceIdentified.msg
+  RangeWithCovarianceArrayStamped.msg
+  RangeWithCovarianceIdentified.msg
   Sphere.msg
   StringStamped.msg
   TrackArrayStamped.msg
