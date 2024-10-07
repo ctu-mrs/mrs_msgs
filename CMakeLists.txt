@@ -81,7 +81,7 @@ add_message_files(DIRECTORY msg/uav_managers FILES
   Reference.msg
   ReferenceStamped.msg
   SafetyAreaManagerDiagnostics.msg
-  SafetyAreaStatus.msg
+  SafetyArea.msg
   SafetyBorder.msg
   Obstacles.msg
   TrackerCommand.msg
