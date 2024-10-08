@@ -165,6 +165,7 @@ add_message_files(DIRECTORY msg/general FILES
   Float64Stamped.msg
   ImageLabeledArray.msg
   ImageLabeled.msg
+  Point2D.msg  
   PoseWithCovarianceArrayStamped.msg
   PoseWithCovarianceIdentified.msg
   RangeWithCovarianceArrayStamped.msg

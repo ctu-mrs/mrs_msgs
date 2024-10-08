@@ -1,5 +1,5 @@
 string horizontal_frame
 string vertical_frame
-geometry_msgs/Point[] points
+mrs_msgs/Point2D[] points
 float64 max_z
 float64 min_z
