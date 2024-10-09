@@ -1,6 +1,9 @@
 # contains the frame_id = your reference frame of choice
 std_msgs/Header header
 
+# desired position [m], optional
+geometry_msgs/Point position
+
 # desired velocity [m/s], optional
 geometry_msgs/Vector3 velocity
 
@@ -10,7 +13,7 @@ geometry_msgs/Vector3 acceleration
 # desired force [N], optional
 geometry_msgs/Vector3 force
 
-# z coordinate
+# z coordinate [m], optional
 float64 z
 
 # desired heading and its rate, optional
@@ -19,6 +22,7 @@ float64 heading
 float64 heading_rate
 
 # set to "true" if you want to control the state
+bool use_position
 bool use_velocity
 bool use_acceleration
 bool use_force

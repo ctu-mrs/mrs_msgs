@@ -143,10 +143,10 @@ add_message_files(DIRECTORY msg/bumper FILES
   ObstacleSectors.msg
   )
 
-# messages for SPEED_TRACKER
-add_message_files(DIRECTORY msg/speed_tracker FILES
+# messages for passthrough_tracker
+add_message_files(DIRECTORY msg/passthrough_tracker FILES
 
-  SpeedTrackerCommand.msg
+  PassthroughTrackerCommand.msg
   )
 
 # general messages
