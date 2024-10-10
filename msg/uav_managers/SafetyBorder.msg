@@ -1,3 +1,4 @@
+bool enabled
 string horizontal_frame
 string vertical_frame
 mrs_msgs/Point2D[] points

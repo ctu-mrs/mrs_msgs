@@ -135,6 +135,7 @@ add_service_files(DIRECTORY srv/uav_managers FILES
   PathToPointInSafetyArea.srv
   GetPointStamped.srv
   GetSafeZoneAtHeight.srv
+  SetSafetyAreaSrv.srv
   )
 
 # messages for the PROFILER
