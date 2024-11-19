@@ -1,5 +1,6 @@
 time stamp
 string uav_name
 bool safety_area_enabled
-bool position_valid
+bool position_valid_2d
+bool position_valid_3d
 mrs_msgs/SafetyArea safety_area
