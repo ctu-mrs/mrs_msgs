@@ -2,25 +2,27 @@
 <package format="3">
 
   <name>mrs_msgs</name>
-  <version>0.0.5</version>
-  <description>The mrs_msgs package</description>
+  <version>0.0.1</version>
+  <description>This package included essential custom messages used by different parts of the mrs-uav-system.</description>
 
   <author email="tomas.baca@fel.cvut.cz">Tomas Baca</author>
   <maintainer email="tomas.baca@fel.cvut.cz">Tomas Baca</maintainer>
+  <maintainer email="afzalhmd14@gmail.com">Afzal Ahmad</maintainer>
 
   <license>BSD 3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>rclcpp</depend>
+  <depend>builtin_interfaces</depend>
   <depend>sensor_msgs</depend>
   <depend>std_srvs</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
-  <depend>rosidl_default_generators</depend>
-  <depend>rosidl_default_runtime</depend>
-  <depend>builtin_interfaces</depend>
-
+  
+  <!-- for correctly generating the msg and srv files -->
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <!-- for making the msg and srv files available at runtime for other nodes -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
   <member_of_group>rosidl_interface_packages</member_of_group>
 
   <export>
