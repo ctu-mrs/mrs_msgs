@@ -1,0 +1,26 @@
+# This file is generated, do NOT modify it by hand
+
+set(srv_files
+  srv/uav_managers/VelocityReferenceSrv.srv
+  srv/uav_managers/TransformVector3Srv.srv
+  srv/uav_managers/ReferenceStampedSrv.srv
+  srv/uav_managers/DynamicsConstraintsSrv.srv
+  srv/uav_managers/TransformReferenceSrv.srv
+  srv/uav_managers/TransformReferenceArraySrv.srv
+  srv/uav_managers/TransformPoseSrv.srv
+  srv/uav_managers/ValidateReference.srv
+  srv/uav_managers/TrajectoryReferenceSrv.srv
+  srv/uav_managers/ValidateReferenceArray.srv
+  srv/uav_managers/ReferenceSrv.srv
+  srv/uav_managers/ConstraintsOverride.srv
+  srv/uav_managers/VelocityReferenceStampedSrv.srv
+  srv/general/SetInt.srv
+  srv/general/String.srv
+  srv/general/Vec4.srv
+  srv/general/GetFloat64.srv
+  srv/general/Float64StampedSrv.srv
+  srv/general/Float64Srv.srv
+  srv/general/Vec1.srv
+  srv/trajectory_generation/PathSrv.srv
+  srv/trajectory_generation/GetPathSrv.srv
+)

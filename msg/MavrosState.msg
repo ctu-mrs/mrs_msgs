@@ -1,2 +1,0 @@
-bool armed
-bool offboard

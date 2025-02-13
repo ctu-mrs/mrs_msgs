@@ -1,3 +1,0 @@
-builtin_interfaces/Time stamp
-bool repulsing
-bool modifying_reference

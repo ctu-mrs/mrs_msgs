@@ -14,10 +14,11 @@ find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 include(msg_list.txt)
+# include(srv_list.txt)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
     ${msg_files}
-    ${srv_files}
+    # ${srv_files}
     DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
   )
 

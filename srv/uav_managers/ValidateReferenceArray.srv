@@ -1,0 +1,4 @@
+mrs_msgs/ReferenceArray array
+---
+bool[] success
+string message
