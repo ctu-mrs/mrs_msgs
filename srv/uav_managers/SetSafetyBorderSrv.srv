@@ -1,0 +1,4 @@
+mrs_msgs/SafetyBorder safety_border
+---
+bool success
+string message
