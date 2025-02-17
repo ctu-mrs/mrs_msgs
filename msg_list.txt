@@ -6,8 +6,8 @@ set(msg_files
   msg/uav_status/UavStatusShort.msg
   msg/uav_status/NodeCpuLoad.msg
   msg/uav_status/CustomTopic.msg
-  msg/uav_managers/Reference.msg
   msg/uav_managers/ReferenceArray.msg
+  msg/uav_managers/Reference.msg
   msg/uav_managers/EstimationDiagnostics.msg
   msg/uav_managers/TrajectoryReference.msg
   msg/uav_managers/ControllerStatus.msg
@@ -16,68 +16,68 @@ set(msg_files
   msg/uav_managers/EstimatorInput.msg
   msg/uav_managers/ControlError.msg
   msg/uav_managers/ConstraintManagerDiagnostics.msg
-  # msg/uav_managers/EulerAngles.msg
-  # msg/uav_managers/UavState.msg
-  # msg/uav_managers/VelocityReference.msg
-  # msg/uav_managers/TrackerStatus.msg
-  # msg/uav_managers/PathReference.msg
-  # msg/uav_managers/EstimatorCorrection.msg
-  # msg/uav_managers/ControlManagerDiagnostics.msg
-  # msg/uav_managers/DynamicsConstraints.msg
-  # msg/uav_managers/ReferenceStamped.msg
-  # msg/uav_managers/UavManagerDiagnostics.msg
-  # msg/uav_managers/VelocityReferenceStamped.msg
-  # msg/uav_managers/ControllerDiagnostics.msg
-  # msg/uav_managers/TrackerCommand.msg
-  # msg/uav_managers/GainManagerDiagnostics.msg
-  # msg/landoff_tracker/LandoffDiagnostics.msg
-  # msg/gimbal/GimbalState.msg
-  # msg/se3_controller/Se3Gains.msg
-  # msg/bumper/Histogram.msg
-  # msg/bumper/ObstacleSectors.msg
-  # msg/general/Float64.msg
-  # msg/general/TrackArrayStamped.msg
-  # msg/general/Float64Stamped.msg
-  # msg/general/RangeWithCovarianceIdentified.msg
-  # msg/general/Float64MultiArrayStamped.msg
-  # msg/general/ImageLabeledArray.msg
-  # msg/general/TrackStamped.msg
-  # msg/general/Sphere.msg
-  # msg/general/Float64ArrayStamped.msg
-  # msg/general/PoseWithCovarianceIdentified.msg
-  # msg/general/PoseWithCovarianceArrayStamped.msg
-  # msg/general/ImageLabeled.msg
-  # msg/general/StringStamped.msg
-  # msg/general/Track.msg
-  # msg/general/RangeWithCovarianceArrayStamped.msg
-  # msg/trajectory_generation/PathWithVelocity.msg
-  # msg/trajectory_generation/Path.msg
-  # msg/trajectory_generation/ReferenceWithVelocity.msg
-  # msg/profiler/ProfilerUpdate.msg
-  # msg/speed_tracker/SpeedTrackerCommand.msg
-  # msg/stamped_msgs/BoolStamped.msg
-  # msg/stamped_msgs/UInt16Stamped.msg
-  # msg/mrs_gripper/GripperDiagnostics.msg
-  # msg/mpc_tracker/FuturePoint.msg
-  # msg/mpc_tracker/MpcPredictionFullState.msg
-  # msg/mpc_tracker/FutureTrajectory.msg
-  # msg/mpc_tracker/MpcTrackerDiagnostics.msg
-  # msg/gnss/RtkFixType.msg
-  # msg/gnss/GpsData.msg
-  # msg/gnss/GpsInfo.msg
-  # msg/gnss/RtkGps.msg
-  # msg/robot_diagnostics/UavDiagnostics.msg
-  # msg/hw_api/HwApiVelocityHdgRateCmd.msg
-  # msg/hw_api/HwApiAccelerationHdgRateCmd.msg
-  # msg/hw_api/HwApiAttitudeRateCmd.msg
-  # msg/hw_api/HwApiAccelerationHdgCmd.msg
-  # msg/hw_api/HwApiAltitude.msg
-  # msg/hw_api/HwApiRcChannels.msg
-  # msg/hw_api/HwApiPositionCmd.msg
-  # msg/hw_api/HwApiActuatorCmd.msg
-  # msg/hw_api/HwApiAttitudeCmd.msg
-  # msg/hw_api/HwApiControlGroupCmd.msg
-  # msg/hw_api/HwApiVelocityHdgCmd.msg
-  # msg/hw_api/HwApiCapabilities.msg
-  # msg/hw_api/HwApiStatus.msg
+  msg/uav_managers/EulerAngles.msg
+  msg/uav_managers/UavState.msg
+  msg/uav_managers/VelocityReference.msg
+  msg/uav_managers/TrackerStatus.msg
+  msg/uav_managers/PathReference.msg
+  msg/uav_managers/EstimatorCorrection.msg
+  msg/uav_managers/ControlManagerDiagnostics.msg
+  msg/uav_managers/DynamicsConstraints.msg
+  msg/uav_managers/ReferenceStamped.msg
+  msg/uav_managers/UavManagerDiagnostics.msg
+  msg/uav_managers/VelocityReferenceStamped.msg
+  msg/uav_managers/ControllerDiagnostics.msg
+  msg/uav_managers/TrackerCommand.msg
+  msg/uav_managers/GainManagerDiagnostics.msg
+  msg/landoff_tracker/LandoffDiagnostics.msg
+  msg/gimbal/GimbalState.msg
+  msg/se3_controller/Se3Gains.msg
+  msg/bumper/Histogram.msg
+  msg/bumper/ObstacleSectors.msg
+  msg/general/Float64.msg
+  msg/general/TrackArrayStamped.msg
+  msg/general/Float64Stamped.msg
+  msg/general/RangeWithCovarianceIdentified.msg
+  msg/general/Float64MultiArrayStamped.msg
+  msg/general/ImageLabeledArray.msg
+  msg/general/TrackStamped.msg
+  msg/general/Sphere.msg
+  msg/general/Float64ArrayStamped.msg
+  msg/general/PoseWithCovarianceIdentified.msg
+  msg/general/PoseWithCovarianceArrayStamped.msg
+  msg/general/ImageLabeled.msg
+  msg/general/StringStamped.msg
+  msg/general/Track.msg
+  msg/general/RangeWithCovarianceArrayStamped.msg
+  msg/trajectory_generation/PathWithVelocity.msg
+  msg/trajectory_generation/Path.msg
+  msg/trajectory_generation/ReferenceWithVelocity.msg
+  msg/profiler/ProfilerUpdate.msg
+  msg/speed_tracker/SpeedTrackerCommand.msg
+  msg/stamped_msgs/BoolStamped.msg
+  msg/stamped_msgs/UInt16Stamped.msg
+  msg/mrs_gripper/GripperDiagnostics.msg
+  msg/mpc_tracker/FuturePoint.msg
+  msg/mpc_tracker/MpcPredictionFullState.msg
+  msg/mpc_tracker/FutureTrajectory.msg
+  msg/mpc_tracker/MpcTrackerDiagnostics.msg
+  msg/gnss/RtkFixType.msg
+  msg/gnss/GpsData.msg
+  msg/gnss/GpsInfo.msg
+  msg/gnss/RtkGps.msg
+  msg/robot_diagnostics/UavDiagnostics.msg
+  msg/hw_api/HwApiVelocityHdgRateCmd.msg
+  msg/hw_api/HwApiAccelerationHdgRateCmd.msg
+  msg/hw_api/HwApiAttitudeRateCmd.msg
+  msg/hw_api/HwApiAccelerationHdgCmd.msg
+  msg/hw_api/HwApiAltitude.msg
+  msg/hw_api/HwApiRcChannels.msg
+  msg/hw_api/HwApiPositionCmd.msg
+  msg/hw_api/HwApiActuatorCmd.msg
+  msg/hw_api/HwApiAttitudeCmd.msg
+  msg/hw_api/HwApiControlGroupCmd.msg
+  msg/hw_api/HwApiVelocityHdgCmd.msg
+  msg/hw_api/HwApiCapabilities.msg
+  msg/hw_api/HwApiStatus.msg
 )

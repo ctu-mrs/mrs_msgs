@@ -14,17 +14,17 @@
 #         TOP VIEW
 #         --------
 #
-#        \         /
-#         \   0   /   (forward)
-#          \     /        x
-#                         ^
-#            O O          |
-#        1    X    3   <--* z
-#            O O       y
-#
-#          /     \
-#         /   2   \
-#        /         \
+# |      \         /            |
+# |       \   0   /   (forward) |
+# |        \     /        x     |
+# |                       ^     |
+# |          O O          |     |
+# |      1    X    3   <--* z   |
+# |          O O       y        |
+# |                             |
+# |        /     \              |
+# |       /   2   \             |
+# |      /         \            |
 
 # Time at which the data in this message was generated, coordinate frame ID.
 std_msgs/Header header
@@ -42,12 +42,12 @@ float64[] sectors
 int8[]    sector_sensors
 
 ## Obstacle distance special values.
-float64 obstacle_not_detected=-1
-float64 obstacle_no_data=-2
+float64 OBSTACLE_NOT_DETECTED=-1
+float64 OBSTACLE_NO_DATA=-2
 
 ## Sensor types enum.
-int8 sensor_none=-1
-int8 sensor_depth=0
-int8 sensor_lidar1d=1
-int8 sensor_lidar2d=2
-int8 sensor_lidar3d=3
+int8 SENSOR_NONE=-1
+int8 SENSOR_DEPTH=0
+int8 SENSOR_LIDAR1D=1
+int8 SENSOR_LIDAR2D=2
+int8 SENSOR_LIDAR3D=3

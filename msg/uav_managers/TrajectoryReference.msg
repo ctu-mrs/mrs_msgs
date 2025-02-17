@@ -20,4 +20,4 @@ bool loop
 float64 dt
 
 # The list of points in the trajectory, spaced by the dt.
-Reference[] points
+mrs_msgs/Reference[] points

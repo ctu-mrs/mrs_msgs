@@ -13,4 +13,4 @@ bool fly_now
 bool loop
 
 # The list of points in the path.
-Reference[] points
+mrs_msgs/Reference[] points

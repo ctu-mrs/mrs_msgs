@@ -2,9 +2,9 @@
 
 # Get the list of all active topics with their types
 msg_types=$(ros2 interface package mrs_msgs -m)
-# msg_types="std_msgs/msg/String\n"
-msg_count=$(echo $msg_types | wc -l)
 count=0
+msg_count=$(echo $msg_types | grep -o "\bmrs_msgs\b" | wc -l)
+
 # Loop through each topic and its type
 while read -r line; do
     (ros2 topic hz /test_msg) &
@@ -22,10 +22,12 @@ while read -r line; do
     pkill -f "ros2 topic hz"
 done <<< $msg_types
 
-echo "test count: $count, msg count: $msg_count"
+echo "Tested msgs: $count"
 if [[ $count -eq $msg_count ]]; then
     echo "Test successful"
 else
     echo "Test failed, some msgs are not valid"
+    exit 1
 fi
+
 exit 0

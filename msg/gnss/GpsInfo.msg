@@ -1,15 +1,15 @@
 builtin_interfaces/Time stamp
 ## GPS_FIX_TYPE enum
 
-uint8 gps_fix_type_no_gps     = 0    # no gps connected
-uint8 gps_fix_type_no_fix     = 1    # no position information, gps is connected
-uint8 gps_fix_type_2d_fix     = 2    # 2D position
-uint8 gps_fix_type_3d_fix     = 3    # 3D position
-uint8 gps_fix_type_dgps       = 4    # dgps/sbas aided 3D position
-uint8 gps_fix_type_rtk_floatr = 5    # tk float, 3D position
-uint8 gps_fix_type_rtk_fixedr = 6    # tk fixed, 3D position
-uint8 gps_fix_type_static     = 7    # static fixed, typically used for base stations
-uint8 gps_fix_type_ppp        = 8    # ppp, 3D position
+uint8 GPS_FIX_TYPE_NO_GPS     = 0    # no gps connected
+uint8 GPS_FIX_TYPE_NO_FIX     = 1    # no position information, gps is connected
+uint8 GPS_FIX_TYPE_2D_FIX     = 2    # 2D position
+uint8 GPS_FIX_TYPE_3D_FIX     = 3    # 3D position
+uint8 GPS_FIX_TYPE_DGPS       = 4    # dgps/sbas aided 3D position
+uint8 GPS_FIX_TYPE_RTK_FLOATR = 5    # tk float, 3D position
+uint8 GPS_FIX_TYPE_RTK_FIXEDR = 6    # tk fixed, 3D position
+uint8 GPS_FIX_TYPE_STATIC     = 7    # static fixed, typically used for base stations
+uint8 GPS_FIX_TYPE_PPP        = 8    # ppp, 3D position
 uint8 fix_type      # [GPS_FIX_TYPE] gps fix type
 
 float64 lat              # [deg] latitude (WGS84, egm96 ellipsoid)
