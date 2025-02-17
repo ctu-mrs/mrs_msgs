@@ -29,8 +29,8 @@ log() {
     /bin/echo -e "${color}$*${RESET}"
 }
 
-# Function to traverse directories and edit .msg files
-process_msg_files() {
+# Function to traverse directories and edit .msg and .srv files
+process_files() {
     local dir="$1" # The directory to start traversal from
     local type="$2"
 
@@ -46,12 +46,8 @@ process_msg_files() {
         log yellow "Processing file: $file"
 
         # Example edit: Append the current date to each .msg file
-        log yellow "Appending current date to $file"
-
-        # Uncomment the following line for more advanced edits (e.g., sed, awk)
         sed -i '/^#/! s/^time/builtin_interfaces\/Time/g' "$file"
         sed -i '/^#/! s/^Header/std_msgs\/Header/g' "$file"
-        # sed -i '/^#/! s/[[:space]]([A-Z])([^[:space:]]*)/\L\1/g' "$file"
         sed -E -i '/^#/! s/[[:space:]]([A-Z])([^[:space:]]*)/\L \1\2/g' "$file"
         /usr/bin/vim -E -s -c "%s/\s\+$//g" -c "wqa" -- "$file"
     done
@@ -94,11 +90,6 @@ log yellow "Postprocessing msg files to correct format"
 process_msg_files $MY_PATH/msg msg
 log yellow "Postprocessing srv files to correct format"
 process_msg_files $MY_PATH/srv srv
-
-# /usr/bin/vim -E -s -c "norm ggdap" -c "wqa" -- $MY_PATH/msg/ObstacleSectors.msg
-# /usr/bin/vim -E -s -c "%g/\[\w\]/norm f[ldt]" -c "wqa" -- $MY_PATH/msg/GpsFix.msg
-# /usr/bin/vim -E -s -c "%g/\[\w\]/norm f[ldt]" -c "wqa" -- $MY_PATH/srv/GazeboApplyForce.srv
-# /usr/bin/vim -E -s -c "%g/\[\w\]/norm f[ldt]" -c "wqa" -- $MY_PATH/msg/GpsData.msg
 
 # print sections for CMakeLists.txt
 
