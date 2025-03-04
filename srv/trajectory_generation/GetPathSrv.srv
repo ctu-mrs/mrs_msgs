@@ -3,3 +3,8 @@ mrs_msgs/Path path
 bool success
 string message
 mrs_msgs/TrajectoryReference trajectory
+
+# the trajectory indeces of the waypoints
+# e.g., the 2nd waypoint is at the position 250 in the trajectory is:
+# waypoint_trajectory_idxs[1] = 250
+int64[] waypoint_trajectory_idxs
