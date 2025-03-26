@@ -19,7 +19,7 @@
 
 ## Modifications for `ros1_bridge`
 
-### Functional Modifications (`bridge-humble` only)
+### Functional Modifications
 
 To make the ROS 2 version of `mrs_msgs` detectable by `ros1_bridge`, the following additions were made:
 
