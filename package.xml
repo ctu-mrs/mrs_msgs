@@ -29,6 +29,7 @@
   <export>
     <rosdoc config="rosdoc.yaml" />
     <build_type>ament_cmake</build_type>
+    <ros1_bridge mapping_rules="bridge_mapping.yaml"/>
   </export>
 
 </package>
