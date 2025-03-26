@@ -1,4 +1,4 @@
 mrs_msgs/ReferenceArray array
 ---
-bool[] success
+uint8[] success
 string message
