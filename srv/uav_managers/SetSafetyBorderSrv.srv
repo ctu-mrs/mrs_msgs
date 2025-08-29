@@ -1,4 +1,5 @@
 mrs_msgs/SafetyBorder safety_border
+bool keep_obstacles
 ---
 bool success
 string message
