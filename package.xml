@@ -28,7 +28,7 @@
   <member_of_group>rosidl_interface_packages</member_of_group>
 
   <export>
-    <rosdoc config="rosdoc.yaml" />
+    <rosdoc2>rosdoc2.yaml</rosdoc2>
     <build_type>ament_cmake</build_type>
   </export>
 
