@@ -32,6 +32,7 @@ set(msg_files
   msg/uav_managers/GainManagerDiagnostics.msg
   msg/uav_managers/WorldOrigin.msg
   msg/uav_managers/SafetyAreaManagerDiagnostics.msg
+  msg/uav_managers/SafetyBorder.msg
   msg/landoff_tracker/LandoffDiagnostics.msg
   msg/gimbal/GimbalState.msg
   msg/se3_controller/Se3Gains.msg

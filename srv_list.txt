@@ -14,7 +14,8 @@ set(srv_files
   srv/uav_managers/ReferenceSrv.srv
   srv/uav_managers/ConstraintsOverride.srv
   srv/uav_managers/VelocityReferenceStampedSrv.srv
-  srv/uav_managers/PrismSrv.srv
+  srv/uav_managers/SetObstacleSrv.srv
+  srv/uav_managers/SetSafetyBorderSrv.srv
   srv/uav_managers/ValidatePathToPointSrv.srv
   srv/uav_managers/GetReferenceStampedSrv.srv
   srv/general/SetInt.srv
