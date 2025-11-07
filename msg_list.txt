@@ -30,6 +30,16 @@ set(msg_files
   msg/uav_managers/ControllerDiagnostics.msg
   msg/uav_managers/TrackerCommand.msg
   msg/uav_managers/GainManagerDiagnostics.msg
+  msg/uav_managers/BatteryState.msg
+  msg/uav_managers/CpuLoad.msg
+  msg/uav_managers/CollisionAvoidanceInfo.msg
+  msg/uav_managers/ControlInfo.msg
+  msg/uav_managers/StateEstimationInfo.msg
+  msg/uav_managers/SystemHealthInfo.msg
+  msg/uav_managers/UavInfo.msg
+  msg/uav_managers/GeneralRobotInfo.msg
+  msg/uav_managers/SensorInfo.msg
+  msg/uav_managers/SensorStatus.msg
   msg/landoff_tracker/LandoffDiagnostics.msg
   msg/gimbal/GimbalState.msg
   msg/se3_controller/Se3Gains.msg
