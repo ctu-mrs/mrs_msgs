@@ -30,6 +30,9 @@ set(msg_files
   msg/uav_managers/ControllerDiagnostics.msg
   msg/uav_managers/TrackerCommand.msg
   msg/uav_managers/GainManagerDiagnostics.msg
+  msg/uav_managers/WorldOrigin.msg
+  msg/uav_managers/SafetyAreaManagerDiagnostics.msg
+  msg/uav_managers/SafetyBorder.msg
   msg/landoff_tracker/LandoffDiagnostics.msg
   msg/gimbal/GimbalState.msg
   msg/se3_controller/Se3Gains.msg
@@ -50,6 +53,8 @@ set(msg_files
   msg/general/StringStamped.msg
   msg/general/Track.msg
   msg/general/RangeWithCovarianceArrayStamped.msg
+  msg/general/Point2D.msg
+  msg/general/Prism.msg
   msg/trajectory_generation/PathWithVelocity.msg
   msg/trajectory_generation/Path.msg
   msg/trajectory_generation/ReferenceWithVelocity.msg
