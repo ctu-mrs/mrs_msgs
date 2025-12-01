@@ -1,0 +1,4 @@
+mrs_msgs/Prism prism 
+---
+bool success
+string message
