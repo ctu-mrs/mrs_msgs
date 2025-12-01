@@ -38,6 +38,10 @@ set(msg_files
   msg/se3_controller/Se3Gains.msg
   msg/bumper/Histogram.msg
   msg/bumper/ObstacleSectors.msg
+  msg/errorgraph/ErrorgraphElement.msg
+  msg/errorgraph/ErrorgraphElementArray.msg
+  msg/errorgraph/ErrorgraphError.msg
+  msg/errorgraph/ErrorgraphNodeID.msg
   msg/general/Float64.msg
   msg/general/TrackArrayStamped.msg
   msg/general/Float64Stamped.msg
