@@ -89,4 +89,15 @@ set(msg_files
   msg/hw_api/HwApiVelocityHdgCmd.msg
   msg/hw_api/HwApiCapabilities.msg
   msg/hw_api/HwApiStatus.msg
+  msg/system_info/BatteryState.msg
+  msg/system_info/CollisionAvoidanceInfo.msg
+  msg/system_info/ControlInfo.msg
+  msg/system_info/CpuLoad.msg
+  msg/system_info/GeneralRobotInfo.msg
+  msg/system_info/SensorInfo.msg
+  msg/system_info/SensorStatus.msg
+  msg/system_info/State.msg
+  msg/system_info/StateEstimationInfo.msg
+  msg/system_info/SystemHealthInfo.msg
+  msg/system_info/UavInfo.msg
 )
