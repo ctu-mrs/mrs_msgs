@@ -28,4 +28,6 @@ set(srv_files
   srv/general/Vec1.srv
   srv/trajectory_generation/PathSrv.srv
   srv/trajectory_generation/GetPathSrv.srv
+  srv/multirotor_simulator/Spawn.srv
+  srv/multirotor_simulator/Kill.srv
 )
