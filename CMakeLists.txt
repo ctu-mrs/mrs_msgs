@@ -23,4 +23,17 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
   )
 
+# Manually install .msg and .srv files to the share folder.
+# This ensures 'ros2 interface show' finds the original files
+# instead of falling back to the .idl files which contain unparseable comments.
+install(
+  FILES ${msg_files}
+  DESTINATION "share/${PROJECT_NAME}/msg"
+)
+
+install(
+  FILES ${srv_files}
+  DESTINATION "share/${PROJECT_NAME}/srv"
+)
+
 ament_package()
