@@ -1,7 +1,9 @@
 
 builtin_interfaces/Time stamp
 string robot_name
+string robot_ip_address
 uint8  robot_type
+
 
 mrs_msgs/BatteryState battery_state
 
