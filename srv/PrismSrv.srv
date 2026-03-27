@@ -1,6 +1,0 @@
-mrs_msgs/Prism prism 
-bool keep_obstacles
-bool update_world_origin #Will update the world origin to the prism 
----
-bool success
-string message
