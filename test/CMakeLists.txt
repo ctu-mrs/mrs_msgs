@@ -9,3 +9,4 @@ endfunction()
 
 add_subdirectory(validate_rosidl_definitions)
 add_subdirectory(test_git_clean)
+add_subdirectory(test_name_collisions)
