@@ -8,3 +8,4 @@ function(add_ros_isolated_launch_test path)
 endfunction()
 
 add_subdirectory(validate_rosidl_definitions)
+add_subdirectory(test_git_clean)
