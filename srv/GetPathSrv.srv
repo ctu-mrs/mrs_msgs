@@ -1,1 +1,1 @@
-trajectory_generation/GetPathSrv.srv
+./trajectory_generation/GetPathSrv.srv

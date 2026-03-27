@@ -1,1 +1,1 @@
-uav_managers/ReferenceArray.msg
+./uav_managers/ReferenceArray.msg

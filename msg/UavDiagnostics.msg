@@ -1,1 +1,1 @@
-robot_diagnostics/UavDiagnostics.msg
+./robot_diagnostics/UavDiagnostics.msg

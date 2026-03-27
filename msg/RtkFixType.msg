@@ -1,1 +1,1 @@
-gnss/RtkFixType.msg
+./gnss/RtkFixType.msg

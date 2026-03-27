@@ -1,1 +1,1 @@
-uav_managers/SafetyBorder.msg
+./uav_managers/SafetyBorder.msg

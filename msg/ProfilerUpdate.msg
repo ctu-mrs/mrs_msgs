@@ -1,1 +1,1 @@
-profiler/ProfilerUpdate.msg
+./profiler/ProfilerUpdate.msg

@@ -1,1 +1,1 @@
-general/ImageLabeled.msg
+./general/ImageLabeled.msg

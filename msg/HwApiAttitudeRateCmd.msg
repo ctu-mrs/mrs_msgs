@@ -1,1 +1,1 @@
-hw_api/HwApiAttitudeRateCmd.msg
+./hw_api/HwApiAttitudeRateCmd.msg

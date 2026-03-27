@@ -1,1 +1,1 @@
-uav_managers/TrajectoryReference.msg
+./uav_managers/TrajectoryReference.msg

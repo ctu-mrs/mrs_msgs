@@ -1,1 +1,1 @@
-uav_status/NodeCpuLoad.msg
+./uav_status/NodeCpuLoad.msg

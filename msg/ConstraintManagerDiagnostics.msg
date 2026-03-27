@@ -1,1 +1,1 @@
-uav_managers/ConstraintManagerDiagnostics.msg
+./uav_managers/ConstraintManagerDiagnostics.msg

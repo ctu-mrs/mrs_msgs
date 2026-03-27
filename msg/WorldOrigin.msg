@@ -1,1 +1,1 @@
-uav_managers/WorldOrigin.msg
+./uav_managers/WorldOrigin.msg

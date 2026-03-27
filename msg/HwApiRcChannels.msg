@@ -1,1 +1,1 @@
-hw_api/HwApiRcChannels.msg
+./hw_api/HwApiRcChannels.msg

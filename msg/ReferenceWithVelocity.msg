@@ -1,1 +1,1 @@
-trajectory_generation/ReferenceWithVelocity.msg
+./trajectory_generation/ReferenceWithVelocity.msg

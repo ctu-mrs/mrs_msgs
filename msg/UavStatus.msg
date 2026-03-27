@@ -1,1 +1,1 @@
-uav_status/UavStatus.msg
+./uav_status/UavStatus.msg

@@ -1,1 +1,1 @@
-uav_managers/ControllerStatus.msg
+./uav_managers/ControllerStatus.msg

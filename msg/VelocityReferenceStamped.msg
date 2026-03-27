@@ -1,1 +1,1 @@
-uav_managers/VelocityReferenceStamped.msg
+./uav_managers/VelocityReferenceStamped.msg

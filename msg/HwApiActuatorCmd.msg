@@ -1,1 +1,1 @@
-hw_api/HwApiActuatorCmd.msg
+./hw_api/HwApiActuatorCmd.msg

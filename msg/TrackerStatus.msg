@@ -1,1 +1,1 @@
-uav_managers/TrackerStatus.msg
+./uav_managers/TrackerStatus.msg

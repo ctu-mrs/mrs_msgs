@@ -1,1 +1,1 @@
-trajectory_generation/PathWithVelocity.msg
+./trajectory_generation/PathWithVelocity.msg

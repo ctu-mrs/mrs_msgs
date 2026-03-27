@@ -1,1 +1,1 @@
-gnss/GpsInfo.msg
+./gnss/GpsInfo.msg

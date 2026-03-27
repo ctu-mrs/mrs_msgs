@@ -1,1 +1,1 @@
-speed_tracker/SpeedTrackerCommand.msg
+./speed_tracker/SpeedTrackerCommand.msg

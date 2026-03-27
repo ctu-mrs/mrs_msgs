@@ -1,1 +1,1 @@
-errorgraph/ErrorgraphNodeID.msg
+./errorgraph/ErrorgraphNodeID.msg

@@ -1,1 +1,1 @@
-hw_api/HwApiVelocityHdgRateCmd.msg
+./hw_api/HwApiVelocityHdgRateCmd.msg

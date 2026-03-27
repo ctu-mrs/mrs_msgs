@@ -1,1 +1,1 @@
-hw_api/HwApiCapabilities.msg
+./hw_api/HwApiCapabilities.msg

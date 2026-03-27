@@ -1,1 +1,1 @@
-uav_managers/TrackerCommand.msg
+./uav_managers/TrackerCommand.msg

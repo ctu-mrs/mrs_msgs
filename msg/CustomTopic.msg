@@ -1,1 +1,1 @@
-uav_status/CustomTopic.msg
+./uav_status/CustomTopic.msg

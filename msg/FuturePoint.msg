@@ -1,1 +1,1 @@
-mpc_tracker/FuturePoint.msg
+./mpc_tracker/FuturePoint.msg

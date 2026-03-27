@@ -1,1 +1,1 @@
-landoff_tracker/LandoffDiagnostics.msg
+./landoff_tracker/LandoffDiagnostics.msg

@@ -1,1 +1,1 @@
-stamped_msgs/UInt16Stamped.msg
+./stamped_msgs/UInt16Stamped.msg

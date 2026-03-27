@@ -136,23 +136,51 @@ set(srv_files
   srv/uav_managers/VelocityReferenceStampedSrv.srv
 )
 
+set(action_files "")
+
+# Run the script to create the flat symlinks in the root msg/, srv/, and action/ folders
+execute_process(
+  COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/link_msg_files.sh" ${msg_files} ${srv_files} ${action_files}
+  WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+  RESULT_VARIABLE SCRIPT_RESULT
+  ERROR_VARIABLE SCRIPT_ERROR
+)
+
+if(NOT SCRIPT_RESULT EQUAL 0)
+  message(FATAL_ERROR 
+    "Symlink script failed with exit code ${SCRIPT_RESULT}.\n"
+    "Error details: ${SCRIPT_ERROR}"
+    )
+endif()
+
+# We transform the list: "msg/folder/File.msg" -> "msg/File.msg"
+set(flat_msg_files "")
+foreach(msg_path ${msg_files})
+    get_filename_component(msg_name ${msg_path} NAME)
+    list(APPEND flat_msg_files "msg/${msg_name}")
+endforeach()
+
+set(flat_srv_files "")
+foreach(srv_path ${srv_files})
+    get_filename_component(srv_name ${srv_path} NAME)
+    list(APPEND flat_srv_files "srv/${srv_name}")
+endforeach()
+
+set(flat_action_files "")
+foreach(action_path ${action_files})
+    get_filename_component(action_name ${action_path} NAME)
+    list(APPEND flat_action_files "action/${action_name}")
+endforeach()
+
 rosidl_generate_interfaces(${PROJECT_NAME}
-    ${msg_files}
-    ${srv_files}
-    DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
-  )
-
-# Manually install .msg and .srv files to the share folder.
-# This ensures 'ros2 interface show' finds the original files
-# instead of falling back to the .idl files which contain unparseable comments.
-install(
-  FILES ${msg_files}
-  DESTINATION "share/${PROJECT_NAME}/msg"
+  ${flat_msg_files}
+  ${flat_srv_files}
+  ${flat_action_files}
+  DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
 )
 
-install(
-  FILES ${srv_files}
-  DESTINATION "share/${PROJECT_NAME}/srv"
-)
+## --------------------------------------------------------------
+## |                           Install                          |
+## --------------------------------------------------------------
 
 ament_package()

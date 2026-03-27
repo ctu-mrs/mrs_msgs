@@ -1,1 +1,1 @@
-uav_managers/ReferenceStamped.msg
+./uav_managers/ReferenceStamped.msg

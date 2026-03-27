@@ -1,1 +1,1 @@
-gazebo_simulation/GazeboSpawnerDiagnostics.msg
+./gazebo_simulation/GazeboSpawnerDiagnostics.msg

@@ -1,1 +1,1 @@
-mpc_tracker/FutureTrajectory.msg
+./mpc_tracker/FutureTrajectory.msg

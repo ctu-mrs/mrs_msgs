@@ -1,1 +1,1 @@
-mrs_gripper/GripperDiagnostics.msg
+./mrs_gripper/GripperDiagnostics.msg

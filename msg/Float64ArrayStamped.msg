@@ -1,1 +1,1 @@
-general/Float64ArrayStamped.msg
+./general/Float64ArrayStamped.msg

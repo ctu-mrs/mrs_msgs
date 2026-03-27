@@ -1,1 +1,1 @@
-bumper/Histogram.msg
+./bumper/Histogram.msg

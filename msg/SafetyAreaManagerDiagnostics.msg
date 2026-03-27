@@ -1,1 +1,1 @@
-uav_managers/SafetyAreaManagerDiagnostics.msg
+./uav_managers/SafetyAreaManagerDiagnostics.msg

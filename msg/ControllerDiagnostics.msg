@@ -1,1 +1,1 @@
-uav_managers/ControllerDiagnostics.msg
+./uav_managers/ControllerDiagnostics.msg

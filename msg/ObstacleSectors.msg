@@ -1,1 +1,1 @@
-bumper/ObstacleSectors.msg
+./bumper/ObstacleSectors.msg

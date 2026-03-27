@@ -1,1 +1,1 @@
-se3_controller/Se3Gains.msg
+./se3_controller/Se3Gains.msg

@@ -1,1 +1,1 @@
-hw_api/HwApiAltitude.msg
+./hw_api/HwApiAltitude.msg

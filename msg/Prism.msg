@@ -1,1 +1,1 @@
-general/Prism.msg
+./general/Prism.msg

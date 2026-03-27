@@ -1,1 +1,1 @@
-uav_managers/GainManagerDiagnostics.msg
+./uav_managers/GainManagerDiagnostics.msg

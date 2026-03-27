@@ -1,1 +1,1 @@
-general/StringStamped.msg
+./general/StringStamped.msg

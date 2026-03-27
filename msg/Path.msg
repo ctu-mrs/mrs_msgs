@@ -1,1 +1,1 @@
-trajectory_generation/Path.msg
+./trajectory_generation/Path.msg

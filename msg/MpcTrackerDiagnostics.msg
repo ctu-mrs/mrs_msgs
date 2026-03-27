@@ -1,1 +1,1 @@
-mpc_tracker/MpcTrackerDiagnostics.msg
+./mpc_tracker/MpcTrackerDiagnostics.msg

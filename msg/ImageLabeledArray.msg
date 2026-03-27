@@ -1,1 +1,1 @@
-general/ImageLabeledArray.msg
+./general/ImageLabeledArray.msg

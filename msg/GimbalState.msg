@@ -1,1 +1,1 @@
-gimbal/GimbalState.msg
+./gimbal/GimbalState.msg

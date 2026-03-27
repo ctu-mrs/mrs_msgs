@@ -1,1 +1,1 @@
-stamped_msgs/BoolStamped.msg
+./stamped_msgs/BoolStamped.msg

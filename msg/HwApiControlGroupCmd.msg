@@ -1,1 +1,1 @@
-hw_api/HwApiControlGroupCmd.msg
+./hw_api/HwApiControlGroupCmd.msg

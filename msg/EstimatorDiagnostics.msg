@@ -1,1 +1,1 @@
-uav_managers/EstimatorDiagnostics.msg
+./uav_managers/EstimatorDiagnostics.msg

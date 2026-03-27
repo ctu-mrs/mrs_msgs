@@ -1,1 +1,1 @@
-hw_api/HwApiPositionCmd.msg
+./hw_api/HwApiPositionCmd.msg

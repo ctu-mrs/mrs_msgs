@@ -1,1 +1,1 @@
-general/Point2D.msg
+./general/Point2D.msg

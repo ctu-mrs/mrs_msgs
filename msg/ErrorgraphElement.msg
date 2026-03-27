@@ -1,1 +1,1 @@
-errorgraph/ErrorgraphElement.msg
+./errorgraph/ErrorgraphElement.msg

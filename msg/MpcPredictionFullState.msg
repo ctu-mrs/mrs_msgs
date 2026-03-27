@@ -1,1 +1,1 @@
-mpc_tracker/MpcPredictionFullState.msg
+./mpc_tracker/MpcPredictionFullState.msg
