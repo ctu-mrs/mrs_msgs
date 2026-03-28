@@ -1,51 +1,48 @@
 #!/bin/bash
 
+# $1 is the path to the JUnit XML result file passed by CMake/CTest
 RESULT_FILE=$1
 PACKAGE="mrs_msgs"
 
-# 1. Get the directory where THIS script is actually located in the source
-# Since the script is in src/mrs_msgs/test/test_git_clean/test_git_clean.sh,
-# we go up 3 levels to find the package root.
+# Resolve absolute path to the package root (mrs_msgs/)
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 PACKAGE_SRC_ROOT=$(realpath "$SCRIPT_DIR/../..")
 
-# 2. Use -C to force Git to look at the package source directory
-# This works regardless of where the build folder is located.
-GIT_ROOT=$(git -C "$PACKAGE_SRC_ROOT" rev-parse --show-toplevel 2>/dev/null)
+# Enter the package directory to scope the Git command
+cd "$PACKAGE_SRC_ROOT"
 
-if [ -z "$GIT_ROOT" ]; then
-    echo "[FAIL] Could not find a git repository for $PACKAGE_SRC_ROOT"
-    PASSED=false
+# Fix for Docker/CI: Mark directory as safe to avoid "dubious ownership" errors
+git config --global --add safe.directory "$(pwd)"
+
+# Check status specifically for this folder ('.')
+# Filter out 'ci_scripts' in case the CI initialized Git in the parent folder
+CHANGES=$(git status --porcelain . | grep -v "ci_scripts")
+
+if [ -z "$CHANGES" ]; then
+    echo "[OK] $PACKAGE source directory is clean."
+    PASSED=true
 else
-    # 3. Check status only for this specific package to avoid unrelated noise
-    CHANGES=$(git -C "$GIT_ROOT" status --porcelain "$PACKAGE_SRC_ROOT")
-
-    if [ -z "$CHANGES" ]; then
-        echo "[OK] Git workspace for $PACKAGE is clean."
-        PASSED=true
-    else
-        echo "[FAIL] Uncommitted changes found in $PACKAGE:"
-        echo "-----------------------------------------------"
-        echo "$CHANGES"
-        echo "-----------------------------------------------"
-        PASSED=false
-    fi
+    echo "[FAIL] Uncommitted changes found in $PACKAGE:"
+    echo "$CHANGES"
+    PASSED=false
 fi
 
-# --- XML GENERATION (Keep this part the same) ---
+# Always generate the XML result file so Colcon/CTest can report the failure
 if [ -n "$RESULT_FILE" ]; then
     mkdir -p "$(dirname "$RESULT_FILE")"
     num_fails=$([ "$PASSED" = true ] && echo "0" || echo "1")
+    
     cat <<EOF > "$RESULT_FILE"
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite name="test_git_clean" tests="1" failures="$num_fails" errors="0">
     <testcase name="git_status_clean" classname="$PACKAGE">
-      $(if [ "$PASSED" = false ]; then echo "<failure message='Uncommitted changes found in $PACKAGE' />"; fi)
+      $(if [ "$PASSED" = false ]; then echo "<failure message='Uncommitted files in $PACKAGE: $CHANGES' />"; fi)
     </testcase>
   </testsuite>
 </testsuites>
 EOF
 fi
 
-if [ "$PASSED" = true ]; then exit 0; else exit 1; fi
+# Exit with non-zero code if changes were found
+[ "$PASSED" = true ] && exit 0 || exit 1
