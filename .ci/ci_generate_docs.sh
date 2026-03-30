@@ -6,18 +6,22 @@ set -e
 ## --------------------------------------------------------------
 echo "Setting up ROS 2 documentation environment..."
 
-# Add MRS PPA and install rosdoc2
-curl -sl https://ctu-mrs.github.io/ppa2-stable/add_ros_ppa.sh | bash
-sudo apt-get -y install python3-rosdoc2
+# Only install if rosdoc2 is missing
+if ! command -v rosdoc2 &> /dev/null; then
+    echo "rosdoc2 not found. Setting up MRS PPA..."
+    curl -sl https://ctu-mrs.github.io/ppa2-stable/add_ros_ppa.sh | bash
+    sudo apt-get update && sudo apt-get -y install python3-rosdoc2
+fi
 
 ## --------------------------------------------------------------
-## |                 2. Documentation Generation                |
+## |                 2. Build & Generate Docs                   |
 ## --------------------------------------------------------------
-echo "Running interface flattening and rosdoc2..."
+echo "Building via raw CMake..."
 
-# Execute the local staging script to handle nested .msg/.srv folders
-# This script copies flattened interfaces to /tmp for rosdoc2 compatibility
-./scripts/generate_docs.sh
+mkdir -p build && cd build
+cmake .. -DMRS_MSGS_DOCS_ONLY=ON -DENABLE_MRS_MSGS_DOCS_BUILD=ON
+make
+cd ..
 
 ## --------------------------------------------------------------
 ## |                  3. Post-Processing                        |

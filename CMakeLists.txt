@@ -5,13 +5,13 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(ament_cmake REQUIRED)
-find_package(builtin_interfaces REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(std_srvs REQUIRED)
-find_package(sensor_msgs REQUIRED)
-find_package(geometry_msgs REQUIRED)
+option(ENABLE_TESTS "Enable building tests" ON)
+option(ENABLE_MRS_MSGS_DOCS_BUILD "Enable documentation build" OFF)
+option(MRS_MSGS_DOCS_ONLY "Documentation build only" OFF)
+
+## --------------------------------------------------------------
+## |               Custom ROS messages definitions              |
+## --------------------------------------------------------------
 
 set(msg_files
   msg/bumper/Histogram.msg
@@ -138,6 +138,10 @@ set(srv_files
 
 set(action_files "")
 
+## --------------------------------------------------------------
+## |                Generating the build symlinks               |
+## --------------------------------------------------------------
+
 # Set the base directory for custom msgs in the BUILD folder
 set(GEN_INTERFACE_BASE_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen_interfaces")
 file(MAKE_DIRECTORY "${GEN_INTERFACE_BASE_DIR}/msg")
@@ -154,10 +158,56 @@ execute_process(
 
 if(NOT SCRIPT_RESULT EQUAL 0)
   message(FATAL_ERROR 
-    "Symlink script failed with exit code ${SCRIPT_RESULT}.\n"
+    "link_msg_files.sh script failed with exit code ${SCRIPT_RESULT}.\n"
     "Error details: ${SCRIPT_ERROR}"
     )
 endif()
+
+## --------------------------------------------------------------
+## |                     Documentation build                    |
+## --------------------------------------------------------------
+
+if(ENABLE_MRS_MSGS_DOCS_BUILD)
+  
+  # Check if rosdoc2 exists on the system path
+  find_program(ROSDOC2_EXECUTABLE rosdoc2)
+
+  if(NOT ROSDOC2_EXECUTABLE)
+    message(FATAL_ERROR 
+      "rosdoc2 not found! Documentation build is enabled but the tool is missing.\n"
+      "Please install it: sudo apt install python3-rosdoc2\n"
+      "Or disable docs building by setting: --cmake-args -DENABLE_MRS_MSGS_DOCS_BUILD=OFF"
+      )
+  endif()
+
+  message(STATUS "mrs_msgs: Generating documentation...")
+  execute_process(
+    COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/generate_docs.sh" "${GEN_INTERFACE_BASE_DIR}"
+    RESULT_VARIABLE DOC_RESULT
+    ERROR_VARIABLE DOC_ERROR
+    )
+
+  if(NOT DOC_RESULT EQUAL 0)
+    message(WARNING "Documentation build failed: ${DOC_ERROR}")
+  endif()
+endif()
+
+if(MRS_MSGS_DOCS_ONLY)
+  message(STATUS "mrs_msgs: Documentation-only mode active. Exiting.")
+  return()
+endif()
+
+## --------------------------------------------------------------
+## |                     ROS messages build                     |
+## --------------------------------------------------------------
+
+find_package(ament_cmake REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 set(rosidl_files "")
 
@@ -192,7 +242,8 @@ if(ENABLE_TESTS)
 endif()
 
 ## --------------------------------------------------------------
-## |                           Install                          |
+## |                         ROS install                        |
 ## --------------------------------------------------------------
+
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
