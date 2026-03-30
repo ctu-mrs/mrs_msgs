@@ -23,8 +23,11 @@ fi
 rm -rf "$STAGING_DIR"
 mkdir -p "$STAGING_DIR"
 
+# Copy Metadata
 cp "$PKG_ROOT/package.xml" "$STAGING_DIR/"
 cp "$PKG_ROOT/rosdoc2.yaml" "$STAGING_DIR/"
+cp "$PKG_ROOT/README.md" "$STAGING_DIR/"
+cp "$PKG_ROOT/LICENSE" "$STAGING_DIR/"
 
 # Copy all subdirectories (msg, srv, action, etc.) from build_interfaces
 for dir in "$BUILD_INTERFACES"/*/; do
