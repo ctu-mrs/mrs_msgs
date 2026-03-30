@@ -14,7 +14,6 @@ export RMS_IMPLEMENTATION=rmw_fastrtps_cpp
 colcon test-result --delete-yes
 
 # colcon test --packages-select mrs_msgs --ctest-args -R 'validate_rosidl_definitions'
-colcon test --packages-select mrs_msgs --ctest-args -R 'test_git_clean'
-# colcon test --packages-select mrs_msgs --ctest-args -R 'test_name_collisions'
+colcon test --packages-select mrs_msgs --ctest-args -R 'test_name_collisions'
 
 colcon test-result --all --verbose

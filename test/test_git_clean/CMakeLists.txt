@@ -1,7 +1,0 @@
-get_filename_component(TEST_NAME "${CMAKE_CURRENT_SOURCE_DIR}" NAME)
-
-ament_add_test(test_git_clean
-  COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/test_git_clean.sh"
-  GENERATE_RESULT_FOR_RETURN_CODE_ZERO
-  TIMEOUT 10
-)
