@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(ENABLE_TESTS "Enable building tests" ON)
 option(ENABLE_MRS_MSGS_DOCS_BUILD "Enable documentation build" OFF)
-option(MRS_MSGS_DOCS_ONLY "Documentation build only" OFF)
+option(MRS_MSGS_DOCS_BUILD_ONLY "Documentation build only" OFF)
 
 ## --------------------------------------------------------------
 ## |               Custom ROS messages definitions              |
@@ -192,7 +192,7 @@ if(ENABLE_MRS_MSGS_DOCS_BUILD)
   endif()
 endif()
 
-if(MRS_MSGS_DOCS_ONLY)
+if(MRS_MSGS_DOCS_BUILD_ONLY)
   message(STATUS "mrs_msgs: Documentation-only mode active. Exiting.")
   return()
 endif()

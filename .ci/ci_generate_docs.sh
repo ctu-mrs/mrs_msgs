@@ -19,7 +19,7 @@ fi
 echo "Building via raw CMake..."
 
 mkdir -p build && cd build
-cmake .. -DMRS_MSGS_DOCS_ONLY=ON -DENABLE_MRS_MSGS_DOCS_BUILD=ON
+cmake .. -DENABLE_MRS_MSGS_DOCS_BUILD=ON -DMRS_MSGS_DOCS_BUILD_ONLY=ON
 make
 cd ..
 
