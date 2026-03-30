@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
-        run: ./.ci/docs.sh
+        run: ./.ci/ci_generate_docs.sh
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
