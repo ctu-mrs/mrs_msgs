@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.28)
 project(mrs_msgs)
 
 set(CMAKE_C_STANDARD 99)
@@ -159,20 +159,20 @@ if(NOT SCRIPT_RESULT EQUAL 0)
     )
 endif()
 
-set(${rosidl_files} "")
+set(rosidl_files "")
 
 foreach(msg_path ${msg_files})
-    get_filename_component(msg_name ${msg_path} NAME)
+    cmake_path(GET msg_path FILENAME msg_name)
     list(APPEND rosidl_files "${GEN_INTERFACE_BASE_DIR}:msg/${msg_name}")
 endforeach()
 
 foreach(srv_path ${srv_files})
-    get_filename_component(srv_name ${srv_path} NAME)
+    cmake_path(GET srv_path FILENAME srv_name)
     list(APPEND rosidl_files "${GEN_INTERFACE_BASE_DIR}:srv/${srv_name}")
 endforeach()
 
 foreach(action_path ${action_files})
-    get_filename_component(action_name ${action_path} NAME)
+    cmake_path(GET action_path FILENAME action_name)
     list(APPEND rosidl_files "${GEN_INTERFACE_BASE_DIR}:action/${action_name}")
 endforeach()
 
