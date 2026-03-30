@@ -29,26 +29,6 @@ done <<< "$interfaces"
 echo "-----------------------------------------------"
 echo "Result: $passed_count / $total_count passed."
 
-# --- XML GENERATION ---
-RESULT_FILE=$1
-if [ -n "$RESULT_FILE" ]; then
-    mkdir -p "$(dirname "$RESULT_FILE")"
-    
-    # Logic for XML failure reporting
-    num_fails=$((total_count - passed_count))
-    
-    cat <<EOF > "$RESULT_FILE"
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="validate_rosidl_definitions" tests="$total_count" failures="$num_fails" errors="0">
-    <testcase name="all_interfaces_loadable" classname="$PACKAGE">
-      $(if [ $num_fails -gt 0 ]; then echo "<failure message='Missing definitions for:$failures' />"; fi)
-    </testcase>
-  </testsuite>
-</testsuites>
-EOF
-fi
-
 # --- FINAL EXIT ---
 if [ "$passed_count" -eq "$total_count" ]; then
     echo "SUCCESS: All messages and services are valid."

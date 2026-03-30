@@ -31,20 +31,4 @@ else
     fi
 fi
 
-# --- XML GENERATION ---
-if [ -n "$RESULT_FILE" ]; then
-    mkdir -p "$(dirname "$RESULT_FILE")"
-    num_fails=$([ "$PASSED" = true ] && echo "0" || echo "1")
-    cat <<EOF > "$RESULT_FILE"
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="test_name_collisions" tests="1" failures="$num_fails" errors="0">
-    <testcase name="unique_filenames" classname="$PACKAGE">
-      $(if [ "$PASSED" = false ]; then echo "<failure message='Duplicate filenames found: $DUPLICATES' />"; fi)
-    </testcase>
-  </testsuite>
-</testsuites>
-EOF
-fi
-
 if [ "$PASSED" = true ]; then exit 0; else exit 1; fi
