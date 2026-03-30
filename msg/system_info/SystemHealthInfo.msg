@@ -12,4 +12,10 @@ float32 gnss_uncertainty        # [m]
 float32 mag_strength            # [T]
 float32 mag_uncertainty         # [T]
 
+float32 rc_rssi                 #[%] 
+
+string  wifi_interface          # interface name (e.g. "wlp2s0"), empty if unavailable
+float32 wifi_signal_dbm         # [dBm] WiFi RSSI (e.g. -46, NaN if unavailable)
+int32   wifi_link_quality       # link quality (0-70 typical, -1 if unavailable)
+
 mrs_msgs/SensorStatus[] available_sensors
