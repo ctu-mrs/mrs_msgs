@@ -138,10 +138,16 @@ set(srv_files
 
 set(action_files "")
 
+# Set the base directory for custom msgs in the BUILD folder
+set(GEN_INTERFACE_BASE_DIR "${CMAKE_CURRENT_BINARY_DIR}/gen_interfaces")
+file(MAKE_DIRECTORY "${GEN_INTERFACE_BASE_DIR}/msg")
+file(MAKE_DIRECTORY "${GEN_INTERFACE_BASE_DIR}/srv")
+file(MAKE_DIRECTORY "${GEN_INTERFACE_BASE_DIR}/action")
+
 # Run the script to create the flat symlinks in the root msg/, srv/, and action/ folders
 execute_process(
-  COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/link_msg_files.sh" ${msg_files} ${srv_files} ${action_files}
-  WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+  COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/link_msg_files.sh" "${GEN_INTERFACE_BASE_DIR}" ${msg_files} ${srv_files} ${action_files}
+  WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
   RESULT_VARIABLE SCRIPT_RESULT
   ERROR_VARIABLE SCRIPT_ERROR
 )
@@ -153,29 +159,25 @@ if(NOT SCRIPT_RESULT EQUAL 0)
     )
 endif()
 
-# We transform the list: "msg/folder/File.msg" -> "msg/File.msg"
-set(flat_msg_files "")
+set(${rosidl_files} "")
+
 foreach(msg_path ${msg_files})
     get_filename_component(msg_name ${msg_path} NAME)
-    list(APPEND flat_msg_files "msg/${msg_name}")
+    list(APPEND rosidl_files "${GEN_INTERFACE_BASE_DIR}:msg/${msg_name}")
 endforeach()
 
-set(flat_srv_files "")
 foreach(srv_path ${srv_files})
     get_filename_component(srv_name ${srv_path} NAME)
-    list(APPEND flat_srv_files "srv/${srv_name}")
+    list(APPEND rosidl_files "${GEN_INTERFACE_BASE_DIR}:srv/${srv_name}")
 endforeach()
 
-set(flat_action_files "")
 foreach(action_path ${action_files})
     get_filename_component(action_name ${action_path} NAME)
-    list(APPEND flat_action_files "action/${action_name}")
+    list(APPEND rosidl_files "${GEN_INTERFACE_BASE_DIR}:action/${action_name}")
 endforeach()
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  ${flat_msg_files}
-  ${flat_srv_files}
-  ${flat_action_files}
+  ${rosidl_files}
   DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
 )
 
@@ -192,5 +194,5 @@ endif()
 ## --------------------------------------------------------------
 ## |                           Install                          |
 ## --------------------------------------------------------------
-
+ament_export_dependencies(rosidl_default_runtime)
 ament_package()
