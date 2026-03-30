@@ -13,9 +13,128 @@ find_package(std_srvs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
-# these files are auto-generated using the copy script
-include(msg_list.txt)
-include(srv_list.txt)
+set(msg_files
+  msg/bumper/Histogram.msg
+  msg/bumper/ObstacleSectors.msg
+  msg/errorgraph/ErrorgraphElement.msg
+  msg/errorgraph/ErrorgraphElementArray.msg
+  msg/errorgraph/ErrorgraphError.msg
+  msg/errorgraph/ErrorgraphNodeID.msg
+  msg/gazebo_simulation/GazeboSpawnerDiagnostics.msg
+  msg/general/Float64.msg
+  msg/general/Float64ArrayStamped.msg
+  msg/general/Float64MultiArrayStamped.msg
+  msg/general/Float64Stamped.msg
+  msg/general/ImageLabeled.msg
+  msg/general/ImageLabeledArray.msg
+  msg/general/Point2D.msg
+  msg/general/PoseWithCovarianceArrayStamped.msg
+  msg/general/PoseWithCovarianceIdentified.msg
+  msg/general/Prism.msg
+  msg/general/RangeWithCovarianceArrayStamped.msg
+  msg/general/RangeWithCovarianceIdentified.msg
+  msg/general/Sphere.msg
+  msg/general/StringStamped.msg
+  msg/general/Track.msg
+  msg/general/TrackArrayStamped.msg
+  msg/general/TrackStamped.msg
+  msg/gimbal/GimbalState.msg
+  msg/gnss/GpsData.msg
+  msg/gnss/GpsInfo.msg
+  msg/gnss/RtkFixType.msg
+  msg/gnss/RtkGps.msg
+  msg/hw_api/HwApiAccelerationHdgCmd.msg
+  msg/hw_api/HwApiAccelerationHdgRateCmd.msg
+  msg/hw_api/HwApiActuatorCmd.msg
+  msg/hw_api/HwApiAltitude.msg
+  msg/hw_api/HwApiAttitudeCmd.msg
+  msg/hw_api/HwApiAttitudeRateCmd.msg
+  msg/hw_api/HwApiCapabilities.msg
+  msg/hw_api/HwApiControlGroupCmd.msg
+  msg/hw_api/HwApiPositionCmd.msg
+  msg/hw_api/HwApiRcChannels.msg
+  msg/hw_api/HwApiStatus.msg
+  msg/hw_api/HwApiVelocityHdgCmd.msg
+  msg/hw_api/HwApiVelocityHdgRateCmd.msg
+  msg/landoff_tracker/LandoffDiagnostics.msg
+  msg/mpc_tracker/FuturePoint.msg
+  msg/mpc_tracker/FutureTrajectory.msg
+  msg/mpc_tracker/MpcPredictionFullState.msg
+  msg/mpc_tracker/MpcTrackerDiagnostics.msg
+  msg/mrs_gripper/GripperDiagnostics.msg
+  msg/profiler/ProfilerUpdate.msg
+  msg/robot_diagnostics/UavDiagnostics.msg
+  msg/se3_controller/Se3Gains.msg
+  msg/speed_tracker/SpeedTrackerCommand.msg
+  msg/stamped_msgs/BoolStamped.msg
+  msg/stamped_msgs/UInt16Stamped.msg
+  msg/trajectory_generation/Path.msg
+  msg/trajectory_generation/PathWithVelocity.msg
+  msg/trajectory_generation/ReferenceWithVelocity.msg
+  msg/uav_managers/ConstraintManagerDiagnostics.msg
+  msg/uav_managers/ControlError.msg
+  msg/uav_managers/ControlManagerDiagnostics.msg
+  msg/uav_managers/ControllerDiagnostics.msg
+  msg/uav_managers/ControllerStatus.msg
+  msg/uav_managers/DynamicsConstraints.msg
+  msg/uav_managers/EstimationDiagnostics.msg
+  msg/uav_managers/EstimatorCorrection.msg
+  msg/uav_managers/EstimatorDiagnostics.msg
+  msg/uav_managers/EstimatorInput.msg
+  msg/uav_managers/EstimatorOutput.msg
+  msg/uav_managers/EulerAngles.msg
+  msg/uav_managers/GainManagerDiagnostics.msg
+  msg/uav_managers/PathReference.msg
+  msg/uav_managers/Reference.msg
+  msg/uav_managers/ReferenceArray.msg
+  msg/uav_managers/ReferenceStamped.msg
+  msg/uav_managers/SafetyAreaManagerDiagnostics.msg
+  msg/uav_managers/SafetyBorder.msg
+  msg/uav_managers/TrackerCommand.msg
+  msg/uav_managers/TrackerStatus.msg
+  msg/uav_managers/TrajectoryReference.msg
+  msg/uav_managers/UavManagerDiagnostics.msg
+  msg/uav_managers/UavState.msg
+  msg/uav_managers/VelocityReference.msg
+  msg/uav_managers/VelocityReferenceStamped.msg
+  msg/uav_managers/WorldOrigin.msg
+  msg/uav_status/CustomTopic.msg
+  msg/uav_status/NodeCpuLoad.msg
+  msg/uav_status/UavStatus.msg
+  msg/uav_status/UavStatusShort.msg
+)
+
+set(srv_files
+  srv/general/Float64Srv.srv
+  srv/general/Float64StampedSrv.srv
+  srv/general/GetBoolSrv.srv
+  srv/general/GetFloat64.srv
+  srv/general/SetInt.srv
+  srv/general/String.srv
+  srv/general/Vec1.srv
+  srv/general/Vec4.srv
+  srv/multirotor_simulator/Kill.srv
+  srv/multirotor_simulator/Spawn.srv
+  srv/trajectory_generation/GetPathSrv.srv
+  srv/trajectory_generation/PathSrv.srv
+  srv/uav_managers/ConstraintsOverride.srv
+  srv/uav_managers/DynamicsConstraintsSrv.srv
+  srv/uav_managers/GetReferenceStampedSrv.srv
+  srv/uav_managers/ReferenceSrv.srv
+  srv/uav_managers/ReferenceStampedSrv.srv
+  srv/uav_managers/SetObstacleSrv.srv
+  srv/uav_managers/SetSafetyBorderSrv.srv
+  srv/uav_managers/TrajectoryReferenceSrv.srv
+  srv/uav_managers/TransformPoseSrv.srv
+  srv/uav_managers/TransformReferenceArraySrv.srv
+  srv/uav_managers/TransformReferenceSrv.srv
+  srv/uav_managers/TransformVector3Srv.srv
+  srv/uav_managers/ValidatePathToPointSrv.srv
+  srv/uav_managers/ValidateReference.srv
+  srv/uav_managers/ValidateReferenceArray.srv
+  srv/uav_managers/VelocityReferenceSrv.srv
+  srv/uav_managers/VelocityReferenceStampedSrv.srv
+)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
     ${msg_files}
