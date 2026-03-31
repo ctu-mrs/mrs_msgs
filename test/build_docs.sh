@@ -9,4 +9,4 @@ while [ ! -e "build/COLCON_IGNORE" ]; do
   fi
 done
 
-colcon build --packages-select mrs_msgs --event-handlers console_direct+ --cmake-args -DENABLE_MRS_MSGS_DOCS_BUILD=ON -DMRS_MSGS_DOCS_BUILD_ONLY=ON
+colcon build --packages-select mrs_msgs --event-handlers console_direct+ --cmake-target docs

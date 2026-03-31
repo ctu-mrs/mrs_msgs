@@ -18,10 +18,8 @@ fi
 ## --------------------------------------------------------------
 echo "Building via raw CMake..."
 
-mkdir -p build && cd build
-cmake .. -DENABLE_MRS_MSGS_DOCS_BUILD=ON -DMRS_MSGS_DOCS_BUILD_ONLY=ON
-make
-cd ..
+cmake -B build -DENABLE_MRS_MSGS_DOCS_BUILD=ON
+cmake --build build --target docs
 
 ## --------------------------------------------------------------
 ## |                  3. Post-Processing                        |

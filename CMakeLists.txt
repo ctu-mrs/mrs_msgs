@@ -5,9 +5,8 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(ENABLE_TESTS "Enable building tests" ON)
-option(ENABLE_MRS_MSGS_DOCS_BUILD "Enable documentation build" OFF)
-option(MRS_MSGS_DOCS_BUILD_ONLY "Documentation build only" OFF)
+option(ENABLE_TESTS "Enable tests building" ON)
+option(ENABLE_MRS_MSGS_DOCS_BUILD "Allow documentation generation" OFF)
 
 ## --------------------------------------------------------------
 ## |               Custom ROS messages definitions              |
@@ -167,34 +166,29 @@ endif()
 ## |                     Documentation build                    |
 ## --------------------------------------------------------------
 
-if(ENABLE_MRS_MSGS_DOCS_BUILD)
-  
-  # Check if rosdoc2 exists on the system path
-  find_program(ROSDOC2_EXECUTABLE rosdoc2)
+find_program(ROSDOC2_EXECUTABLE rosdoc2)
 
-  if(NOT ROSDOC2_EXECUTABLE)
-    message(FATAL_ERROR 
-      "rosdoc2 not found! Documentation build is enabled but the tool is missing.\n"
-      "Please install it: sudo apt install python3-rosdoc2\n"
-      "Or disable docs building by setting: --cmake-args -DENABLE_MRS_MSGS_DOCS_BUILD=OFF"
-      )
-  endif()
-
-  message(STATUS "mrs_msgs: Generating documentation...")
-  execute_process(
+# Always register the manual docs target
+add_custom_target(docs
     COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/generate_docs.sh" "${GEN_INTERFACE_BASE_DIR}"
-    RESULT_VARIABLE DOC_RESULT
-    ERROR_VARIABLE DOC_ERROR
-    )
+    COMMENT "Generating documentation with rosdoc2..."
+    VERBATIM
+)
 
-  if(NOT DOC_RESULT EQUAL 0)
-    message(WARNING "Documentation build failed: ${DOC_ERROR}")
-  endif()
-endif()
+# If automatic build is requested, validate and link to 'ALL'
+if(ENABLE_MRS_MSGS_DOCS_BUILD)
+    if(NOT ROSDOC2_EXECUTABLE)
+        message(FATAL_ERROR
+            "rosdoc2 not found! Documentation build is enabled but the tool is missing.\n"
+            "Please install it: sudo apt install python3-rosdoc2\n"
+            "Or disable docs: --cmake-args -DENABLE_MRS_MSGS_DOCS_BUILD=OFF"
+        )
+    endif()
 
-if(MRS_MSGS_DOCS_BUILD_ONLY)
-  message(STATUS "mrs_msgs: Documentation-only mode active. Exiting.")
-  return()
+    message(STATUS "mrs_msgs: Documentation will build automatically ('docs_auto' linked to 'ALL')")
+
+    add_custom_target(docs_auto ALL)
+    add_dependencies(docs_auto docs)
 endif()
 
 ## --------------------------------------------------------------
