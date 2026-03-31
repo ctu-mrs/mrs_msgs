@@ -40,6 +40,9 @@ for dir in "$BUILD_INTERFACES"/*/; do
     fi
 done
 
+# remove all images because docs are broken otherwise
+sed -i '/!\[.*\](.*)/d' "$STAGING_DIR/README.md"
+
 # Run rosdoc2 against the staging area and save output to the source 'doc' folder
 rosdoc2 build --package-path "$STAGING_DIR" --output-directory "$PKG_ROOT/doc"
 
