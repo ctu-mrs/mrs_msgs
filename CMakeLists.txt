@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(ENABLE_TESTS "Enable tests building" ON)
 option(ENABLE_MRS_MSGS_DOCS_BUILD "Allow documentation generation" OFF)
+option(MRS_MSGS_DOCS_BUILD_ONLY "Set documentation generation build only" OFF)
 
 ## --------------------------------------------------------------
 ## |               Custom ROS messages definitions              |
@@ -176,12 +177,13 @@ add_custom_target(docs
 )
 
 # If automatic build is requested, validate and link to 'ALL'
-if(ENABLE_MRS_MSGS_DOCS_BUILD)
+if(ENABLE_MRS_MSGS_DOCS_BUILD OR MRS_MSGS_DOCS_BUILD_ONLY)
+
     if(NOT ROSDOC2_EXECUTABLE)
         message(FATAL_ERROR
             "rosdoc2 not found! Documentation build is enabled but the tool is missing.\n"
             "Please install it: sudo apt install python3-rosdoc2\n"
-            "Or disable docs: --cmake-args -DENABLE_MRS_MSGS_DOCS_BUILD=OFF"
+            "Or disable docs: --cmake-args -DENABLE_MRS_MSGS_DOCS_BUILD=OFF -DMRS_MSGS_DOCS_BUILD_ONLY=OFF"
         )
     endif()
 
@@ -189,6 +191,11 @@ if(ENABLE_MRS_MSGS_DOCS_BUILD)
 
     add_custom_target(docs_auto ALL)
     add_dependencies(docs_auto docs)
+endif()
+
+if(MRS_MSGS_DOCS_BUILD_ONLY)
+  message(STATUS "mrs_msgs: Documentation-only mode active. Exiting.")
+  return()
 endif()
 
 ## --------------------------------------------------------------
