@@ -10,7 +10,7 @@ echo "Setting up ROS 2 documentation environment..."
 if ! command -v rosdoc2 &> /dev/null; then
     echo "rosdoc2 not found. Setting up MRS PPA..."
     curl -sl https://ctu-mrs.github.io/ppa2-stable/add_ros_ppa.sh | bash
-    sudo apt-get update && sudo apt-get -y install python3-rosdoc2
+    sudo apt-get -y install python3-rosdoc2
 fi
 
 ## --------------------------------------------------------------
