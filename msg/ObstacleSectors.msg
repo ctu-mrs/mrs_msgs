@@ -1,1 +1,0 @@
-bumper/ObstacleSectors.msg

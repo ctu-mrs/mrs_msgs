@@ -1,1 +1,0 @@
-robot_diagnostics/UavDiagnostics.msg

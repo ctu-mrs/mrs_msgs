@@ -1,1 +1,0 @@
-general/PoseWithCovarianceArrayStamped.msg

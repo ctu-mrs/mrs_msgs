@@ -1,1 +1,0 @@
-general/StringStamped.msg

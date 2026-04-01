@@ -1,1 +1,0 @@
-gnss/RtkGps.msg

@@ -1,1 +1,0 @@
-hw_api/HwApiCapabilities.msg

@@ -1,1 +1,0 @@
-uav_status/UavStatus.msg

@@ -1,1 +1,0 @@
-uav_managers/ReferenceStamped.msg

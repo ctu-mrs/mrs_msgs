@@ -1,1 +1,0 @@
-general/Float64ArrayStamped.msg

@@ -1,1 +1,0 @@
-mrs_gripper/GripperDiagnostics.msg
