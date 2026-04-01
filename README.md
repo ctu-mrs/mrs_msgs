@@ -2,7 +2,7 @@
 
 ![](.fig/thumbnail.jpg)
 
-| Build status | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions) | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions) | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/Docs/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions) |
+| Build status | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/ros_build_test/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions) | [![Build Status](https://github.com/ctu-mrs/mrs_msgs/workflows/docs/badge.svg)](https://github.com/ctu-mrs/mrs_msgs/actions) |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 
 ## Documentation
