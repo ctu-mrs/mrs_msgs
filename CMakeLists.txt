@@ -53,6 +53,7 @@ set(msg_files
   msg/hw_api/HwApiControlGroupCmd.msg
   msg/hw_api/HwApiPositionCmd.msg
   msg/hw_api/HwApiRcChannels.msg
+  msg/hw_api/HwApiRcRssi.msg
   msg/hw_api/HwApiStatus.msg
   msg/hw_api/HwApiVelocityHdgCmd.msg
   msg/hw_api/HwApiVelocityHdgRateCmd.msg
