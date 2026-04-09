@@ -1,13 +1,13 @@
-string    active_controller
+string    active_controller  "unknown"
 string[]  available_controllers
 
-string    active_gains
+string    active_gains       "unknown"
 string[]  available_gains
 
-string    active_tracker
+string    active_tracker     "unknown"
 string[]  available_trackers
 
-string    active_constraints
+string    active_constraints "unknown"
 string[]  available_constraints
 
-float32   thrust    # [%]
+float32   thrust    -1.0  # [%]

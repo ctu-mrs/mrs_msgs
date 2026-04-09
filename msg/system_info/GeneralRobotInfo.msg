@@ -4,7 +4,7 @@ string robot_ip_address
 
 # Identifier of the robot type, e.g., "drone: 0", "boat: 1", "ground robot: 2". 
 uint8  robot_type
-bool ready_to_start
+bool   ready_to_start
 
 # List of problems preventing the robot from starting, reported by the diagnostics node. 
 string[] problems_preventing_start
