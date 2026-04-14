@@ -108,6 +108,7 @@ set(msg_files
   msg/system_info/ControlInfo.msg
   msg/system_info/CpuLoad.msg
   msg/system_info/GeneralRobotInfo.msg
+  msg/system_info/OnboardComputerInfo.msg
   msg/system_info/SensorInfo.msg
   msg/system_info/SensorStatus.msg
   msg/system_info/State.msg
@@ -221,6 +222,7 @@ find_package(std_msgs REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
 
 set(rosidl_files "")
 
@@ -241,7 +243,7 @@ endforeach()
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${rosidl_files}
-  DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs
+  DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs std_srvs diagnostic_msgs
 )
 
 ## --------------------------------------------------------------
