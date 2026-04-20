@@ -64,11 +64,22 @@ set(msg_files
   msg/mpc_tracker/MpcTrackerDiagnostics.msg
   msg/mrs_gripper/GripperDiagnostics.msg
   msg/profiler/ProfilerUpdate.msg
-  msg/robot_diagnostics/UavDiagnostics.msg
   msg/se3_controller/Se3Gains.msg
   msg/speed_tracker/SpeedTrackerCommand.msg
   msg/stamped_msgs/BoolStamped.msg
   msg/stamped_msgs/UInt16Stamped.msg
+  msg/system_info/BatteryState.msg
+  msg/system_info/CollisionAvoidanceInfo.msg
+  msg/system_info/ControlInfo.msg
+  msg/system_info/CpuLoad.msg
+  msg/system_info/GeneralRobotInfo.msg
+  msg/system_info/OnboardComputerInfo.msg
+  msg/system_info/SensorInfo.msg
+  msg/system_info/SensorStatus.msg
+  msg/system_info/State.msg
+  msg/system_info/StateEstimationInfo.msg
+  msg/system_info/SystemHealthInfo.msg
+  msg/system_info/UavInfo.msg
   msg/trajectory_generation/Path.msg
   msg/trajectory_generation/PathWithVelocity.msg
   msg/trajectory_generation/ReferenceWithVelocity.msg
@@ -103,18 +114,6 @@ set(msg_files
   msg/uav_status/NodeCpuLoad.msg
   msg/uav_status/UavStatus.msg
   msg/uav_status/UavStatusShort.msg
-  msg/system_info/BatteryState.msg
-  msg/system_info/CollisionAvoidanceInfo.msg
-  msg/system_info/ControlInfo.msg
-  msg/system_info/CpuLoad.msg
-  msg/system_info/GeneralRobotInfo.msg
-  msg/system_info/OnboardComputerInfo.msg
-  msg/system_info/SensorInfo.msg
-  msg/system_info/SensorStatus.msg
-  msg/system_info/State.msg
-  msg/system_info/StateEstimationInfo.msg
-  msg/system_info/SystemHealthInfo.msg
-  msg/system_info/UavInfo.msg
 )
 
 set(srv_files
