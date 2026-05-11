@@ -1,0 +1,11 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Optional: labels to apply to the PRs
+    labels:
+      - "dependencies"
+      - "github_actions"
