@@ -17,11 +17,11 @@ for FILE_PATH in "$@"; do
         # Ensure the destination subdirectory exists in the BUILD folder
         mkdir -p "$DEST_BASE/$DIR_NAME"
         
-        # Create absolute symlink from Build Dir to Source Dir
-        # Absolute paths are much safer when linking across different directory trees
-        TARGET_FILE="$ROOT_DIR/$FILE_PATH"
-        LINK_LOCATION="$DEST_BASE/$DIR_NAME/$BASE_NAME"
+        # Copy the file from Source Dir to Build Dir
+        # Using copies instead of symlinks ensures proper installation
+        SOURCE_FILE="$ROOT_DIR/$FILE_PATH"
+        DEST_FILE="$DEST_BASE/$DIR_NAME/$BASE_NAME"
         
-        ln -sf "$TARGET_FILE" "$LINK_LOCATION"
+        cp -f "$SOURCE_FILE" "$DEST_FILE"
     fi
 done
