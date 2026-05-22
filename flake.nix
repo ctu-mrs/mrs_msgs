@@ -14,6 +14,18 @@
         };
 
         ros = pkgs.rosPackages.jazzy;
+
+        deps = [
+          ros.ros-core
+          ros.ament-cmake-core
+          ros.builtin-interfaces
+          ros.python-cmake-module
+          ros.rosidl-default-runtime
+          ros.sensor-msgs
+          ros.std-srvs
+          ros.std-msgs
+          ros.geometry-msgs
+        ];
       in {
 
         # We drop ${system} here because eachDefaultSystem handles it
@@ -31,39 +43,24 @@
             ros.rosidl-default-generators 
           ];
           
-          buildInputs = [ 
-            ros.ros-core
-            ros.ament-cmake-core
-            ros.builtin-interfaces
+          buildInputs = deps;
+
+          propagatedBuildInputs = [ 
             ros.sensor-msgs
             ros.std-srvs
             ros.std-msgs
             ros.geometry-msgs
-            ros.python-cmake-module
-            # Added runtime requirement for messages
-            ros.rosidl-default-runtime
           ];
         };
 
         devShells.default = pkgs.mkShell {
+
           name = "mrs_msgs";
+
           packages = [
             pkgs.colcon
             (ros.buildEnv {
-              paths = [
-                ros.ros-core
-                ros.ament-cmake 
-                ros.ament-cmake-core
-                ros.builtin-interfaces
-                ros.sensor-msgs
-                ros.std-srvs
-                ros.std-msgs
-                ros.geometry-msgs
-                ros.python-cmake-module
-                # Required to run colcon build locally for messages
-                ros.rosidl-default-generators
-                ros.rosidl-default-runtime
-              ];
+              paths = deps;
             })
           ];
         };
