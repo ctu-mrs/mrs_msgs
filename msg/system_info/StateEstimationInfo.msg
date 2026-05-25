@@ -19,3 +19,12 @@ mrs_msgs/Reference global_pose
 string current_estimator
 string[] running_estimators
 string[] switchable_estimators
+
+# Per-axis active estimator names
+string   horizontal_estimator  "unknown"
+string   vertical_estimator    "unknown"
+string   heading_estimator     "unknown"
+string   agl_estimator         "unknown"
+
+# Maximum allowed Z coordinate of the UAV [m]
+float32  max_flight_z          -1.0

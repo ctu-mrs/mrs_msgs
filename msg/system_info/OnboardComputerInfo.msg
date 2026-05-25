@@ -1,4 +1,6 @@
 float32 cpu_load                -1.0  # [%]
+float32 cpu_ghz                 -1.0  # [GHz] average frequency across cores
+float32 cpu_temperature         -1.0  # [°C] maximum across thermal zones
 float32 free_ram                -1.0  # [GiB]
 float32 total_ram               -1.0  # [GiB]
 int32   free_hdd                -1    # [GiB]
