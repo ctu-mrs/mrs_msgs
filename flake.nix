@@ -5,9 +5,12 @@
   };
 
   outputs = { self, nix-ros-overlay, nixpkgs }:
+
     # This automatically loops through x86_64-linux, aarch64-linux, etc.
     nix-ros-overlay.inputs.flake-utils.lib.eachDefaultSystem (system:
+
       let
+
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ nix-ros-overlay.overlays.default ];
@@ -17,15 +20,16 @@
 
         deps = [
           ros.ros-core
-          ros.ament-cmake-core
-          ros.builtin-interfaces
-          ros.python-cmake-module
-          ros.rosidl-default-runtime
+          # ros.ament-cmake-core
+          # ros.builtin-interfaces
+          # ros.python-cmake-module
+          # ros.rosidl-default-runtime
           ros.sensor-msgs
           ros.std-srvs
           ros.std-msgs
           ros.geometry-msgs
         ];
+
       in {
 
         # We drop ${system} here because eachDefaultSystem handles it
@@ -38,11 +42,13 @@
           
           buildType = "ament_cmake";
           
+          # the stuff you need to run on the build machine
           nativeBuildInputs = [ 
             ros.ament-cmake 
             ros.rosidl-default-generators 
           ];
           
+          # dependencies we are linking agains
           buildInputs = deps;
 
           propagatedBuildInputs = [ 
