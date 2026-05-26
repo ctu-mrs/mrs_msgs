@@ -1,12 +1,15 @@
 # flake.nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+# 1. Define the tools
     flake-parts.url = "github:hercules-ci/flake-parts";
     devenv.url = "github:cachix/devenv";
     
+    # 2. Define the ROS overlay FIRST
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
-    nix-ros-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    
+    # 3. REVERSE THE FOLLOWS: Force your flake and devenv to use the overlay's nixpkgs
+    nixpkgs.follows = "nix-ros-overlay/nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, ... }:
