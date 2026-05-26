@@ -30,7 +30,18 @@
             inherit system;
             overlays = [ inputs.nix-ros-overlay.overlays.default ];
           };
+
           ros = rosPkgs.rosPackages.jazzy;
+
+          rosDeps = [
+            ros.ros-core
+            ros.sensor-msgs
+            ros.std-srvs
+            ros.std-msgs
+            ros.geometry-msgs
+            ros.ament-cmake-core
+            ros.python-cmake-module
+          ];
         in
         {
           # --- The Local Developer Environment ---
@@ -39,6 +50,7 @@
 
             _module.args = {
               inherit rosPkgs; # This passes the rosPkgs you defined above
+              inherit rosDeps;
             };
 
             # Explicitly resolve the directory for the Nix sandbox
@@ -61,9 +73,7 @@
             src = ./.;
             buildType = "ament_cmake";
             nativeBuildInputs = [ ros.ament-cmake ros.rosidl-default-generators ];
-            propagatedBuildInputs = [ 
-              ros.sensor-msgs ros.std-srvs ros.std-msgs ros.geometry-msgs  ros.ament-cmake-core
-            ];
+            propagatedBuildInputs = rosDeps;
           };
         };
         
