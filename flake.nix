@@ -22,7 +22,21 @@
       # Delegate the development environment to devenv.nix
       devShells.${system}.default = devenv.lib.mkShell {
         inherit inputs pkgs;
-        modules = [ ./devenv.nix ];
+        modules = [
+          ./devenv.nix
+          
+          # Add this inline module to fix the directory resolution
+          ({ config, ... }: {
+            devenv.root =
+              let
+                folder = builtins.getEnv "PWD";
+                isInsideWorkTree = folder != "";
+              in
+                if isInsideWorkTree
+                then folder
+                else ./.;
+          })
+        ];
       };
 
       # Keep the native ROS package builder for downstream flakes
