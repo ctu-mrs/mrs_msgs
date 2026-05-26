@@ -34,7 +34,17 @@
           # --- The Local Developer Environment ---
           # devenv.shells handles all the mkShell boilerplate behind the scenes
           devenv.shells.default = {
-            # We still keep the actual environment logic in the separate file!
+            # Explicitly resolve the directory for the Nix sandbox
+            devenv.root =
+              let
+                folder = builtins.getEnv "PWD";
+                isInsideWorkTree = folder != "";
+              in
+                if isInsideWorkTree
+                then folder
+                else ./.;
+
+            # Keep importing your clean environment file
             imports = [ ./devenv.nix ];
           };
 
