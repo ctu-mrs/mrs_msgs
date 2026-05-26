@@ -3,12 +3,11 @@
   inputs = {
 # 1. Define the tools
     flake-parts.url = "github:hercules-ci/flake-parts";
+
     devenv.url = "github:cachix/devenv";
     
     # 2. Define the ROS overlay FIRST
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
-    
-    # 3. REVERSE THE FOLLOWS: Force your flake and devenv to use the overlay's nixpkgs
     nixpkgs.follows = "nix-ros-overlay/nixpkgs";
   };
 
@@ -37,6 +36,11 @@
           # --- The Local Developer Environment ---
           # devenv.shells handles all the mkShell boilerplate behind the scenes
           devenv.shells.default = {
+
+            _module.args = {
+              inherit rosPkgs; # This passes the rosPkgs you defined above
+            };
+
             # Explicitly resolve the directory for the Nix sandbox
             devenv.root =
               let
@@ -45,9 +49,8 @@
               in
                 if isInsideWorkTree
                 then folder
-                else ./.;
+                else builtins.toString ./.; # <--- Cast the path to a string here
 
-            # Keep importing your clean environment file
             imports = [ ./devenv.nix ];
           };
 
@@ -67,8 +70,8 @@
       # 4. Global flake configurations live at the bottom
       flake = {
         nixConfig = {
-          extra-substituters = [ "https://ros.cachix.org" ];
-          extra-trusted-public-keys = [ "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo=" ];
+          extra-substituters = [ "https://ros.cachix.org" "https://devenv.cachix.org" ];
+          extra-trusted-public-keys = [ "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo=" "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" ];
         };
       };
     };

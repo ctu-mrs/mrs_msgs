@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ rosPkgs, ... }:
 let
-  ros = pkgs.rosPackages.jazzy;
+  ros = rosPkgs.rosPackages.jazzy;
   deps = [ ros.ros-core ros.sensor-msgs /* ... */ ];
 in
 {
-  packages = [ pkgs.colcon (ros.buildEnv { paths = deps; }) ];
+  packages = [ rosPkgs.colcon (ros.buildEnv { paths = deps; }) ];
   enterShell = ''
     echo "🔧 Welcome to the mrs_msgs devenv environment!"
   '';
