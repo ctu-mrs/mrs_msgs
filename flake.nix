@@ -4,7 +4,7 @@
     devenv.url = "github:cachix/devenv";
 
     nixpkgs.follows = "devenv/nixpkgs";
-    
+
     # 2. Define the ROS overlay FIRST
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
     ros-nixpkgs.follows = "nix-ros-overlay/nixpkgs";
@@ -13,7 +13,7 @@
   outputs = inputs@{ flake-parts, ... }:
 
     flake-parts.lib.mkFlake { inherit inputs; } {
-      
+
       # 1. Import the devenv module natively
       imports = [
         inputs.devenv.flakeModule
@@ -48,12 +48,13 @@
           # devenv.shells handles all the mkShell boilerplate behind the scenes
           devenv.shells.default = {
 
+            name = "mrs_msgs-dev-shell";
+
             _module.args = {
               inherit rosPkgs; # This passes the rosPkgs you defined above
               inherit rosDeps;
             };
 
-            # Explicitly resolve the directory for the Nix sandbox
             devenv.root =
               let
                 folder = builtins.getEnv "PWD";
@@ -76,7 +77,7 @@
             propagatedBuildInputs = rosDeps;
           };
         };
-        
+
       # 4. Global flake configurations live at the bottom
       flake = {
         nixConfig = {
