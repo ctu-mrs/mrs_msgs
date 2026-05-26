@@ -1,65 +1,62 @@
+# flake.nix
 {
-  description = "Description for the project";
-
   inputs = {
-    devenv-root = {
-      url = "file+file:///dev/null";
-      flake = false;
-    };
-    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     devenv.url = "github:cachix/devenv";
-    nix2container.url = "github:nlewo/nix2container";
-    nix2container.inputs.nixpkgs.follows = "nixpkgs";
-    mk-shell-bin.url = "github:rrbutani/nix-mk-shell-bin";
+    
+    nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
+    nix-ros-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  nixConfig = {
-    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
-    extra-substituters = "https://devenv.cachix.org";
-  };
-
-  outputs = inputs@{ flake-parts, devenv-root, ... }:
+  outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
+      
+      # 1. Import the devenv module natively
       imports = [
         inputs.devenv.flakeModule
       ];
-      systems = [ "x86_64-linux" "i686-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
 
-      perSystem = { config, self', inputs', pkgs, system, ... }: {
-        # Per-system attributes can be defined here. The self' and inputs'
-        # module parameters provide easy access to attributes of the same
-        # system.
+      # 2. Declare the architectures you support
+      systems = [ "x86_64-linux" "aarch64-linux" ];
 
-        # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
-        packages.default = pkgs.hello;
+      # 3. Everything in here is automatically generated for each system above
+      perSystem = { config, self', inputs', pkgs, system, ... }:
+        let
+          # Apply your ROS overlay for this specific system
+          rosPkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [ inputs.nix-ros-overlay.overlays.default ];
+          };
+          ros = rosPkgs.rosPackages.jazzy;
+        in
+        {
+          # --- The Local Developer Environment ---
+          # devenv.shells handles all the mkShell boilerplate behind the scenes
+          devenv.shells.default = {
+            # We still keep the actual environment logic in the separate file!
+            imports = [ ./devenv.nix ];
+          };
 
-        devenv.shells.default = {
-          name = "my-project";
-
-          imports = [
-            # This is just like the imports in devenv.nix.
-            # See https://devenv.sh/guides/using-with-flake-parts/#import-a-devenv-module
-            # ./devenv-foo.nix
-          ];
-
-          # https://devenv.sh/reference/options/
-          packages = [ config.packages.default ];
-
-          enterShell = ''
-            hello
-          '';
-
-          processes.hello.exec = "hello";
+          # --- The C++ Package Builder ---
+          packages.default = ros.buildRosPackage {
+            pname = "mrs_msgs";
+            version = "2.0.0";
+            src = ./.;
+            buildType = "ament_cmake";
+            nativeBuildInputs = [ ros.ament-cmake ros.rosidl-default-generators ];
+            propagatedBuildInputs = [ 
+              ros.sensor-msgs ros.std-srvs ros.std-msgs ros.geometry-msgs 
+            ];
+          };
         };
-
-      };
+        
+      # 4. Global flake configurations live at the bottom
       flake = {
-        # The usual flake attributes can be defined here, including system-
-        # agnostic ones like nixosModule and system-enumerating ones, although
-        # those are more easily expressed in perSystem.
-
+        nixConfig = {
+          extra-substituters = [ "https://ros.cachix.org" ];
+          extra-trusted-public-keys = [ "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo=" ];
+        };
       };
     };
 }
