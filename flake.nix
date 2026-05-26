@@ -62,7 +62,7 @@
             buildType = "ament_cmake";
             nativeBuildInputs = [ ros.ament-cmake ros.rosidl-default-generators ];
             propagatedBuildInputs = [ 
-              ros.sensor-msgs ros.std-srvs ros.std-msgs ros.geometry-msgs 
+              ros.sensor-msgs ros.std-srvs ros.std-msgs ros.geometry-msgs  ros.ament-cmake-core
             ];
           };
         };
