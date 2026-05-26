@@ -8,12 +8,6 @@ build/*
 flake.lock
 result
 
-# Devenv
-.devenv*
-devenv.local.nix
-devenv.local.yaml
-devenv.lock
-
 # direnv
 .direnv
 
