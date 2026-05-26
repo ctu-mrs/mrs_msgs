@@ -8,10 +8,10 @@ build/*
 flake.lock
 result
 
-# direnv
-.direnv
-
 # pre-commit
 .pre-commit-config.yaml
 
-.devenv
+.devenv/
+.envrc
+.direnv
+
