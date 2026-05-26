@@ -1,48 +1,33 @@
-{ pkgs, lib, config, inputs, ... }:
+# devenv.nix
+{ pkgs, ... }:
 
+let
+  ros = pkgs.rosPackages.jazzy;
+  
+  deps = [
+    ros.ros-core
+    ros.sensor-msgs
+    ros.std-srvs
+    ros.std-msgs
+    ros.geometry-msgs
+  ];
+in
 {
-  # https://devenv.sh/basics/
-  env.GREET = "devenv";
+  # 1. Provide colcon and the ROS environment for local development
+  packages = [
+    pkgs.colcon
+    (ros.buildEnv {
+      paths = deps;
+    })
+  ];
 
-  # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
-
-  # https://devenv.sh/languages/
-  # languages.rust.enable = true;
-
-  # https://devenv.sh/processes/
-  # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
-
-  # https://devenv.sh/services/
-  # services.postgres.enable = true;
-
-  # https://devenv.sh/scripts/
-  scripts.hello.exec = ''
-    echo hello from $GREET
-  '';
-
-  # https://devenv.sh/basics/
+  # 2. Add a welcome message and automatically source the workspace
   enterShell = ''
-    hello         # Run scripts directly
-    git --version # Use packages
+    echo "🔧 Welcome to the mrs_msgs devenv environment!"
+    
+    if [ -f install/setup.bash ]; then
+      source install/setup.bash
+      echo "✅ Local colcon workspace sourced."
+    fi
   '';
-
-  # https://devenv.sh/tasks/
-  # tasks = {
-  #   "myproj:setup".exec = "mytool build";
-  #   "devenv:enterShell".after = [ "myproj:setup" ];
-  # };
-
-  # https://devenv.sh/tests/
-  enterTest = ''
-    echo "Running tests"
-    git --version | grep --color=auto "${pkgs.git.version}"
-  '';
-
-  # https://devenv.sh/git-hooks/
-  # git-hooks.hooks.shellcheck.enable = true;
-
-  # See full reference at https://devenv.sh/reference/options/
-  cachix.pull = [ "ctu-mrs" ];
-  cachix.push = "ctu-mrs";
 }
