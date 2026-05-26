@@ -13,3 +13,5 @@ result
 
 # pre-commit
 .pre-commit-config.yaml
+
+.devenv
