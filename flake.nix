@@ -1,17 +1,17 @@
-# flake.nix
 {
   inputs = {
-# 1. Define the tools
     flake-parts.url = "github:hercules-ci/flake-parts";
-
     devenv.url = "github:cachix/devenv";
+
+    nixpkgs.follows = "devenv/nixpkgs";
     
     # 2. Define the ROS overlay FIRST
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
-    nixpkgs.follows = "nix-ros-overlay/nixpkgs";
+    ros-nixpkgs.follows = "nix-ros-overlay/nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, ... }:
+
     flake-parts.lib.mkFlake { inherit inputs; } {
       
       # 1. Import the devenv module natively
@@ -19,14 +19,14 @@
         inputs.devenv.flakeModule
       ];
 
-      # 2. Declare the architectures you support
-      systems = [ "x86_64-linux" "aarch64-linux" ];
+      systems = [ "x86_64-linux" ];
 
       # 3. Everything in here is automatically generated for each system above
       perSystem = { config, self', inputs', pkgs, system, ... }:
+
         let
           # Apply your ROS overlay for this specific system
-          rosPkgs = import inputs.nixpkgs {
+          rosPkgs = import inputs.ros-nixpkgs {
             inherit system;
             overlays = [ inputs.nix-ros-overlay.overlays.default ];
           };
@@ -49,7 +49,7 @@
               in
                 if isInsideWorkTree
                 then folder
-                else builtins.toString ./.; # <--- Cast the path to a string here
+                else "${./.}";
 
             imports = [ ./devenv.nix ];
           };

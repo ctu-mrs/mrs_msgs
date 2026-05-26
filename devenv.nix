@@ -1,7 +1,7 @@
 { rosPkgs, ... }:
 let
   ros = rosPkgs.rosPackages.jazzy;
-  deps = [ ros.ros-core ros.sensor-msgs /* ... */ ];
+  deps = [ ros.ros-core ros.sensor-msgs ];
 in
 {
   packages = [ rosPkgs.colcon (ros.buildEnv { paths = deps; }) ];
