@@ -151,7 +151,7 @@ file(MAKE_DIRECTORY "${GEN_INTERFACE_BASE_DIR}/action")
 
 # Run the script to create the flat symlinks in the root msg/, srv/, and action/ folders
 execute_process(
-  COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/link_msg_files.sh" "${GEN_INTERFACE_BASE_DIR}" ${msg_files} ${srv_files} ${action_files}
+  COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/link_msg_files.sh" "${GEN_INTERFACE_BASE_DIR}" ${msg_files} ${srv_files} ${action_files}
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
   RESULT_VARIABLE SCRIPT_RESULT
   ERROR_VARIABLE SCRIPT_ERROR
@@ -172,7 +172,7 @@ find_program(ROSDOC2_EXECUTABLE rosdoc2)
 
 # Always register the manual docs target
 add_custom_target(docs
-    COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/generate_docs.sh" "${GEN_INTERFACE_BASE_DIR}"
+    COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/generate_docs.sh" "${GEN_INTERFACE_BASE_DIR}"
     COMMENT "Generating documentation with rosdoc2..."
     VERBATIM
 )
