@@ -1,0 +1,8 @@
+Float64ArrayStamped
+===================
+This is a ROS message definition.
+
+**Source**
+
+.. literalinclude:: ../../../../../../../../../../../../tmp/mrs_msgs_docs_ErWSV1/msg/Float64ArrayStamped.msg
+

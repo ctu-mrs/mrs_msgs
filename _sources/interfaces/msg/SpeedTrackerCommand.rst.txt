@@ -1,0 +1,8 @@
+SpeedTrackerCommand
+===================
+This is a ROS message definition.
+
+**Source**
+
+.. literalinclude:: ../../../../../../../../../../../../tmp/mrs_msgs_docs_ErWSV1/msg/SpeedTrackerCommand.msg
+

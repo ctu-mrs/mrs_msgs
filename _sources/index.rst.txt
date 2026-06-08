@@ -1,0 +1,23 @@
+.. GENERATED_CONTENT by rosdoc2.verbs.build.builders.sphinx_builder.
+
+mrs_msgs
+========
+
+This package included essential custom messages used by different parts of the mrs-uav-system.
+
+.. toctree::
+   :maxdepth: 2
+
+
+
+   Message Definitions <interfaces/message_definitions>
+   Service Definitions <interfaces/service_definitions>
+
+   Standard Documents <standards>
+
+.. include:: __readme_include.rst
+
+.. toctree::
+   :hidden:
+
+   genindex

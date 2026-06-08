@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValidateReference &mdash; mrs_msgs 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=86f27845" />
+
+  
+  
+        <script src="../../_static/jquery.js?v=8dae8fb0"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ValidateReferenceArray" href="ValidateReferenceArray.html" />
+    <link rel="prev" title="ValidatePathToPointSrv" href="ValidatePathToPointSrv.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            mrs_msgs
+          </a>
+              <div class="version">
+                2.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../message_definitions.html">Message Definitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../msg/BatteryState.html">BatteryState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/BoolStamped.html">BoolStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CollisionAvoidanceInfo.html">CollisionAvoidanceInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ConstraintManagerDiagnostics.html">ConstraintManagerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ControlError.html">ControlError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ControlInfo.html">ControlInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ControlManagerDiagnostics.html">ControlManagerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ControllerDiagnostics.html">ControllerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ControllerStatus.html">ControllerStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CpuLoad.html">CpuLoad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/CustomTopic.html">CustomTopic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/DynamicsConstraints.html">DynamicsConstraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ErrorgraphElement.html">ErrorgraphElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ErrorgraphElementArray.html">ErrorgraphElementArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ErrorgraphError.html">ErrorgraphError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ErrorgraphNodeID.html">ErrorgraphNodeID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/EstimationDiagnostics.html">EstimationDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/EstimatorCorrection.html">EstimatorCorrection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/EstimatorDiagnostics.html">EstimatorDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/EstimatorInput.html">EstimatorInput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/EstimatorOutput.html">EstimatorOutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/EulerAngles.html">EulerAngles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Float64.html">Float64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Float64ArrayStamped.html">Float64ArrayStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Float64MultiArrayStamped.html">Float64MultiArrayStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Float64Stamped.html">Float64Stamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/FuturePoint.html">FuturePoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/FutureTrajectory.html">FutureTrajectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GainManagerDiagnostics.html">GainManagerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GazeboSpawnerDiagnostics.html">GazeboSpawnerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GeneralRobotInfo.html">GeneralRobotInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GimbalState.html">GimbalState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GpsData.html">GpsData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GpsInfo.html">GpsInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/GripperDiagnostics.html">GripperDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Histogram.html">Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiAccelerationHdgCmd.html">HwApiAccelerationHdgCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiAccelerationHdgRateCmd.html">HwApiAccelerationHdgRateCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiActuatorCmd.html">HwApiActuatorCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiAltitude.html">HwApiAltitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiAttitudeCmd.html">HwApiAttitudeCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiAttitudeRateCmd.html">HwApiAttitudeRateCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiCapabilities.html">HwApiCapabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiControlGroupCmd.html">HwApiControlGroupCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiPositionCmd.html">HwApiPositionCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiRcChannels.html">HwApiRcChannels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiRcRssi.html">HwApiRcRssi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiStatus.html">HwApiStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiVelocityHdgCmd.html">HwApiVelocityHdgCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/HwApiVelocityHdgRateCmd.html">HwApiVelocityHdgRateCmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ImageLabeled.html">ImageLabeled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ImageLabeledArray.html">ImageLabeledArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/LandoffDiagnostics.html">LandoffDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/MpcPredictionFullState.html">MpcPredictionFullState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/MpcTrackerDiagnostics.html">MpcTrackerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/NodeCpuLoad.html">NodeCpuLoad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ObstacleSectors.html">ObstacleSectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/OnboardComputerInfo.html">OnboardComputerInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Path.html">Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/PathReference.html">PathReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/PathWithVelocity.html">PathWithVelocity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Point2D.html">Point2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/PoseWithCovarianceArrayStamped.html">PoseWithCovarianceArrayStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/PoseWithCovarianceIdentified.html">PoseWithCovarianceIdentified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Prism.html">Prism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ProfilerUpdate.html">ProfilerUpdate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/RangeWithCovarianceArrayStamped.html">RangeWithCovarianceArrayStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/RangeWithCovarianceIdentified.html">RangeWithCovarianceIdentified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Reference.html">Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ReferenceArray.html">ReferenceArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ReferenceStamped.html">ReferenceStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/ReferenceWithVelocity.html">ReferenceWithVelocity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/RtkFixType.html">RtkFixType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/RtkGps.html">RtkGps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/SafetyAreaManagerDiagnostics.html">SafetyAreaManagerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/SafetyBorder.html">SafetyBorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Se3Gains.html">Se3Gains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/SensorInfo.html">SensorInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/SensorStatus.html">SensorStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/SpeedTrackerCommand.html">SpeedTrackerCommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Sphere.html">Sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/State.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/StateEstimationInfo.html">StateEstimationInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/StringStamped.html">StringStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/SystemHealthInfo.html">SystemHealthInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/Track.html">Track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/TrackArrayStamped.html">TrackArrayStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/TrackStamped.html">TrackStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/TrackerCommand.html">TrackerCommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/TrackerStatus.html">TrackerStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/TrajectoryReference.html">TrajectoryReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/UInt16Stamped.html">UInt16Stamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/UavInfo.html">UavInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/UavManagerDiagnostics.html">UavManagerDiagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/UavState.html">UavState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/UavStatus.html">UavStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/UavStatusShort.html">UavStatusShort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/VelocityReference.html">VelocityReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/VelocityReferenceStamped.html">VelocityReferenceStamped</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../msg/WorldOrigin.html">WorldOrigin</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../service_definitions.html">Service Definitions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ConstraintsOverride.html">ConstraintsOverride</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DynamicsConstraintsSrv.html">DynamicsConstraintsSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Float64Srv.html">Float64Srv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Float64StampedSrv.html">Float64StampedSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GetBoolSrv.html">GetBoolSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GetFloat64.html">GetFloat64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GetPathSrv.html">GetPathSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GetReferenceStampedSrv.html">GetReferenceStampedSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kill.html">Kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PathSrv.html">PathSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ReferenceSrv.html">ReferenceSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ReferenceStampedSrv.html">ReferenceStampedSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SetInt.html">SetInt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SetObstacleSrv.html">SetObstacleSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SetSafetyBorderSrv.html">SetSafetyBorderSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spawn.html">Spawn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrajectoryReferenceSrv.html">TrajectoryReferenceSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransformPoseSrv.html">TransformPoseSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransformReferenceArraySrv.html">TransformReferenceArraySrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransformReferenceSrv.html">TransformReferenceSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransformVector3Srv.html">TransformVector3Srv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ValidatePathToPointSrv.html">ValidatePathToPointSrv</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ValidateReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ValidateReferenceArray.html">ValidateReferenceArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vec1.html">Vec1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vec4.html">Vec4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VelocityReferenceSrv.html">VelocityReferenceSrv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VelocityReferenceStampedSrv.html">VelocityReferenceStampedSrv</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../standards.html">Standard Documents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../standard_docs/LICENSE.html">LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standard_docs/PACKAGE.html">PACKAGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../standard_docs/README.html">README</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../standard_docs/README.html#mrs-ros-messages">MRS ROS messages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../standard_docs/README.html#documentation">Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../standard_docs/README.html#general-points">General Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../standard_docs/README.html#developer-notes">Developer notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">mrs_msgs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../service_definitions.html">Service Definitions</a></li>
+      <li class="breadcrumb-item active">ValidateReference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/interfaces/srv/ValidateReference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="validatereference">
+<h1>ValidateReference<a class="headerlink" href="#validatereference" title="Link to this heading"></a></h1>
+<p>This is a ROS service definition.</p>
+<p><strong>Source</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mrs_msgs</span><span class="o">/</span><span class="n">ReferenceStamped</span> <span class="n">reference</span>
+<span class="o">---</span>
+<span class="nb">bool</span> <span class="n">success</span>
+<span class="n">string</span> <span class="n">message</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ValidatePathToPointSrv.html" class="btn btn-neutral float-left" title="ValidatePathToPointSrv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ValidateReferenceArray.html" class="btn btn-neutral float-right" title="ValidateReferenceArray" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The &lt;mrs_msgs&gt; Contributors. License: BSD 3-Clause.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
