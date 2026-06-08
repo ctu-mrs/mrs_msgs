@@ -1,6 +1,6 @@
 string  name
 string  message
-bool    ready 
+bool    ready
 string  topic
 float32 rate  # [Hz]
 
