@@ -5,36 +5,42 @@ on:
     branches: [ ros2 ]
     paths-ignore:
       - '**/README.md'
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-
-  cancel:
-
-    name: Cancel Previous Runs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
-        with:
-          access_token: ${{ github.token }}
-
-  docs:
+  build:
     runs-on: ubuntu-24.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v7
 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v6
-
-      - name: Build
+      - name: Build documentation
         run: ./.ci/ci_generate_docs.sh
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./doc/html
-          allow_empty_commit: true
-          force_orphan: true
+          path: ./doc/html
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/ros2'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
