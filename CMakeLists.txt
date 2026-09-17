@@ -74,6 +74,7 @@ set(msg_files
   msg/system_info/CpuLoad.msg
   msg/system_info/GeneralRobotInfo.msg
   msg/system_info/OnboardComputerInfo.msg
+  msg/system_info/PreflightStatus.msg
   msg/system_info/SensorInfo.msg
   msg/system_info/SensorStatus.msg
   msg/system_info/State.msg

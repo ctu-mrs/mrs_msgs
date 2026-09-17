@@ -10,6 +10,7 @@ uint8 ROBOT_TYPE_GROUND_ROBOT=2
 uint8 robot_type
 
 bool ready_to_start
+mrs_msgs/PreflightStatus preflight_status
 
 # List of problems preventing the robot from starting, reported by the diagnostics node. 
 string[] problems_preventing_start
