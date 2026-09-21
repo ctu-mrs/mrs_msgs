@@ -19,3 +19,4 @@ bool      flying_normally        false
 bool      have_goal              false
 bool      tracking_trajectory    false
 bool      callbacks_enabled      false
+bool      output_enabled         false
