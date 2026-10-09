@@ -10,7 +10,7 @@ string[]  available_trackers
 string    active_constraints "unknown"
 string[]  available_constraints
 
-float32   thrust    -1.0  # [%]
+float32   throttle  -1.0  # [-] commanded throttle, 0..1
 
 # Tracker command setpoint, in the local estimation frame
 mrs_msgs/Reference cmd_pose
