@@ -12,6 +12,9 @@ bool accepts_velocity_hdg_rate_cmd
 bool accepts_velocity_hdg_cmd
 bool accepts_position_cmd
 
+# the MRS tracker's reference as a feedforward, not a control mode
+bool accepts_feedforward
+
 bool produces_ground_truth
 bool produces_gnss
 bool produces_gnss_status
