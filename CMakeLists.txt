@@ -20,7 +20,8 @@ set(msg_files
   msg/errorgraph/ErrorgraphElementArray.msg
   msg/errorgraph/ErrorgraphError.msg
   msg/errorgraph/ErrorgraphNodeID.msg
-  msg/gazebo_simulation/GazeboSpawnerDiagnostics.msg
+  msg/gazebo_simulation/GazeboSpawnerStatus.msg
+  msg/gazebo_simulation/GazeboSpawnerVehicle.msg
   msg/general/Float64.msg
   msg/general/Float64ArrayStamped.msg
   msg/general/Float64MultiArrayStamped.msg
