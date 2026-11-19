@@ -17,4 +17,5 @@ uint8 STATE_MIDAIR     = 11 # MRS is taking over a UAV already in the air (mid-a
 uint8 STATE_EHOVER     = 12 # emergency hover: MRS holds the position after an error (ControlManager ehover)
 uint8 STATE_ELAND      = 13 # emergency landing (ControlManager eland)
 uint8 STATE_FAILSAFE   = 14 # failsafe: blind descent without position feedback (ControlManager failsafe)
-uint8 STATE_NO_LINK    = 15 # HW API lost the connection to the autopilot
+uint8 STATE_FLIP       = 15 # MRS performs a flip (FlipTracker)
+uint8 STATE_NO_LINK    = 16 # HW API lost the connection to the autopilot
